@@ -1,5 +1,49 @@
 import { bravopay } from "../_lib/bravopay.js";
 
+function firstNonEmpty(...values) {
+    for (const value of values) {
+        const text = String(value ?? "").trim();
+        if (text) return text;
+    }
+    return "";
+}
+
+function resolvePixVisualData(transaction) {
+    const pix = transaction?.pix || {};
+
+    const paymentCode = firstNonEmpty(
+        pix.copy_paste,
+        pix.copyPaste,
+        pix.emv,
+        pix.payload,
+        transaction?.pix_code,
+        transaction?.pixCode,
+        transaction?.copy_paste,
+        transaction?.copyPaste
+    );
+
+    const paymentQrUrl = firstNonEmpty(
+        pix.qr_code_url,
+        pix.qrcode_url,
+        pix.qrCodeUrl,
+        pix.image_url,
+        pix.imageUrl,
+        transaction?.qr_code_url,
+        transaction?.qrCodeUrl
+    );
+
+    const paymentCodeBase64 = firstNonEmpty(
+        pix.qr_code_base64,
+        pix.qrcode_base64,
+        pix.qrCodeBase64,
+        pix.base64,
+        transaction?.qr_code_base64,
+        transaction?.qrCodeBase64
+    ).replace(/^data:image\/[^;]+;base64,/i, "");
+
+    return { paymentCode, paymentQrUrl, paymentCodeBase64 };
+}
+
 export default async function handler(req, res) {
 
     if (req.method !== "POST") {
@@ -51,6 +95,12 @@ export default async function handler(req, res) {
             })
         });
 
+        const {
+            paymentCode,
+            paymentQrUrl,
+            paymentCodeBase64
+        } = resolvePixVisualData(transaction);
+
         return res.status(200).json({
 
             success: true,
@@ -63,11 +113,21 @@ export default async function handler(req, res) {
 
             statusRaw: transaction.status,
 
-            pixCode: transaction.pix?.copy_paste || "",
+            // Campos esperados pelo script.js atual.
+            paymentCode,
 
-            copyPaste: transaction.pix?.copy_paste || "",
+            paymentQrUrl,
 
-            qrCode: transaction.pix?.copy_paste || "",
+            paymentCodeBase64,
+
+            // Mantidos para compatibilidade com versoes anteriores.
+            pixCode: paymentCode,
+
+            copyPaste: paymentCode,
+
+            qrCode: paymentQrUrl || paymentCodeBase64,
+
+            qrCodeBase64: paymentCodeBase64,
 
             amount: transaction.amount_cents / 100,
 
