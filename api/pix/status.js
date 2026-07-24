@@ -8,11 +8,39 @@ export default async function handler(req, res) {
 
         const tx = await bravopay(`/transactions/${id}`);
 
-        res.status(200).json(tx);
+        return res.status(200).json({
+
+            success: true,
+
+            idTransaction: tx.id,
+
+            txid: tx.id,
+
+            status: tx.status,
+
+            statusRaw: tx.status,
+
+            paid: String(tx.status).toUpperCase() === "PAID",
+
+            pixCode: tx.pix?.copy_paste || "",
+
+            amount: tx.amount_cents / 100,
+
+            amount_cents: tx.amount_cents
+
+        });
 
     } catch (e) {
 
-        res.status(500).json(e);
+        console.error(e);
+
+        return res.status(500).json({
+            success: false,
+            error:
+                e?.error?.message ||
+                e?.message ||
+                "Erro ao consultar pagamento"
+        });
 
     }
 
