@@ -998,7 +998,7 @@ function initHome() {
         trackLead('quiz_started', {
             stage: 'quiz'
         });
-        redirect('quiz.html');
+        redirect('quiz');
     });
 }
 
