@@ -9727,4 +9727,3 @@ function redirect(url) {
     window.__ifbAllowUnload = true;
     window.location.href = target;
 }
-
