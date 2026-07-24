@@ -1,1 +1,38 @@
-{"pixel":{"enabled":true,"id":"1322250786418815","backupId":"","events":{"page_view":true,"quiz_view":true,"lead":true,"purchase":true,"checkout":true}},"tiktokPixel":{"enabled":false,"id":"","events":{"page_view":true,"quiz_view":true,"lead":true,"purchase":true,"checkout":true}},"features":{"orderbump":true}}
+export default function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  return res.status(200).json({
+    pixel: {
+      enabled: true,
+      id: "1322250786418815",
+      backupId: "",
+      events: {
+        page_view: true,
+        quiz_view: true,
+        lead: true,
+        purchase: true,
+        checkout: true
+      }
+    },
+    tiktokPixel: {
+      enabled: false,
+      id: "",
+      events: {
+        page_view: true,
+        quiz_view: true,
+        lead: true,
+        purchase: true,
+        checkout: true
+      }
+    },
+    features: {
+      orderbump: true
+    }
+  });
+}
