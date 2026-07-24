@@ -1,0 +1,51 @@
+Uri: https://bagfood.vercel.app/assets/ifoodentregadores.webp
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\assets\ifoodentregadores.webp
+Content Type: image/webp
+
+Uri: https://bagfood.vercel.app/assets/seguro-bag.png
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\assets\seguro-bag.png
+Content Type: image/png
+
+Uri: https://bagfood.vercel.app/backguard.js?v=1.5
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\backguard.js
+Content Type: application/javascript
+
+Uri: https://bagfood.vercel.app/orderbump
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\orderbump.html
+Content Type: text/html
+
+Uri: https://bagfood.vercel.app/script.js?v=11.0
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\script.js
+Content Type: application/javascript
+
+Uri: https://bagfood.vercel.app/style.css?v=3.2
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\style.css
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\css2
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf
+Content Type: font/ttf
+
+rcel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf
+File Name: C:\Downloaded Web Sites\bagfood.vercel.app\s\outfit\v15\QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf
+Content Type: font/ttf
+
