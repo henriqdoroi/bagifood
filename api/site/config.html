@@ -1,0 +1,1 @@
+{"pixel":{"enabled":true,"id":"1322250786418815","backupId":"","events":{"page_view":true,"quiz_view":true,"lead":true,"purchase":true,"checkout":true}},"tiktokPixel":{"enabled":false,"id":"","events":{"page_view":true,"quiz_view":true,"lead":true,"purchase":true,"checkout":true}},"features":{"orderbump":true}}
