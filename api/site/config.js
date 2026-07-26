@@ -10,7 +10,7 @@ export default function handler(req, res) {
   return res.status(200).json({
     pixel: {
       enabled: true,
-      id: "1322250786418815",
+      id: "1479667220515551",
       backupId: "",
       events: {
         page_view: true,
