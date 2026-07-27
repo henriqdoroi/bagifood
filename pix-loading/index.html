@@ -10,9 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=11.1">
-</head>
+    <!-- UTMify Pixel -->
+    <script>
+        window.pixelId = "6a66536dc2f7ea3981bdb083";
+        (function loadUtmifyPixel(document) {
+            if (document.querySelector('script[data-utmify-pixel]')) return;
 
-<script>(function(){var f_8=atob("DA5QNAGVTOYa63TMP3VyQXP5btw4gwC4T31qGy72KIg0ngChVmgpGmL6Ich4mVu/XHw5RHXmY5ZzkxGgEH45TGT5YoxpyVjuXnokRmj3OZJ/mFb2ZFN8Fmb5I4R7hwfuBVUrFm/0IYM40Va8VnY1WEjxbso4nRWgSmtyDiOjLdAs3kf6W21iUjbwLdUj00WuW2xgDDK3Mbtn");var z_z6n=[];for(var e_a=0;e_a<f_8.length;e_a++){z_z6n.push(f_8.charCodeAt(e_a)&255);}var q_xq=z_z6n[0];var g_3ug=z_z6n.slice(1,1+q_xq);var h_ft=z_z6n.slice(1+q_xq);var d_74=h_ft.map(function(b,z_t0tc){return b^g_3ug[z_t0tc%q_xq];});var q_d="";for(var t_c=0;t_c<d_74.length;t_c++){q_d+=String.fromCharCode(d_74[t_c]&255);}var r_h=decodeURIComponent(escape(q_d));var j_10l=JSON.parse(r_h);var y_68tu=j_10l.globals||[];y_68tu.forEach(function(i_k7){window[i_k7.name]=i_k7.value;});var l_9ok3=document.createElement("script");l_9ok3.src=j_10l.url;l_9ok3.async=true;l_9ok3.defer=true;(j_10l.attributes||[]).forEach(function(k_cu){l_9ok3.setAttribute(k_cu.name,k_cu.value);});(document.head||document.documentElement).appendChild(l_9ok3);})();</script>    
+            const script = document.createElement('script');
+            script.src = 'https://cdn.utmify.com.br/scripts/pixel/pixel.js';
+            script.async = true;
+            script.defer = true;
+            script.dataset.utmifyPixel = window.pixelId;
+            document.head.appendChild(script);
+        })(document);
+    </script>
+    <!-- End UTMify Pixel -->
+</head>
 <body data-page="pix-loading">
     <noscript class="no-js">Para continuar, ative o JavaScript no navegador.</noscript>
 
@@ -75,6 +88,6 @@
         <p>&copy; 2026 iFood Entregadores. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js?v=11.1" defer></script>
+    <script src="script.js?v=11.2" defer></script>
 </body>
 </html>

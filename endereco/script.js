@@ -3698,6 +3698,7 @@ function initPix() {
 
             const status = normalizePixStatus(data?.status);
             const statusRawText = String(data?.statusRaw || data?.status || '').trim();
+            const paymentConfirmed = data?.paid === true || status === 'paid';
             if (pixIofStatus) {
                 if (status === 'paid') {
                     pixIofStatus.textContent = 'Status: Pagamento confirmado';
@@ -3716,8 +3717,8 @@ function initPix() {
                     pixCorreiosStatus.textContent = 'Status: Aguardando pagamento';
                 }
             }
-            if (status === 'paid') {
-                markPaidAndRedirect(data?.statusRaw);
+            if (paymentConfirmed) {
+                markPaidAndRedirect(statusRawText || 'paid');
                 return;
             }
 
@@ -3744,8 +3745,14 @@ function initPix() {
         return;
     }
 
-    const missingPixVisualData = !String(pix?.paymentCode || '').trim() && !String(pix?.paymentQrUrl || pix?.paymentCodeBase64 || '').trim();
-    const pollIntervalMs = missingPixVisualData ? 2500 : 5000;
+    const pollIntervalMs = 2500;
+    const pollWhenPageBecomesActive = () => {
+        if (document.visibilityState === 'visible') pollPixStatus();
+    };
+
+    window.addEventListener('focus', pollPixStatus);
+    window.addEventListener('online', pollPixStatus);
+    document.addEventListener('visibilitychange', pollWhenPageBecomesActive);
 
     ensureApiSession()
         .catch(() => null)
@@ -9727,4 +9734,3 @@ function redirect(url) {
     window.__ifbAllowUnload = true;
     window.location.href = target;
 }
-
