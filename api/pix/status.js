@@ -8,6 +8,37 @@ function firstNonEmpty(...values) {
     return "";
 }
 
+const PAID_STATUSES = new Set([
+    "paid",
+    "approved",
+    "completed",
+    "confirmed",
+    "settled"
+]);
+
+function normalizeStatus(value) {
+    return String(value ?? "")
+        .trim()
+        .toLowerCase()
+        .replace(/[\s-]+/g, "_");
+}
+
+function resolveTransactionStatus(transaction) {
+    const statusRaw = firstNonEmpty(
+        transaction?.status,
+        transaction?.payment_status,
+        transaction?.paymentStatus,
+        transaction?.pix?.status
+    );
+    const normalized = normalizeStatus(statusRaw);
+
+    return {
+        statusRaw,
+        status: PAID_STATUSES.has(normalized) ? "paid" : normalized,
+        paid: PAID_STATUSES.has(normalized)
+    };
+}
+
 function resolvePixVisualData(transaction) {
     const pix = transaction?.pix || {};
 
@@ -46,6 +77,9 @@ function resolvePixVisualData(transaction) {
 
 export default async function handler(req, res) {
 
+    // A resposta de status nunca deve ser reutilizada pelo navegador ou CDN.
+    res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+
     if (req.method !== "POST" && req.method !== "GET") {
         return res.status(405).json({
             error: "Method not allowed"
@@ -70,6 +104,7 @@ export default async function handler(req, res) {
         }
 
         const tx = await bravopay(`/transactions/${encodeURIComponent(id)}`);
+        const { status, statusRaw, paid } = resolveTransactionStatus(tx);
         const {
             paymentCode,
             paymentQrUrl,
@@ -84,11 +119,11 @@ export default async function handler(req, res) {
 
             txid: tx.id,
 
-            status: tx.status,
+            status,
 
-            statusRaw: tx.status,
+            statusRaw,
 
-            paid: String(tx.status).toUpperCase() === "PAID",
+            paid,
 
             // Campos esperados pelo script.js atual.
             paymentCode,
