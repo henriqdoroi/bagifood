@@ -860,10 +860,15 @@ function initHome() {
     const btnStart = document.getElementById('btn-start');
 
     btnStart?.addEventListener('click', () => {
-        resetFlow();
-        setStage('quiz');
-        trackLead('quiz_started', { stage: 'quiz' });
-        redirect('quiz.html');
+        // O link possui href nativo para continuar funcionando mesmo que um
+        // pixel de terceiros falhe durante o clique.
+        try {
+            resetFlow();
+            setStage('quiz');
+            trackLead('quiz_started', { stage: 'quiz' });
+        } catch (_error) {
+            // A navegacao nativa para /quiz nao depende do rastreamento.
+        }
     });
 }
 
