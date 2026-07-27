@@ -3667,29 +3667,9 @@ function initPix() {
             const { response: res, body: data } = await postPixStatusWithSessionRetry();
             if (!res.ok) return;
 
-            const nextPaymentCode = String(
-                data?.paymentCode ||
-                data?.pixCode ||
-                data?.copyPaste ||
-                data?.copy_paste ||
-                ''
-            ).trim();
-            const rawStatusQrCode = String(data?.qrCode || '').trim();
-            const nextPaymentQrUrl = String(
-                data?.paymentQrUrl ||
-                data?.qrCodeUrl ||
-                data?.qr_code_url ||
-                ((/^https?:\/\//i.test(rawStatusQrCode) || rawStatusQrCode.startsWith('data:image'))
-                    ? rawStatusQrCode
-                    : '') ||
-                ''
-            ).trim();
-            const nextPaymentCodeBase64 = String(
-                data?.paymentCodeBase64 ||
-                data?.qrCodeBase64 ||
-                data?.qr_code_base64 ||
-                ''
-            ).replace(/^data:image\/[^;]+;base64,/i, '').trim();
+            const nextPaymentCode = String(data?.paymentCode || '').trim();
+            const nextPaymentQrUrl = String(data?.paymentQrUrl || '').trim();
+            const nextPaymentCodeBase64 = String(data?.paymentCodeBase64 || '').trim();
             const shouldUpdatePix =
                 (!String(pix?.paymentCode || '').trim() && !!nextPaymentCode) ||
                 (!String(pix?.paymentQrUrl || '').trim() && !!nextPaymentQrUrl) ||
@@ -8480,39 +8460,8 @@ async function createPixCharge(shipping, bumpPrice, options = {}) {
             throw new Error(message);
         }
 
-        const normalizedPaymentCode = String(
-            data?.paymentCode ||
-            data?.pixCode ||
-            data?.copyPaste ||
-            data?.copy_paste ||
-            ''
-        ).trim();
-        const rawCreateQrCode = String(data?.qrCode || '').trim();
-        const normalizedPaymentQrUrl = String(
-            data?.paymentQrUrl ||
-            data?.qrCodeUrl ||
-            data?.qr_code_url ||
-            ((/^https?:\/\//i.test(rawCreateQrCode) || rawCreateQrCode.startsWith('data:image'))
-                ? rawCreateQrCode
-                : '') ||
-            ''
-        ).trim();
-        const normalizedPaymentCodeBase64 = String(
-            data?.paymentCodeBase64 ||
-            data?.qrCodeBase64 ||
-            data?.qr_code_base64 ||
-            ''
-        ).replace(/^data:image\/[^;]+;base64,/i, '').trim();
-
-        if (!normalizedPaymentCode && !normalizedPaymentQrUrl && !normalizedPaymentCodeBase64) {
-            throw new Error('A API criou a transacao, mas nao retornou o codigo PIX.');
-        }
-
         const pixPayload = {
             ...data,
-            paymentCode: normalizedPaymentCode,
-            paymentQrUrl: normalizedPaymentQrUrl,
-            paymentCodeBase64: normalizedPaymentCodeBase64,
             amount,
             shippingId: shippingForPix.id,
             shippingName: shippingForPix.name,
@@ -9778,3 +9727,4 @@ function redirect(url) {
     window.__ifbAllowUnload = true;
     window.location.href = target;
 }
+
